@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap");
+
+@import "./components/Button/Button.css";
+@import "./components/Card/Card.css";
+@import "./components/Dropdown/Dropdown.css";
+
+:root {
+  color-scheme: dark;
+
+  --gray-1: hsl(246, 6%, 9%);
+  --gray-2: hsl(240, 5.1%, 11.6%);
+  --gray-3: hsl(241, 5%, 14.3%);
+  --gray-4: hsl(242, 4.9%, 16.5%);
+  --gray-5: hsl(243, 4.9%, 18.8%);
+  --gray-6: hsl(244, 4.9%, 21.5%);
+  --gray-7: hsl(245, 4.9%, 25.4%);
+  --gray-8: hsl(247, 4.8%, 32.5%);
+  --gray-9: hsl(252, 4%, 45.2%);
+  --gray-10: hsl(247, 3.4%, 50.7%);
+  --gray-11: hsl(253, 4%, 63.7%);
+  --gray-12: hsl(256, 6%, 93.2%);
+
+  --gray-a1: hsla(0, 0%, 0%, 0);
+  --gray-a2: hsla(240, 76.7%, 91.2%, 0.031);
+  --gray-a3: hsla(240, 86%, 95.8%, 0.061);
+  --gray-a4: hsla(240, 91.8%, 94.7%, 0.087);
+  --gray-a5: hsla(240, 91.5%, 95.8%, 0.113);
+  --gray-a6: hsla(240, 92%, 93.8%, 0.148);
+  --gray-a7: hsla(240, 94.8%, 95.3%, 0.191);
+  --gray-a8: hsla(249, 98.1%, 95.2%, 0.273);
+  --gray-a9: hsla(248, 97.6%, 96.2%, 0.416);
+  --gray-a10: hsla(248, 95.5%, 96.6%, 0.477);
+  --gray-a11: hsla(250, 98%, 98%, 0.615);
+  --gray-a12: hsla(240, 93.9%, 99.6%, 0.931);
+
+  --accent: hsl(219, 79%, 66%);
+  --canvas: var(--gray-1);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+
+  --br-1: 3px;
+  --br-2: 4px;
+  --br-3: 6px;
+  --br-4: 8px;
+  --br-5: 12px;
+  --br-6: 16px;
+
+  --ff-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+  --fs-1: 12px;
+  --fs-2: 14px;
+  --fs-3: 16px;
+  --fs-4: 18px;
+  --fs-5: 20px;
+  --fs-6: 24px;
+  --fs-7: 28px;
+  --fs-8: 35px;
+  --fs-9: 60px;
+}
+
+body {
+  margin: 0;
+  overflow-wrap: break-word;
+  font-family: var(--ff-sans);
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  color: var(--gray-12);
+  background-color: var(--canvas);
+}
