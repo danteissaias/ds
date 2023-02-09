@@ -1,3 +1,3 @@
-import { withClassName } from "../../lib"
+import { withClassName } from "../../lib";
 
-export const Card = withClassName("div", "Card")
+export const Card = withClassName("div", "Card");

@@ -1,25 +1,28 @@
-import * as Dropdown from "@radix-ui/react-dropdown-menu"
-import classnames from "clsx"
-import { ElementRef, forwardRef, ReactNode } from "react"
-import { withClassName } from "../../lib"
-import { Button as Btn, ButtonProps } from "../Button/Button"
+import * as Dropdown from "@radix-ui/react-dropdown-menu";
+import classnames from "clsx";
+import { ElementRef, forwardRef, ReactNode } from "react";
+import { withClassName, withDefaultProps } from "../../lib";
+import { Button as Btn, ButtonProps } from "../Button/Button";
 
 export interface DropdownMenuProps {
-  trigger: ReactNode
-  children: ReactNode
+  trigger: ReactNode;
+  children: ReactNode;
 }
 
-export const Root = Dropdown.Root
-export const Portal = Dropdown.Portal
+export const Root = withDefaultProps(Dropdown.Root, { modal: false });
+export const Portal = Dropdown.Portal;
 
 export const Button = forwardRef<
   ElementRef<typeof Dropdown.Trigger>,
   ButtonProps
->(({ className, ...props }, forwardedRef) => (
-  <Dropdown.Trigger ref={forwardedRef} asChild>
-    <Btn {...props} />
-  </Dropdown.Trigger>
-))
+>(({ className, ...props }, forwardedRef) => {
+  const isDisabled = props.state === "disabled" || props.state === "loading";
+  return (
+    <Dropdown.Trigger asChild ref={forwardedRef} disabled={isDisabled}>
+      <Btn {...props} />
+    </Dropdown.Trigger>
+  );
+});
 
 export const Content = forwardRef<
   ElementRef<typeof Dropdown.Content>,
@@ -46,9 +49,9 @@ export const Content = forwardRef<
       {...props}
     />
   )
-)
+);
 
-export const Group = withClassName(Dropdown.Group, "DropdownGroup")
-export const Item = withClassName(Dropdown.Item, "DropdownItem")
-export const Label = withClassName(Dropdown.Label, "DropdownLabel")
-export const Separator = withClassName(Dropdown.Separator, "DropdownSeparator")
+export const Group = withClassName(Dropdown.Group, "DropdownGroup");
+export const Item = withClassName(Dropdown.Item, "DropdownItem");
+export const Label = withClassName(Dropdown.Label, "DropdownLabel");
+export const Separator = withClassName(Dropdown.Separator, "DropdownSeparator");

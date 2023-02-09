@@ -1,4 +1,3 @@
-import classnames from "clsx";
 import {
   ComponentProps,
   createElement,
@@ -7,19 +6,19 @@ import {
   forwardRef,
 } from "react";
 
-export const withClassName = <
-  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>
+export const withDefaultProps = <
+  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>,
+  P extends ComponentProps<T>
 >(
   component: T,
-  ...classes: string[]
+  defaultProps: P
 ) => {
   const Comp = forwardRef<ElementRef<typeof component>, ComponentProps<T>>(
     (props, forwardedRef) =>
-      createElement(component, {
-        ...props,
-        ref: forwardedRef,
-        className: classnames(props.classNames, classes),
-      })
+      createElement(
+        component,
+        Object.assign(defaultProps, props, { ref: forwardedRef })
+      )
   );
 
   Comp.displayName =

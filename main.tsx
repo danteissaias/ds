@@ -72,7 +72,7 @@ const App = () => (
       >
         <h3>Dropdown</h3>
         <div style={{ display: "flex", gap: 8 }}>
-          <Dropdown.Root modal={false}>
+          <Dropdown.Root>
             <Dropdown.Button>
               User
               <Icons.ChevronDown size="16" />

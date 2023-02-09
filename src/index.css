@@ -3,6 +3,7 @@
 @import "./components/Button/Button.css";
 @import "./components/Card/Card.css";
 @import "./components/Dropdown/Dropdown.css";
+@import "./components/Input/Input.css";
 
 :root {
   color-scheme: dark;
