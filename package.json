@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "vite",
+    "verce-build": "vite build",
     "build": "tsup src/index.ts"
   },
   "dependencies": {
