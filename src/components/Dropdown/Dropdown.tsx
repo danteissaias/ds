@@ -4,11 +4,6 @@ import { ElementRef, forwardRef, ReactNode } from "react";
 import { withClassName, withDefaultProps } from "../../lib";
 import { Button as Btn, ButtonProps } from "../Button/Button";
 
-export interface DropdownMenuProps {
-  trigger: ReactNode;
-  children: ReactNode;
-}
-
 export const Root = withDefaultProps(Dropdown.Root, { modal: false });
 export const Portal = Dropdown.Portal;
 

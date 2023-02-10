@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { Button, Dropdown, Card, Icons } from "./src";
+import { Button, Dropdown, Card, Icons, TextField } from "./src";
 import "./src/index.css";
 
 const App = () => (
@@ -121,6 +121,22 @@ const App = () => (
         <h3>Card</h3>
         <div style={{ display: "flex", gap: 8 }}>
           <Card style={{ width: 300 }}>This is the card content.</Card>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gap: 20,
+          color: "var(--gray-12)",
+          padding: 25,
+        }}
+      >
+        <h3>Input</h3>
+        <div style={{ display: "flex", gap: 8 }}>
+          <TextField.Root>
+            <TextField.Label>Email address</TextField.Label>
+            <TextField.Input placeholder="dante@issaias.com" />
+          </TextField.Root>
         </div>
       </div>
     </main>
