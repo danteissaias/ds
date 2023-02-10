@@ -73,6 +73,24 @@ const App = () => (
         <h3>Dropdown</h3>
         <div style={{ display: "flex", gap: 8 }}>
           <Dropdown.Root>
+            <Dropdown.Button ghost>
+              User
+              <Icons.ChevronDown size="16" />
+            </Dropdown.Button>
+            <Dropdown.Content style={{ minWidth: 230 }}>
+              <Dropdown.Label>Label</Dropdown.Label>
+              <Dropdown.Group>
+                <Dropdown.Item>Workspace Settings</Dropdown.Item>
+                <Dropdown.Item>Create or join workspace</Dropdown.Item>
+                <Dropdown.Item>Add an account</Dropdown.Item>
+              </Dropdown.Group>
+              <Dropdown.Separator />
+              <Dropdown.Group>
+                <Dropdown.Item>Log out</Dropdown.Item>
+              </Dropdown.Group>
+            </Dropdown.Content>
+          </Dropdown.Root>
+          <Dropdown.Root>
             <Dropdown.Button>
               User
               <Icons.ChevronDown size="16" />

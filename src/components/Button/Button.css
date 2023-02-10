@@ -105,6 +105,11 @@
   }
 }
 
+.Button.gray[data-state="open"] {
+  background-color: var(--gray-6);
+  box-shadow: inset 0 0 0 1px var(--gray-a4);
+}
+
 .Button.gray.state-disabled,
 .Button.gray.state-loading {
   background-color: var(--gray-3);
