@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [solidPlugin({ hot: false })],
 });

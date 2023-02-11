@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "strict": true,
-    "jsx": "react-jsx",
-    "target": "es2018",
+    "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "jsxImportSource": "solid-js",
+    "target": "es2018"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]

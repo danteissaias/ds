@@ -88,7 +88,7 @@
 }
 
 .Button.gray svg {
-  color: var(--gray-10);
+  color: var(--gray-10) !important;
 }
 
 @media (hover: hover) {
@@ -127,7 +127,7 @@
 }
 
 .Button.gray.ghost svg {
-  color: var(--gray-11);
+  color: var(--gray-11) !important;
 }
 
 @media (hover: hover) {
