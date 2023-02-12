@@ -6,7 +6,7 @@ export interface ButtonProps
   /** @deprecated Disabled state is controlled by the `state` prop. */
   disabled?: never;
   state?: "disabled" | "loading" | "normal";
-  size?: "1" | "2";
+  size?: "1" | "2" | "3";
   color?: "gray";
   /** Icon button. */
   icon?: boolean;

@@ -163,19 +163,17 @@ function App() {
       >
         <h3>Button</h3>
         <div style={{ display: "flex", gap: "8px" }}>
-          Normal
+          Sizes
           <Button size="1">Small</Button>
           <Button>Medium</Button>
+          <Button size="3">Large</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
-          Ghost
-          <Button ghost size="1">
-            Small
-          </Button>
-          <Button ghost>Medium</Button>
+          Variants
+          <Button>Default</Button>
+          <Button ghost>Ghost</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
-          {" "}
           Disabled
           <Button ghost state="disabled">
             Ghost
@@ -183,7 +181,6 @@ function App() {
           <Button state="disabled">Default</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
-          {" "}
           Loading
           <Button ghost state="loading">
             Ghost
