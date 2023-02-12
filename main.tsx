@@ -180,9 +180,7 @@ function App() {
           <Button ghost state="disabled">
             Ghost
           </Button>
-          <Button state="disabled" onClick={() => alert(1)}>
-            Default
-          </Button>
+          <Button state="disabled">Default</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           {" "}

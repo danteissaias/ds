@@ -30,6 +30,7 @@ export function Button(props: ButtonProps) {
     "state",
     "icon",
     "class",
+    "onClick",
   ]);
 
   const isLoading = props.state === "loading";
@@ -37,9 +38,17 @@ export function Button(props: ButtonProps) {
 
   return (
     <button
-      disabled={isLoading || isDisabled}
+      aria-live="assertive"
+      aria-disabled={isLoading || isDisabled ? "true" : undefined}
+      aria-label={isLoading ? "Loading, please wait." : undefined}
       class={`reset-button Button ${props.color} state-${props.state} size-${props.size}`}
       classList={{ ghost: props.ghost, icon: props.icon }}
+      onClick={(event) => {
+        if (event.currentTarget.getAttribute("aria-disabled") === "true") {
+          event.preventDefault();
+          event.stopPropagation();
+        } else typeof props.onClick === "function" && props.onClick(event);
+      }}
       {...rest}
     />
   );
