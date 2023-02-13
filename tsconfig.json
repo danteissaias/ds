@@ -6,6 +6,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsxImportSource": "solid-js",
+    "resolveJsonModule": true,
     "target": "es2018",
     "paths": { "@/*": ["./src/*"] }
   },
