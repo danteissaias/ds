@@ -33,5 +33,9 @@
     "vite": "^4.0.4",
     "vite-plugin-solid": "^2.5.0",
     "vite-tsconfig-paths": "^4.0.5"
+  },
+  "peerDependencies": {
+    "lucide-solid": "^0.113.0",
+    "solid-js": "^1.6.10"
   }
 }

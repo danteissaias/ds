@@ -1,6 +1,5 @@
 import { render } from "solid-js/web";
-import { Button, Card } from "./src";
-import * as Icons from "lucide-solid";
+import { Button, Card, Icons } from "./src";
 import "./src/index.css";
 
 function App() {
