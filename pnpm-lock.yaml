@@ -7,10 +7,17 @@ importers:
       '@danteissaias/ds': workspace:*
       lucide-solid: ^0.113.0
       solid-js: ^1.6.10
+      vite: ^4.0.4
+      vite-plugin-solid: ^2.5.0
+      vite-tsconfig-paths: ^4.0.5
     dependencies:
       '@danteissaias/ds': link:../ds
       lucide-solid: 0.113.0_solid-js@1.6.10
       solid-js: 1.6.10
+    devDependencies:
+      vite: 4.0.4
+      vite-plugin-solid: 2.5.0_solid-js@1.6.10+vite@4.0.4
+      vite-tsconfig-paths: 4.0.5
 
   packages/ds:
     specifiers:
@@ -1234,6 +1241,17 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /tsconfck/2.0.2:
+    resolution: {integrity: sha512-H3DWlwKpow+GpVLm/2cpmok72pwRr1YFROV3YzAmvzfGFiC1zEM/mc9b7+1XnrxuXtEbhJ7xUSIqjPFbedp7aQ==}
+    engines: {node: ^14.13.1 || ^16 || >=18, pnpm: ^7.18.0}
+    hasBin: true
+    peerDependencies:
+      typescript: ^4.3.5
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dev: true
+
   /tsconfck/2.0.2_typescript@4.9.4:
     resolution: {integrity: sha512-H3DWlwKpow+GpVLm/2cpmok72pwRr1YFROV3YzAmvzfGFiC1zEM/mc9b7+1XnrxuXtEbhJ7xUSIqjPFbedp7aQ==}
     engines: {node: ^14.13.1 || ^16 || >=18, pnpm: ^7.18.0}
@@ -1291,10 +1309,21 @@ packages:
       merge-anything: 5.1.4
       solid-js: 1.6.10
       solid-refresh: 0.4.3_solid-js@1.6.10
-      vite: 4.0.4_@types+node@18.11.18
+      vite: 4.0.4
       vitefu: 0.2.4_vite@4.0.4
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vite-tsconfig-paths/4.0.5:
+    resolution: {integrity: sha512-/L/eHwySFYjwxoYt1WRJniuK/jPv+WGwgRGBYx3leciR5wBeqntQpUE6Js6+TJemChc+ter7fDBKieyEWDx4yQ==}
+    dependencies:
+      debug: 4.3.4
+      globrex: 0.1.2
+      tsconfck: 2.0.2
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: true
 
   /vite-tsconfig-paths/4.0.5_typescript@4.9.4:
@@ -1306,6 +1335,39 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    dev: true
+
+  /vite/4.0.4:
+    resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.16.16
+      postcss: 8.4.21
+      resolve: 1.22.1
+      rollup: 3.9.1
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /vite/4.0.4_@types+node@18.11.18:
@@ -1350,7 +1412,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.0.4_@types+node@18.11.18
+      vite: 4.0.4
     dev: true
 
   /wrap-ansi/7.0.0:
