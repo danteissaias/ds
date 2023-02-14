@@ -1,5 +1,8 @@
 {
   "scripts": {
-    "vercel-build": "pnpm -C packages/docs/ build"
+    "vercel-build": "turbo build"
+  },
+  "devDependencies": {
+    "turbo": "^1.7.4"
   }
 }

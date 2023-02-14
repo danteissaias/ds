@@ -6,3 +6,4 @@ dist
 target
 .next
 next-env.d.ts
+.turbo
