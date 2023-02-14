@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "vercel-build": "pnpm -C packages/docs/ build"
+  }
+}
