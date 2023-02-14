@@ -1,6 +1,6 @@
+import "@danteissaias/ds/index.css";
 import { render } from "solid-js/web";
-import { Button, Card, Icons } from "./src";
-import "./src/index.css";
+import { Button, Card, Icons } from "@danteissaias/ds";
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
         <div style={{ display: "flex", gap: "8px" }}>
           Only icon
           <Button icon ghost>
-            <Icons.Upload />
+            <Icons.Search />
           </Button>
           <Button icon>
             <Icons.Upload />
@@ -54,7 +54,7 @@ function App() {
             <Icons.Search size="16" /> Search
           </Button>
           <Button>
-            <Icons.Search size="16" /> Upload
+            <Icons.Upload size="16" /> Upload
           </Button>
         </div>
       </div>

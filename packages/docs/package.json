@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@danteissaias/ds": "workspace:*",
+    "lucide-solid": "^0.113.0",
+    "solid-js": "^1.6.10"
+  }
+}
