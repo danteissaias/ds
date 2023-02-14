@@ -1,6 +1,6 @@
-import "@danteissaias/ds/index.css";
+import "@danteissaias/ds/src/index.css";
 import { render } from "solid-js/web";
-import { Button, Card, Icons } from "@danteissaias/ds";
+import { Button, Card, Icons } from "@danteissaias/ds/src";
 
 function App() {
   return (
