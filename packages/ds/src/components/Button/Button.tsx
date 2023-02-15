@@ -1,5 +1,6 @@
 import { JSX, splitProps } from "solid-js";
 import { mergeDefaultProps } from "@/lib";
+import { Spinner } from "../Spinner/Spinner";
 
 export interface ButtonProps
   extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -31,6 +32,7 @@ export function Button(props: ButtonProps) {
     "icon",
     "class",
     "onClick",
+    "children",
   ]);
 
   const isLoading = props.state === "loading";
@@ -50,6 +52,9 @@ export function Button(props: ButtonProps) {
         } else typeof props.onClick === "function" && props.onClick(event);
       }}
       {...rest}
-    />
+    >
+      {isLoading ? <Spinner /> : null}
+      {props.children}
+    </button>
   );
 }

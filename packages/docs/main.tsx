@@ -28,12 +28,8 @@ function App() {
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Loading
-          <Button state="loading">
-            <Spinner />
-            Default
-          </Button>
+          <Button state="loading">Default</Button>
           <Button ghost state="loading">
-            <Spinner />
             Ghost
           </Button>
         </div>
