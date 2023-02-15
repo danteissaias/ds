@@ -1,6 +1,7 @@
-import "@danteissaias/ds/src/index.css";
+import "../src/index.css";
+
 import { render } from "solid-js/web";
-import { Button, Card, Icons, Spinner } from "@danteissaias/ds/src";
+import { Button, Card, Icons } from "../src";
 
 function App() {
   return (
@@ -69,4 +70,4 @@ function App() {
   );
 }
 
-render(() => <App />, document.body);
+render(() => <App />, document.getElementById("root") as HTMLDivElement);

@@ -1,4 +1,4 @@
-import * as path from "node:path";
+import * as path from "path";
 import { defineConfig } from "vite";
 import lightningcss from "vite-plugin-lightningcss";
 import solidPlugin from "vite-plugin-solid";
@@ -17,7 +17,6 @@ export default defineConfig({
       output: { assetFileNames: "index.css" },
       external: [
         ...Object.keys(pkg.dependencies),
-        ...Object.keys(pkg.peerDependencies),
         "solid-js",
         "solid-js/web",
         "solid-js/store",
