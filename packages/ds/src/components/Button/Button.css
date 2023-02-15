@@ -105,20 +105,20 @@
 @media (hover: hover) {
   .Button.gray:hover {
     background-color: var(--gray-6);
-    box-shadow: inset 0 0 0 1px var(--gray-a4);
+    box-shadow: inset 0 0 0 1px var(--gray-a5);
   }
 }
 
 @media (hover: none) {
   .Button.gray:active {
     background-color: var(--gray-6);
-    box-shadow: inset 0 0 0 1px var(--gray-a4);
+    box-shadow: inset 0 0 0 1px var(--gray-a5);
   }
 }
 
 .Button.gray[data-state="open"] {
   background-color: var(--gray-6);
-  box-shadow: inset 0 0 0 1px var(--gray-a4);
+  box-shadow: inset 0 0 0 1px var(--gray-a5);
 }
 
 .Button.gray.state-disabled,
