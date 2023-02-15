@@ -1,5 +1,3 @@
-/* Button */
-
 .reset-button {
   appearance: none;
   background-color: transparent;
@@ -13,6 +11,8 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Button */
+
 .Button {
   display: inline-flex;
   align-items: center;
@@ -25,7 +25,7 @@
     border-color 0.15s ease, transform 0.15s ease;
 }
 
-.Button:active {
+.Button:active:not(.state-disabled, .state-loading) {
   transform: scale(0.98);
 }
 
@@ -41,15 +41,6 @@
   cursor: progress;
 }
 
-.Button.size-1 {
-  height: var(--space-5);
-  font-size: var(--fs-1);
-  padding-left: var(--space-2);
-  padding-right: var(--space-2);
-  border-radius: var(--br-2);
-  gap: var(--space-1);
-}
-
 .Button.size-2 {
   height: var(--space-6);
   font-size: var(--fs-2);
@@ -57,25 +48,10 @@
   padding-right: var(--space-3);
   border-radius: var(--br-3);
   gap: var(--space-2);
-}
-
-.Button.size-3 {
-  height: var(--space-7);
-  font-size: var(--fs-3);
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
-  border-radius: var(--br-4);
-  gap: var(--space-3);
+  --spinner-size: var(--space-4);
 }
 
 /* Icon button */
-
-.Button.size-1.icon {
-  padding-left: 0;
-  padding-right: 0;
-  width: var(--space-5);
-  border-radius: var(--br-3);
-}
 
 .Button.size-2.icon {
   padding-left: 0;
@@ -84,27 +60,11 @@
   border-radius: var(--br-4);
 }
 
-.Button.size-3.icon {
-  padding-left: 0;
-  padding-right: 0;
-  width: var(--space-7);
-  border-radius: var(--br-4);
-}
-
-.Button.size-1.icon svg {
-  height: var(--space-3);
-  width: var(--space-3);
-}
-
 .Button.size-2.icon svg {
   height: var(--space-4);
   width: var(--space-4);
 }
 
-.Button.size-3.icon svg {
-  height: 20px;
-  width: 20px;
-}
 /* Button - gray */
 
 .Button.gray {
