@@ -9,7 +9,7 @@
   line-height: 1;
   padding: 0;
   margin: 0;
-  cursor: pointer;
+  cursor: default;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -23,6 +23,10 @@
   font-weight: 500;
   transition: color 0.15s ease, background-color 0.15s ease,
     border-color 0.15s ease, transform 0.15s ease;
+}
+
+.Button:active {
+  transform: scale(0.98);
 }
 
 .Button:focus-visible {
@@ -80,6 +84,13 @@
   border-radius: var(--br-4);
 }
 
+.Button.size-3.icon {
+  padding-left: 0;
+  padding-right: 0;
+  width: var(--space-7);
+  border-radius: var(--br-4);
+}
+
 .Button.size-1.icon svg {
   height: var(--space-3);
   width: var(--space-3);
@@ -90,6 +101,10 @@
   width: var(--space-4);
 }
 
+.Button.size-3.icon svg {
+  height: 20px;
+  width: 20px;
+}
 /* Button - gray */
 
 .Button.gray {
@@ -99,7 +114,7 @@
 }
 
 .Button.gray svg {
-  color: var(--gray-10) !important;
+  color: var(--gray-11);
 }
 
 @media (hover: hover) {
@@ -137,7 +152,7 @@
 }
 
 .Button.gray.ghost svg {
-  color: var(--gray-11) !important;
+  color: var(--gray-11);
 }
 
 @media (hover: hover) {

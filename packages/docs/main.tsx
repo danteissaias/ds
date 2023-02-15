@@ -21,6 +21,18 @@ function App() {
           <Button size="3">Large</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
+          Icon sizes
+          <Button size="1" icon>
+            <Icons.Upload />
+          </Button>
+          <Button size="2" icon>
+            <Icons.Upload />
+          </Button>
+          <Button size="3" icon>
+            <Icons.Upload />
+          </Button>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
           Variants
           <Button>Default</Button>
           <Button ghost>Ghost</Button>
