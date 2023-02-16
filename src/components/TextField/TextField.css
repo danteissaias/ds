@@ -1,6 +1,8 @@
 .TextField {
 }
 
+/* Label */
+
 .TextField .Label {
   display: block;
   color: var(--gray-11);
@@ -15,6 +17,8 @@
   font-size: var(--fs-2);
   margin-bottom: var(--space-1);
 }
+
+/* Input */
 
 .reset-input {
   position: relative;

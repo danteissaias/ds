@@ -108,7 +108,8 @@ function App() {
         }}
       >
         <h3>Example</h3>
-        <div
+        <form
+          onSubmit={(e) => e.preventDefault()}
           style={{
             display: "flex",
             "flex-direction": "column",
@@ -118,14 +119,14 @@ function App() {
         >
           <TextField.Root>
             <TextField.Label>Email address</TextField.Label>
-            <TextField.Input placeholder="john@doe.com" />
+            <TextField.Input required type="email" placeholder="john@doe.com" />
           </TextField.Root>
           <TextField.Root>
             <TextField.Label>Password</TextField.Label>
-            <TextField.Input placeholder="••••••••" />
+            <TextField.Input required type="password" placeholder="••••••••" />
           </TextField.Root>
           <Button>Log in</Button>
-        </div>
+        </form>
       </div>
     </main>
   );
