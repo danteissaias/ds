@@ -24,7 +24,8 @@
     "build": "vite build && dts-bundle-generator -o dist/index.d.ts src/index.ts"
   },
   "dependencies": {
-    "@kobalte/core": "^0.6.1"
+    "@kobalte/core": "^0.6.1",
+    "@solid-primitives/props": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

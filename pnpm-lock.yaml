@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/core': ^7.20.12
   '@kobalte/core': ^0.6.1
+  '@solid-primitives/props': ^3.0.6
   '@types/node': ^18.11.18
   babel-preset-solid: ^1.6.10
   dts-bundle-generator: ^7.2.0
@@ -17,6 +18,7 @@ specifiers:
 
 dependencies:
   '@kobalte/core': 0.6.1_solid-js@1.6.11
+  '@solid-primitives/props': 3.0.6_solid-js@1.6.11
 
 devDependencies:
   '@babel/core': 7.20.12
@@ -664,6 +666,15 @@ packages:
     dependencies:
       '@solid-primitives/event-listener': 2.2.6_solid-js@1.6.11
       '@solid-primitives/rootless': 1.2.3_solid-js@1.6.11
+      '@solid-primitives/utils': 5.1.0_solid-js@1.6.11
+      solid-js: 1.6.11
+    dev: false
+
+  /@solid-primitives/props/3.0.6_solid-js@1.6.11:
+    resolution: {integrity: sha512-/bN1iqNm5XwO3Ls8wBZPgbLs9cgJsq2XkrnH2XAR9HPTurtZaXSz+WhhibQqJSYAFZn+p19gFESN8q43pObU9Q==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
       '@solid-primitives/utils': 5.1.0_solid-js@1.6.11
       solid-js: 1.6.11
     dev: false

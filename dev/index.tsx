@@ -1,9 +1,11 @@
 import "../src/index.css";
 
 import { render } from "solid-js/web";
-import { Button, Card, Icons } from "../src";
+import { Button, Card, Icons, TextField } from "../src";
+import { createSignal } from "solid-js";
 
 function App() {
+  const [test, setTest] = createSignal("abc");
   return (
     <main>
       <div
@@ -17,7 +19,7 @@ function App() {
         <h3>Button</h3>
         <div style={{ display: "flex", gap: "8px" }}>
           Variants
-          <Button>Default</Button>
+          <Button onClick={() => setTest("efg")}>Default</Button>
           <Button ghost>Ghost</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
@@ -53,6 +55,7 @@ function App() {
           </Button>
         </div>
       </div>
+
       <div
         style={{
           display: "grid",
@@ -63,7 +66,26 @@ function App() {
       >
         <h3>Card</h3>
         <div style={{ display: "flex", gap: "8px" }}>
-          <Card style={{ width: "300px" }}>This is the card content.</Card>
+          <Card class={test()} style={{ width: "300px" }}>
+            This is the card content.
+          </Card>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gap: "20px",
+          color: "var(--gray-12)",
+          padding: "25px",
+        }}
+      >
+        <h3>Text Field</h3>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <TextField.Root>
+            <TextField.Label>Label</TextField.Label>
+            <TextField.Input />
+          </TextField.Root>
         </div>
       </div>
     </main>
