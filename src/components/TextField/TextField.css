@@ -42,7 +42,7 @@
 }
 
 .TextField .Input:focus {
-  box-shadow: inset 0 0 0 1px var(--gray-a7);
+  box-shadow: inset 0 0 0 1px var(--gray-a8);
 }
 
 .TextField.size-1 .Input {
