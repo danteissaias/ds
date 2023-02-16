@@ -17,6 +17,7 @@ export default defineConfig({
       output: { assetFileNames: "index.css" },
       external: [
         ...Object.keys(pkg.dependencies),
+        ...Object.keys(pkg.peerDependencies),
         "solid-js",
         "solid-js/web",
         "solid-js/store",
