@@ -7,7 +7,7 @@ export interface ButtonProps
   /** @deprecated Disabled state is controlled by the `state` prop. */
   disabled?: never;
   state?: "disabled" | "loading" | "normal";
-  size?: "2";
+  size?: "1" | "2";
   color?: "gray";
   /** Icon button. */
   icon?: boolean;
@@ -31,6 +31,7 @@ export function Button(props: ButtonProps) {
     "state",
     "icon",
     "class",
+    "classList",
     "onClick",
     "children",
   ]);
@@ -43,13 +44,13 @@ export function Button(props: ButtonProps) {
       aria-live="assertive"
       aria-disabled={isLoading || isDisabled ? "true" : undefined}
       aria-label={isLoading ? "Loading, please wait." : undefined}
-      class={`reset-button Button ${props.color} state-${props.state} size-${props.size}`}
-      classList={{ ghost: props.ghost, icon: props.icon }}
-      onClick={(event) => {
-        if (event.currentTarget.getAttribute("aria-disabled") === "true") {
-          event.preventDefault();
-          event.stopPropagation();
-        } else typeof props.onClick === "function" && props.onClick(event);
+      class={`${props.class} reset-button Button ${props.color} state-${props.state} size-${props.size}`}
+      classList={{ ghost: props.ghost, icon: props.icon, ...props.classList }}
+      onClick={(e) => {
+        if (e.currentTarget.getAttribute("aria-disabled") === "true") {
+          e.preventDefault();
+          e.stopPropagation();
+        } else typeof props.onClick === "function" && props.onClick(e);
       }}
       {...rest}
     >

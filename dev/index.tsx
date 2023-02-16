@@ -18,6 +18,11 @@ function App() {
       >
         <h3>Button</h3>
         <div style={{ display: "flex", gap: "8px" }}>
+          Sizes
+          <Button size="1">Small</Button>
+          <Button size="2">Medium</Button>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
           Variants
           <Button onClick={() => setTest("efg")}>Default</Button>
           <Button ghost>Ghost</Button>
@@ -38,20 +43,20 @@ function App() {
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Only icon
-          <Button icon>
+          <Button icon size="1">
             <Icons.Upload />
           </Button>
-          <Button icon ghost>
+          <Button icon>
             <Icons.Search />
           </Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           With icon
-          <Button>
-            <Icons.Upload size="16" /> Upload
+          <Button size="1">
+            <Icons.Upload /> Upload
           </Button>
-          <Button ghost>
-            <Icons.Search size="16" /> Search
+          <Button>
+            <Icons.Search /> Search
           </Button>
         </div>
       </div>
@@ -82,9 +87,14 @@ function App() {
       >
         <h3>Text Field</h3>
         <div style={{ display: "flex", gap: "8px" }}>
+          <TextField.Root size="1">
+            <TextField.Label>Label</TextField.Label>
+            <TextField.Input placeholder="Small" />
+          </TextField.Root>
+
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
-            <TextField.Input />
+            <TextField.Input placeholder="Medium" />
           </TextField.Root>
         </div>
       </div>

@@ -2,7 +2,59 @@
 }
 
 .TextField .Label {
+  display: block;
+  color: var(--gray-11);
+}
+
+.TextField.size-1 .Label {
+  font-size: var(--fs-2);
+  margin-bottom: var(--space-1);
+}
+
+.TextField.size-2 .Label {
+  font-size: var(--fs-2);
+  margin-bottom: var(--space-1);
+}
+
+.reset-input {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-width: 0;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .TextField .Input {
+  color: var(--gray-12);
+  background: var(--gray-4);
+  box-shadow: inset 0 0 0 1px var(--gray-a4);
+  transition: box-shadow 0.15s ease;
+}
+
+.TextField .Input::placeholder {
+  color: var(--gray-9);
+}
+
+.TextField .Input:focus {
+  box-shadow: inset 0 0 0 1px var(--gray-a7);
+}
+
+.TextField.size-1 .Input {
+  height: var(--space-6);
+  font-size: var(--fs-2);
+  padding: 0 var(--space-2);
+  border-radius: var(--br-3);
+}
+
+.TextField.size-2 .Input {
+  height: var(--space-7);
+  font-size: var(--fs-2);
+  padding: 0 var(--space-2);
+  border-radius: var(--br-3);
 }
