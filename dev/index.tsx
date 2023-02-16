@@ -98,6 +98,35 @@ function App() {
           </TextField.Root>
         </div>
       </div>
+
+      <div
+        style={{
+          display: "grid",
+          gap: "20px",
+          color: "var(--gray-12)",
+          padding: "25px",
+        }}
+      >
+        <h3>Example</h3>
+        <div
+          style={{
+            display: "flex",
+            "flex-direction": "column",
+            gap: "var(--space-4)",
+            "max-width": "300px",
+          }}
+        >
+          <TextField.Root>
+            <TextField.Label>Email address</TextField.Label>
+            <TextField.Input placeholder="john@doe.com" />
+          </TextField.Root>
+          <TextField.Root>
+            <TextField.Label>Password</TextField.Label>
+            <TextField.Input placeholder="••••••••" />
+          </TextField.Root>
+          <Button>Log in</Button>
+        </div>
+      </div>
     </main>
   );
 }
