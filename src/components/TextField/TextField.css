@@ -1,12 +1,6 @@
 .TextField {
 }
 
-@media (hover: none) {
-  input {
-    font-size: var(--fs-3) !important;
-  }
-}
-
 /* Label */
 
 .TextField .Label {
@@ -74,4 +68,11 @@
   font-size: var(--fs-2);
   padding: 0 var(--space-2);
   border-radius: var(--br-3);
+}
+
+/* Larger font on mobile */
+@media (hover: none) {
+  .TextField .Input {
+    font-size: var(--fs-3) !important;
+  }
 }
