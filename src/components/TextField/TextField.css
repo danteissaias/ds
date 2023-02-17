@@ -51,7 +51,7 @@
   color: var(--gray-9);
 }
 
-.TextField .Input:hover {
+.TextField .Input:where(:hover) {
   border-color: var(--gray-8);
   box-shadow: none;
 }
