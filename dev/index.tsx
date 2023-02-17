@@ -97,6 +97,33 @@ function App() {
             <TextField.Input placeholder="Medium" />
           </TextField.Root>
         </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <TextField.Root isDisabled>
+            <TextField.Label>Label</TextField.Label>
+            <TextField.Input placeholder="Disabled" />
+          </TextField.Root>
+          <TextField.Root validationState="invalid">
+            <TextField.Label>Label</TextField.Label>
+            <TextField.Input placeholder="Invalid" />
+          </TextField.Root>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <TextField.Root>
+            <TextField.Label>Label</TextField.Label>
+            <TextField.Input placeholder="Description" />
+            <TextField.Description>
+              This is a description.
+            </TextField.Description>
+          </TextField.Root>
+
+          <TextField.Root validationState="invalid">
+            <TextField.Label>Label</TextField.Label>
+            <TextField.Input placeholder="Error message" />
+            <TextField.ErrorMessage>
+              This is an error message.
+            </TextField.ErrorMessage>
+          </TextField.Root>
+        </div>
       </div>
 
       <div

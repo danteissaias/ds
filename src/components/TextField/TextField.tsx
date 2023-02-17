@@ -21,3 +21,11 @@ export const Label = withCombineProps(TextField.Label, { class: "Label" });
 export const Input = withCombineProps(TextField.Input, {
   class: "reset-input Input",
 });
+
+export const Description = withCombineProps(TextField.Description, {
+  class: "Description",
+});
+
+export const ErrorMessage = withCombineProps(TextField.ErrorMessage, {
+  class: "ErrorMessage",
+});

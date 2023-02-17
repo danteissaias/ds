@@ -34,8 +34,20 @@
   --gray-a11: hsla(0, 0%, 100%, 0.592);
   --gray-a12: hsla(0, 0%, 100%, 0.923);
 
+  --red-1: #1f1315;
+  --red-2: #291415;
+  --red-3: #3c181a;
+  --red-4: #481a1d;
+  --red-5: #541b1f;
+  --red-6: #671e22;
+  --red-7: #822025;
+  --red-8: #aa2429;
+  --red-9: #e5484d;
+  --red-10: #f2555a;
+  --red-11: #ff6369;
+  --red-12: #feecee;
+
   --canvas: var(--gray-1);
-  --focus: var(--gray-9);
 
   --space-1: 4px;
   --space-2: 8px;

@@ -1,11 +1,12 @@
 .TextField {
+  display: inline-block;
 }
 
 /* Label */
 
 .TextField .Label {
   display: block;
-  color: var(--gray-11);
+  color: var(--gray-12);
 }
 
 .TextField.size-1 .Label {
@@ -39,6 +40,7 @@
   color: var(--gray-12);
   background: var(--canvas);
   border: 1px solid var(--gray-6);
+  --focus-color: var(--gray-9);
 }
 
 .TextField .Input::placeholder {
@@ -46,14 +48,29 @@
 }
 
 @media (hover: hover) {
-  .TextField .Input:hover {
+  .TextField .Input:where(:hover:not([aria-invalid="true"]):not(:disabled)) {
     border-color: var(--gray-8);
   }
 }
 
+.TextField .Input:disabled {
+  cursor: not-allowed;
+  background-color: var(--gray-2);
+  color: var(--gray-10);
+}
+
+.TextField .Input[aria-invalid="true"] {
+  border-color: var(--red-11);
+  --focus-color: var(--red-9);
+}
+
 .TextField .Input:focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus);
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
+}
+
+.TextField .Input[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
 }
 
 .TextField.size-1 .Input {
@@ -75,4 +92,20 @@
   .TextField .Input {
     font-size: var(--fs-3) !important;
   }
+}
+
+/* Description */
+
+.TextField .Description {
+  font-size: var(--fs-2);
+  margin-top: var(--space-2);
+  color: var(--gray-11);
+}
+
+/* Description */
+
+.TextField .ErrorMessage {
+  font-size: var(--fs-2);
+  margin-top: var(--space-2);
+  color: var(--red-11);
 }
