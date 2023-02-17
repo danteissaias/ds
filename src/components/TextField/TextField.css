@@ -1,6 +1,12 @@
 .TextField {
 }
 
+@media (hover: none) {
+  input {
+    font-size: var(--fs-3) !important;
+  }
+}
+
 /* Label */
 
 .TextField .Label {
@@ -45,8 +51,8 @@
   color: var(--gray-9);
 }
 
-.TextField .Input:is(:hover, :active) {
-  border: 1px solid var(--gray-8);
+.TextField .Input::where(:hover:not([aria-invalid="true"]):not(:disabled)) {
+  border-color: var(--gray-8);
 }
 
 .TextField .Input:focus-visible {
