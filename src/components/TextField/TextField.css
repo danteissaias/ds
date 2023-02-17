@@ -51,7 +51,7 @@
   color: var(--gray-9);
 }
 
-.TextField .Input::where(:hover:not([aria-invalid="true"]):not(:disabled)) {
+.TextField .Input:hover {
   border-color: var(--gray-8);
 }
 
