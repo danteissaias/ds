@@ -10,12 +10,12 @@
 
 .TextField.size-1 .Label {
   font-size: var(--fs-2);
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
 }
 
 .TextField.size-2 .Label {
   font-size: var(--fs-2);
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
 }
 
 /* Input */
@@ -32,21 +32,26 @@
   font-family: inherit;
   flex-shrink: 0;
   -webkit-tap-highlight-color: transparent;
+  transition: border 0.15s ease;
 }
 
 .TextField .Input {
   color: var(--gray-12);
   background: var(--canvas);
-  box-shadow: inset 0 0 0 1px var(--gray-5);
-  transition: box-shadow 0.15s ease;
+  border: 1px solid var(--gray-6);
 }
 
 .TextField .Input::placeholder {
   color: var(--gray-9);
 }
 
-.TextField .Input:focus {
-  box-shadow: inset 0 0 0 1px var(--gray-8);
+.TextField .Input:is(:hover, :active) {
+  border: 1px solid var(--gray-8);
+}
+
+.TextField .Input:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus);
 }
 
 .TextField.size-1 .Input {

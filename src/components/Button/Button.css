@@ -22,11 +22,7 @@
   box-sizing: border-box;
   font-weight: 500;
   transition: color 0.15s ease, background-color 0.15s ease,
-    box-shadow 0.15s ease, transform 0.15s ease;
-}
-
-.Button:focus-visible {
-  outline: 2px solid var(--accent);
+    transform 0.15s ease, border-color 0.15s ease;
 }
 
 .Button.state-normal:active {
@@ -88,7 +84,12 @@
 .Button.gray {
   color: var(--gray-12);
   background-color: var(--gray-4);
-  box-shadow: inset 0 0 0 1px var(--gray-a4);
+  border: 1px solid var(--gray-6);
+}
+
+.Button.gray:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus);
 }
 
 .Button.gray svg {
@@ -98,26 +99,26 @@
 @media (hover: hover) {
   .Button.gray:hover {
     background-color: var(--gray-6);
-    box-shadow: inset 0 0 0 1px var(--gray-a4);
+    border: 1px solid var(--gray-8);
   }
 }
 
 @media (hover: none) {
   .Button.gray:active {
     background-color: var(--gray-6);
-    box-shadow: inset 0 0 0 1px var(--gray-a4);
+    border: 1px solid var(--gray-8);
   }
 }
 
 .Button.gray[data-state="open"] {
   background-color: var(--gray-6);
-  box-shadow: inset 0 0 0 1px var(--gray-a4);
+  border: 1px solid var(--gray-8);
 }
 
 .Button.gray.state-disabled,
 .Button.gray.state-loading {
   background-color: var(--gray-3);
-  box-shadow: inset 0 0 0 1px var(--gray-a3);
+  border: 1px solid var(--gray-5);
   color: var(--gray-a9);
 }
 
@@ -125,8 +126,12 @@
 
 .Button.gray.ghost {
   background-color: transparent;
-  box-shadow: none;
+  border: none;
   color: var(--gray-11);
+}
+
+.Button.gray.ghost:focus-visible {
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus);
 }
 
 .Button.gray.ghost svg {
@@ -135,26 +140,22 @@
 
 @media (hover: hover) {
   .Button.gray.ghost:hover {
-    box-shadow: none;
     background-color: var(--gray-a4);
   }
 }
 
 @media (hover: none) {
   .Button.gray.ghost:active {
-    box-shadow: none;
     background-color: var(--gray-a4);
   }
 }
 
 .Button.gray.ghost[data-state="open"] {
-  box-shadow: none;
   background-color: var(--gray-a4);
 }
 
 .Button.gray.ghost.state-disabled,
 .Button.gray.ghost.state-loading {
   background-color: var(--gray-a3);
-  box-shadow: none;
   color: var(--gray-a9);
 }

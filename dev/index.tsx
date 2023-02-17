@@ -125,7 +125,7 @@ function App() {
             <TextField.Label>Password</TextField.Label>
             <TextField.Input required type="password" placeholder="••••••••" />
           </TextField.Root>
-          <Button>Log in</Button>
+          <Button>Login</Button>
         </form>
       </div>
     </main>
