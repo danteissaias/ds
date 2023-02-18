@@ -1,6 +1,7 @@
 /* Button */
 
 .Button {
+  -webkit-tap-highlight-color: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
