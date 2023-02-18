@@ -35,10 +35,8 @@
   color: var(--gray-9);
 }
 
-@media (hover: hover) {
-  .TextField .Input:where(:hover:not([aria-invalid="true"]):not(:disabled)) {
-    border-color: var(--gray-8);
-  }
+.TextField .Input:where(:hover:not([aria-invalid="true"]):not(:disabled)) {
+  border-color: var(--gray-8);
 }
 
 .TextField .Input:disabled {
