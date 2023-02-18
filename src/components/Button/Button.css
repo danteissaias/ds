@@ -96,11 +96,6 @@
   }
 }
 
-.Button.gray[data-state="open"] {
-  background-color: var(--gray-6);
-  border-color: var(--gray-8);
-}
-
 .Button.gray.state-disabled,
 .Button.gray.state-loading {
   background-color: var(--gray-3);
@@ -135,10 +130,6 @@
   .Button.gray.ghost:active {
     background-color: var(--gray-a4);
   }
-}
-
-.Button.gray.ghost[data-state="open"] {
-  background-color: var(--gray-a4);
 }
 
 .Button.gray.ghost.state-disabled,
