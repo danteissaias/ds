@@ -21,25 +21,12 @@
 
 /* Input */
 
-.reset-input {
-  position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-width: 0;
-  outline: none;
-  box-sizing: border-box;
-  width: 100%;
-  font-family: inherit;
-  flex-shrink: 0;
-  -webkit-tap-highlight-color: transparent;
-  transition: border 0.15s ease;
-}
-
 .TextField .Input {
+  width: 100%;
   color: var(--gray-12);
-  background: var(--canvas);
+  background-color: var(--canvas);
   border: 1px solid var(--gray-6);
+  transition: border 0.15s ease;
   --focus-color: var(--gray-9);
 }
 

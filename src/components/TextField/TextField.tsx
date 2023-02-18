@@ -18,9 +18,7 @@ export function Root(props: TextFieldRootProps) {
 
 export const Label = withCombineProps(TextField.Label, { class: "Label" });
 
-export const Input = withCombineProps(TextField.Input, {
-  class: "reset-input Input",
-});
+export const Input = withCombineProps(TextField.Input, { class: "Input" });
 
 export const Description = withCombineProps(TextField.Description, {
   class: "Description",
