@@ -22,7 +22,7 @@
 /* Input */
 
 .TextField .Input {
-  -webkit-tap-highlight-color: transparent;
+  appearance: none;
   width: 100%;
   color: var(--gray-12);
   background-color: var(--canvas);
@@ -33,6 +33,7 @@
 
 .TextField .Input::placeholder {
   color: var(--gray-9);
+  user-select: none;
 }
 
 .TextField .Input:where(:hover:not([aria-invalid="true"]):not(:disabled)) {
