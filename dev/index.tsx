@@ -4,6 +4,38 @@ import { render } from "solid-js/web";
 import { Button, Card, Icons, TextField } from "../src";
 import { createSignal } from "solid-js";
 
+function LoginExample() {
+  const [isLoading, setIsLoading] = createSignal(false);
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setTimeout(() => setIsLoading(false), 2000);
+      }}
+      style={{
+        display: "flex",
+        "flex-direction": "column",
+        gap: "var(--space-4)",
+        "max-width": "300px",
+      }}
+    >
+      <TextField.Root>
+        <TextField.Label>Email address</TextField.Label>
+        <TextField.Input required type="email" placeholder="john@doe.com" />
+      </TextField.Root>
+      <TextField.Root>
+        <TextField.Label>Password</TextField.Label>
+        <TextField.Input required type="password" placeholder="••••••••" />
+      </TextField.Root>
+      <Button state={isLoading() ? "loading" : "normal"}>
+        {isLoading() ? "Logging in" : "Login"}
+      </Button>
+    </form>
+  );
+}
+
 function App() {
   return (
     <main>
@@ -132,25 +164,7 @@ function App() {
         }}
       >
         <h3>Example</h3>
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          style={{
-            display: "flex",
-            "flex-direction": "column",
-            gap: "var(--space-4)",
-            "max-width": "300px",
-          }}
-        >
-          <TextField.Root>
-            <TextField.Label>Email address</TextField.Label>
-            <TextField.Input required type="email" placeholder="john@doe.com" />
-          </TextField.Root>
-          <TextField.Root>
-            <TextField.Label>Password</TextField.Label>
-            <TextField.Input required type="password" placeholder="••••••••" />
-          </TextField.Root>
-          <Button>Login</Button>
-        </form>
+        <LoginExample />
       </div>
     </main>
   );

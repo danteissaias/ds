@@ -35,17 +35,14 @@ export function Button(props: ButtonProps) {
     "children",
   ]);
 
-  const isLoading = props.state === "loading";
-  const isDisabled = props.state === "disabled";
-
   return (
     <button
-      disabled={isDisabled || isLoading}
+      disabled={props.state === "loading" || props.state === "disabled"}
       class={`Button ${props.color} state-${props.state} size-${props.size}`}
       classList={{ ghost: props.ghost, icon: props.icon }}
       {...rest}
     >
-      {isLoading ? <Spinner /> : null}
+      {props.state === "loading" ? <Spinner /> : null}
       {props.children}
     </button>
   );

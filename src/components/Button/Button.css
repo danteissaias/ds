@@ -70,7 +70,7 @@
 .Button.gray {
   color: var(--gray-12);
   background-color: var(--gray-4);
-  border: 1px solid var(--gray-6);
+  border: 1px solid var(--gray-7);
   --focus-color: var(--gray-9);
 }
 
@@ -99,9 +99,8 @@
 
 .Button.gray.state-disabled,
 .Button.gray.state-loading {
-  background-color: var(--gray-3);
-  border-color: var(--gray-5);
-  color: var(--gray-a9);
+  background-color: var(--gray-4);
+  border-color: var(--gray-7);
 }
 
 /* Button - gray + ghost */
@@ -135,6 +134,5 @@
 
 .Button.gray.ghost.state-disabled,
 .Button.gray.ghost.state-loading {
-  background-color: var(--gray-a3);
-  color: var(--gray-a9);
+  background-color: var(--gray-a4);
 }
