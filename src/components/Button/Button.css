@@ -15,12 +15,9 @@
   transform: scale(0.98);
 }
 
-.Button.state-disabled {
-  cursor: not-allowed;
-}
-
+.Button.state-disabled,
 .Button.state-loading {
-  cursor: progress;
+  cursor: not-allowed;
 }
 
 /* Sizes */
