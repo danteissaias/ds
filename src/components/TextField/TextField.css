@@ -28,8 +28,8 @@
   user-select: none;
 }
 
-.TextField .Input:where(:hover:not([aria-invalid="true"]):not(:disabled)) {
-  border-color: var(--gray-8);
+.TextField .Input:focus-visible {
+  border-color: var(--gray-10);
 }
 
 .TextField .Input:disabled {
@@ -45,12 +45,11 @@
 
 .TextField .Input:focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
 }
 
-.TextField .Input[aria-invalid="true"]:focus-visible {
+/*.TextField .Input[aria-invalid="true"]:focus-visible {
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
-}
+} */
 
 .TextField.size-1 .Input {
   height: var(--space-6);
