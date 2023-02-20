@@ -41,7 +41,7 @@ export function Button(props: ButtonProps) {
   return (
     <button
       disabled={isDisabled || isLoading}
-      class={`reset-button Button ${props.color} state-${props.state} size-${props.size}`}
+      class={`Button ${props.color} state-${props.state} size-${props.size}`}
       classList={{ ghost: props.ghost, icon: props.icon }}
       {...rest}
     >
