@@ -32,7 +32,6 @@ export function Button(props: ButtonProps) {
     "icon",
     "class",
     "classList",
-    "onClick",
     "children",
   ]);
 
@@ -41,17 +40,9 @@ export function Button(props: ButtonProps) {
 
   return (
     <button
-      aria-live="assertive"
-      aria-disabled={isLoading || isDisabled ? "true" : undefined}
-      aria-label={isLoading ? "Loading, please wait." : undefined}
-      class={`${props.class} reset-button Button ${props.color} state-${props.state} size-${props.size}`}
-      classList={{ ghost: props.ghost, icon: props.icon, ...props.classList }}
-      onClick={(e) => {
-        if (e.currentTarget.getAttribute("aria-disabled") === "true") {
-          e.preventDefault();
-          e.stopPropagation();
-        } else typeof props.onClick === "function" && props.onClick(e);
-      }}
+      disabled={isDisabled || isLoading}
+      class={`reset-button Button ${props.color} state-${props.state} size-${props.size}`}
+      classList={{ ghost: props.ghost, icon: props.icon }}
       {...rest}
     >
       {isLoading ? <Spinner /> : null}

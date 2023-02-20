@@ -5,7 +5,6 @@ import { Button, Card, Icons, TextField } from "../src";
 import { createSignal } from "solid-js";
 
 function App() {
-  const [test, setTest] = createSignal("abc");
   return (
     <main>
       <div
@@ -24,7 +23,7 @@ function App() {
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Variants
-          <Button onClick={() => setTest("efg")}>Default</Button>
+          <Button>Default</Button>
           <Button ghost>Ghost</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
@@ -71,9 +70,7 @@ function App() {
       >
         <h3>Card</h3>
         <div style={{ display: "flex", gap: "8px" }}>
-          <Card class={test()} style={{ width: "300px" }}>
-            This is the card content.
-          </Card>
+          <Card style={{ width: "300px" }}>This is the card content.</Card>
         </div>
       </div>
 
