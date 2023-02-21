@@ -13,7 +13,7 @@ specifiers:
   solid-js: ^1.6.11
   typescript: ^4.9.4
   vite: ^4.1.1
-  vite-plugin-lightningcss: ^0.0.3
+  vite-plugin-lightningcss: ^0.0.5
   vite-plugin-solid: ^2.5.0
   vite-tsconfig-paths: ^4.0.5
 
@@ -32,7 +32,7 @@ devDependencies:
   solid-js: 1.6.11
   typescript: 4.9.5
   vite: 4.1.1_@types+node@18.13.0
-  vite-plugin-lightningcss: 0.0.3
+  vite-plugin-lightningcss: 0.0.5
   vite-plugin-solid: 2.5.0_solid-js@1.6.11+vite@4.1.1
   vite-tsconfig-paths: 4.0.5_typescript@4.9.5
 
@@ -1247,8 +1247,8 @@ packages:
     resolution: {integrity: sha512-T1ab131NkP3BfXB7KUSgV7Rhu81R2id+L6NaJ7NypAAG5iV6gXnPpQE5RK1fvb+3JYsPTL+ihWna5sr5RN9gaQ==}
     dev: true
 
-  /vite-plugin-lightningcss/0.0.3:
-    resolution: {integrity: sha512-Owm/1Ns0zv532aydBXPRKnaF5cOmACAeQfgpd0gOWJMibMX+XW0KOBvGGejmSUl6gURXUg+FarrBWP2nhWDdeA==}
+  /vite-plugin-lightningcss/0.0.5:
+    resolution: {integrity: sha512-lhz5GkXeRT/k09A7qEqmoL3CwdJDHgODPeGVlWGU1UxuGPEKfvSpKnDXza8nawKvxvc0eawJEsKjBzQP4AeGHw==}
     dependencies:
       browserslist: 4.21.5
       lightningcss: 1.19.0

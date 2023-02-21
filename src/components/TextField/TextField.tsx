@@ -4,9 +4,13 @@ import { ComponentProps, splitProps } from "solid-js";
 
 import { mergeDefaultProps, withCombineProps } from "@/lib";
 
-export const Root = withCombineProps(TextField.Root, { class: "TextField" });
+export const Root: typeof TextField.Root = withCombineProps(TextField.Root, {
+  class: "TextField",
+});
 
-export const Label = withCombineProps(TextField.Label, { class: "Label" });
+export const Label: typeof TextField.Label = withCombineProps(TextField.Label, {
+  class: "Label",
+});
 
 export interface TextFieldInputProps
   extends ComponentProps<typeof TextField.Input> {
@@ -25,14 +29,17 @@ export function Input(props: TextFieldInputProps) {
     />
   );
 }
-export const TextArea = withCombineProps(TextField.TextArea, {
-  class: "TextArea",
-});
+export const TextArea: typeof TextField.TextArea = withCombineProps(
+  TextField.TextArea,
+  { class: "TextArea" }
+);
 
-export const Description = withCombineProps(TextField.Description, {
-  class: "Description",
-});
+export const Description: typeof TextField.Description = withCombineProps(
+  TextField.Description,
+  { class: "Description" }
+);
 
-export const ErrorMessage = withCombineProps(TextField.ErrorMessage, {
-  class: "ErrorMessage",
-});
+export const ErrorMessage: typeof TextField.ErrorMessage = withCombineProps(
+  TextField.ErrorMessage,
+  { class: "ErrorMessage" }
+);
