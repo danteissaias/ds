@@ -1,17 +1,16 @@
+import cn from "clsx";
 import { JSX, splitProps } from "solid-js";
+
+import { Spinner } from "@/components";
 import { mergeDefaultProps } from "@/lib";
-import { Spinner } from "../Spinner/Spinner";
 
 export interface ButtonProps
   extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** @deprecated Disabled state is controlled by the `state` prop. */
-  disabled?: never;
-  state?: "disabled" | "loading" | "normal";
+  loading?: boolean;
   size?: "1" | "2";
   color?: "gray";
-  variant?: "default" | "outline" | "ghost";
-  /** Icon button. */
   icon?: boolean;
+  ghost?: boolean;
 }
 
 export function Button(props: ButtonProps) {
@@ -19,8 +18,6 @@ export function Button(props: ButtonProps) {
     {
       size: "2",
       color: "gray",
-      state: "normal",
-      variant: "default",
     },
     props
   );
@@ -28,22 +25,27 @@ export function Button(props: ButtonProps) {
   const [, rest] = splitProps(props, [
     "size",
     "color",
-    "variant",
-    "state",
+    "loading",
+    "disabled",
     "icon",
+    "ghost",
     "class",
-    "classList",
     "children",
   ]);
 
   return (
     <button
-      disabled={props.state === "loading" || props.state === "disabled"}
-      class={`Button ${props.color} state-${props.state} size-${props.size} ${props.variant}`}
-      classList={{ icon: props.icon }}
+      disabled={props.disabled || props.loading}
+      class={cn(props.class, "reset-button", "Button", {
+        ghost: props.ghost,
+        icon: props.icon,
+        gray: props.color === "gray",
+        "size-1": props.size === "1",
+        "size-2": props.size === "2",
+      })}
       {...rest}
     >
-      {props.state === "loading" ? <Spinner /> : null}
+      {props.loading ? <Spinner /> : null}
       {props.children}
     </button>
   );

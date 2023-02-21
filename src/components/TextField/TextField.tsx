@@ -1,24 +1,30 @@
-import { mergeDefaultProps, withCombineProps } from "@/lib";
 import { TextField } from "@kobalte/core";
+import cn from "clsx";
 import { ComponentProps, splitProps } from "solid-js";
 
-export interface TextFieldRootProps
-  extends ComponentProps<typeof TextField.Root> {
-  size?: "1" | "2";
-}
+import { mergeDefaultProps, withCombineProps } from "@/lib";
 
-export function Root(props: TextFieldRootProps) {
-  props = mergeDefaultProps({ size: "2" }, props);
-
-  const [, rest] = splitProps(props, ["size", "class", "classList"]);
-
-  return <TextField.Root class={`TextField size-${props.size}`} {...rest} />;
-}
+export const Root = withCombineProps(TextField.Root, { class: "TextField" });
 
 export const Label = withCombineProps(TextField.Label, { class: "Label" });
 
-export const Input = withCombineProps(TextField.Input, { class: "Input" });
+export interface TextFieldInputProps
+  extends ComponentProps<typeof TextField.Input> {
+  size?: "1" | "2";
+}
 
+export function Input(props: TextFieldInputProps) {
+  props = mergeDefaultProps({ size: "2" }, props);
+
+  const [, rest] = splitProps(props, ["size", "class"]);
+
+  return (
+    <TextField.Input
+      class={cn(props.class, "Input", `size-${props.size}`)}
+      {...rest}
+    />
+  );
+}
 export const TextArea = withCombineProps(TextField.TextArea, {
   class: "TextArea",
 });

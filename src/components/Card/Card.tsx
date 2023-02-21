@@ -1,5 +1,6 @@
-import { withCombineProps } from "@/lib";
 import { JSX } from "solid-js";
+
+import { withCombineProps } from "@/lib";
 
 export interface CardProps extends JSX.HTMLAttributes<HTMLDivElement> {}
 

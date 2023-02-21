@@ -29,7 +29,7 @@ function LoginExample() {
         <TextField.Label>Password</TextField.Label>
         <TextField.Input required type="password" placeholder="••••••••" />
       </TextField.Root>
-      <Button state={isLoading() ? "loading" : "normal"}>
+      <Button loading={isLoading()}>
         {isLoading() ? "Logging in" : "Login"}
       </Button>
     </form>
@@ -56,35 +56,28 @@ function App() {
         <div style={{ display: "flex", gap: "8px" }}>
           Variants
           <Button>Default</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
+          <Button ghost>Ghost</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Disabled
-          <Button state="disabled">Default</Button>
-          <Button variant="outline" state="disabled">
-            Outline
-          </Button>
-          <Button variant="ghost" state="disabled">
+          <Button disabled>Default</Button>
+          <Button ghost disabled>
             Ghost
           </Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Loading
-          <Button state="loading">Default</Button>
-          <Button variant="outline" state="loading">
-            Outline
-          </Button>
-          <Button variant="ghost" state="loading">
+          <Button loading>Default</Button>
+          <Button ghost loading>
             Ghost
           </Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Only icon
-          <Button icon size="1">
+          <Button icon aria-label="Upload" size="1">
             <Icons.Upload />
           </Button>
-          <Button icon>
+          <Button icon aria-label="Search">
             <Icons.Search />
           </Button>
         </div>
@@ -123,9 +116,9 @@ function App() {
       >
         <h3>Input</h3>
         <div style={{ display: "flex", gap: "8px" }}>
-          <TextField.Root size="1">
+          <TextField.Root>
             <TextField.Label>Label</TextField.Label>
-            <TextField.Input placeholder="Small" />
+            <TextField.Input size="1" placeholder="Small" />
           </TextField.Root>
 
           <TextField.Root>
@@ -171,14 +164,9 @@ function App() {
       >
         <h3>Text Area</h3>
         <div style={{ display: "flex", gap: "8px" }}>
-          <TextField.Root size="1">
-            <TextField.Label>Label</TextField.Label>
-            <TextField.TextArea placeholder="Small" />
-          </TextField.Root>
-
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
-            <TextField.TextArea placeholder="Medium" />
+            <TextField.TextArea placeholder="Default" />
           </TextField.Root>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>

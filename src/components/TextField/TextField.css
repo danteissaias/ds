@@ -14,9 +14,16 @@
 /* Input */
 
 .TextField .Input {
-  display: block;
+  position: relative;
   appearance: none;
+  border-width: 0;
+  outline: none;
+  box-sizing: border-box;
   width: 100%;
+  font-family: inherit;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-overflow: ellipsis;
   color: var(--gray-12);
   background-color: var(--canvas);
   border: 1px solid var(--gray-6);
@@ -33,7 +40,7 @@
   border-color: var(--gray-10);
 }
 
-.TextField .Input:disabled {
+.TextField .Input[disabled] {
   cursor: not-allowed;
   background-color: var(--gray-2);
   color: var(--gray-10);
@@ -43,14 +50,14 @@
   border-color: var(--red-11);
 }
 
-.TextField.size-1 .Input {
+.TextField .Input.size-1 {
   height: var(--space-6);
   font-size: var(--fs-2);
   padding: 0 var(--space-2);
   border-radius: var(--br-3);
 }
 
-.TextField.size-2 .Input {
+.TextField .Input.size-2 {
   height: var(--space-7);
   font-size: var(--fs-2);
   padding: 0 var(--space-2);
@@ -67,16 +74,27 @@
 
 /* TextArea */
 
-/* Input */
-
 .TextField .TextArea {
   appearance: none;
+  border-width: 0;
   display: block;
+  outline: none;
+  box-sizing: border-box;
   width: 100%;
+  font-family: inherit;
+  flex-shrink: 0;
+  flex-grow: 1;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-width: thin;
+  resize: none;
+  cursor: auto;
   color: var(--gray-12);
   background-color: var(--canvas);
   border: 1px solid var(--gray-6);
   transition: border 0.15s ease;
+  font-size: var(--fs-2);
+  padding: var(--space-2);
+  border-radius: var(--br-3);
 }
 
 .TextField .TextArea::placeholder {
@@ -89,7 +107,7 @@
   border-color: var(--gray-10);
 }
 
-.TextField .TextArea:disabled {
+.TextField .TextArea[disabled] {
   cursor: not-allowed;
   background-color: var(--gray-2);
   color: var(--gray-10);
@@ -97,18 +115,6 @@
 
 .TextField .TextArea[aria-invalid="true"] {
   border-color: var(--red-11);
-}
-
-.TextField.size-1 .TextArea {
-  font-size: var(--fs-2);
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--br-3);
-}
-
-.TextField.size-2 .TextArea {
-  font-size: var(--fs-2);
-  padding: var(--space-2);
-  border-radius: var(--br-3);
 }
 
 /* Larger font on mobile */
@@ -127,7 +133,7 @@
   color: var(--gray-11);
 }
 
-/* Description */
+/* Error Message */
 
 .TextField .ErrorMessage {
   font-size: var(--fs-2);

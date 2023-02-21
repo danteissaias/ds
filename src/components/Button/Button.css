@@ -11,12 +11,11 @@
     transform 0.15s ease, border-color 0.15s ease;
 }
 
-.Button.state-normal:active {
+.Button:active:not([disabled]) {
   transform: scale(0.98);
 }
 
-.Button.state-disabled,
-.Button.state-loading {
+.Button[disabled] {
   cursor: not-allowed;
 }
 
@@ -31,6 +30,11 @@
   --spinner-size: var(--space-4);
 }
 
+.Button.size-1 svg {
+  height: var(--space-4);
+  width: var(--space-4);
+}
+
 .Button.size-2 {
   height: var(--space-7);
   font-size: var(--fs-2);
@@ -40,6 +44,11 @@
   --spinner-size: var(--space-4);
 }
 
+.Button.size-2 svg {
+  height: var(--space-4);
+  width: var(--space-4);
+}
+
 /* Icon button */
 
 .Button.size-1.icon {
@@ -47,19 +56,9 @@
   width: var(--space-6);
 }
 
-.Button.size-1 svg {
-  height: var(--space-4);
-  width: var(--space-4);
-}
-
 .Button.size-2.icon {
   padding: 0;
   width: var(--space-7);
-}
-
-.Button.size-2 svg {
-  height: var(--space-4);
-  width: var(--space-4);
 }
 
 /* Button - gray */
@@ -68,12 +67,11 @@
   color: var(--gray-12);
   background-color: var(--gray-4);
   border: 1px solid var(--gray-7);
-  --focus-color: var(--gray-9);
 }
 
 .Button.gray:focus-visible {
-  outline: 0;
-  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
+  outline: 2px solid var(--gray-9);
+  outline-offset: 2px;
 }
 
 .Button.gray svg {
@@ -94,10 +92,10 @@
   }
 }
 
-.Button.gray.state-disabled,
-.Button.gray.state-loading {
-  background-color: var(--gray-4);
-  border-color: var(--gray-7);
+.Button.gray[disabled] {
+  color: var(--gray-11);
+  background-color: var(--gray-3);
+  border-color: var(--gray-6);
 }
 
 /* Button - gray + ghost */
@@ -106,11 +104,11 @@
   background-color: transparent;
   border: none;
   color: var(--gray-11);
-  --focus-color: var(--gray-9);
 }
 
 .Button.gray.ghost:focus-visible {
-  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
+  outline: 2px solid var(--gray-9);
+  outline-offset: 2px;
 }
 
 .Button.gray.ghost svg {
@@ -129,41 +127,6 @@
   }
 }
 
-.Button.gray.ghost.state-disabled,
-.Button.gray.ghost.state-loading {
-  background-color: var(--gray-a4);
-}
-
-/* Button - gray + outline */
-
-.Button.gray.outline {
-  background-color: transparent;
-  border-color: var(--gray-7);
-  --focus-color: var(--gray-9);
-}
-
-.Button.gray.outline:focus-visible {
-  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
-}
-
-.Button.gray.outline svg {
-  color: var(--gray-11);
-}
-
-@media (hover: hover) {
-  .Button.gray.outline:hover {
-    border-color: var(--gray-8);
-  }
-}
-
-@media (hover: none) {
-  .Button.gray.outline:active {
-    border-color: var(--gray-8);
-  }
-}
-
-.Button.gray.outline.state-disabled,
-.Button.gray.outline.state-loading {
-  background-color: var(--gray-2);
-  border-color: var(--gray-7);
+.Button.gray.ghost[disabled] {
+  background-color: var(--gray-a3);
 }

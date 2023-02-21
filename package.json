@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "@kobalte/core": "^0.6.1",
-    "@solid-primitives/props": "^3.0.6"
+    "@solid-primitives/props": "^3.0.6",
+    "clsx": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
