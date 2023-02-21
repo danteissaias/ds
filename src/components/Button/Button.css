@@ -133,3 +133,37 @@
 .Button.gray.ghost.state-loading {
   background-color: var(--gray-a4);
 }
+
+/* Button - gray + outline */
+
+.Button.gray.outline {
+  background-color: transparent;
+  border-color: var(--gray-7);
+  --focus-color: var(--gray-9);
+}
+
+.Button.gray.outline:focus-visible {
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
+}
+
+.Button.gray.outline svg {
+  color: var(--gray-11);
+}
+
+@media (hover: hover) {
+  .Button.gray.outline:hover {
+    border-color: var(--gray-8);
+  }
+}
+
+@media (hover: none) {
+  .Button.gray.outline:active {
+    border-color: var(--gray-8);
+  }
+}
+
+.Button.gray.outline.state-disabled,
+.Button.gray.outline.state-loading {
+  background-color: var(--gray-2);
+  border-color: var(--gray-7);
+}

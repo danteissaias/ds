@@ -56,19 +56,26 @@ function App() {
         <div style={{ display: "flex", gap: "8px" }}>
           Variants
           <Button>Default</Button>
-          <Button ghost>Ghost</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="ghost">Ghost</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Disabled
           <Button state="disabled">Default</Button>
-          <Button ghost state="disabled">
+          <Button variant="outline" state="disabled">
+            Outline
+          </Button>
+          <Button variant="ghost" state="disabled">
             Ghost
           </Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Loading
           <Button state="loading">Default</Button>
-          <Button ghost state="loading">
+          <Button variant="outline" state="loading">
+            Outline
+          </Button>
+          <Button variant="ghost" state="loading">
             Ghost
           </Button>
         </div>

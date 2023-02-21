@@ -9,9 +9,9 @@ export interface ButtonProps
   state?: "disabled" | "loading" | "normal";
   size?: "1" | "2";
   color?: "gray";
+  variant?: "default" | "outline" | "ghost";
   /** Icon button. */
   icon?: boolean;
-  ghost?: boolean;
 }
 
 export function Button(props: ButtonProps) {
@@ -20,6 +20,7 @@ export function Button(props: ButtonProps) {
       size: "2",
       color: "gray",
       state: "normal",
+      variant: "default",
     },
     props
   );
@@ -27,7 +28,7 @@ export function Button(props: ButtonProps) {
   const [, rest] = splitProps(props, [
     "size",
     "color",
-    "ghost",
+    "variant",
     "state",
     "icon",
     "class",
@@ -38,8 +39,8 @@ export function Button(props: ButtonProps) {
   return (
     <button
       disabled={props.state === "loading" || props.state === "disabled"}
-      class={`Button ${props.color} state-${props.state} size-${props.size}`}
-      classList={{ ghost: props.ghost, icon: props.icon }}
+      class={`Button ${props.color} state-${props.state} size-${props.size} ${props.variant}`}
+      classList={{ icon: props.icon }}
       {...rest}
     >
       {props.state === "loading" ? <Spinner /> : null}
