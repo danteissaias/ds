@@ -47,10 +47,6 @@
   outline: 0;
 }
 
-/*.TextField .Input[aria-invalid="true"]:focus-visible {
-  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--focus-color);
-} */
-
 .TextField.size-1 .Input {
   height: var(--space-6);
   font-size: var(--fs-2);
@@ -66,6 +62,7 @@
 }
 
 /* Larger font on mobile */
+
 @media (hover: none) {
   .TextField .Input {
     font-size: var(--fs-3) !important;
