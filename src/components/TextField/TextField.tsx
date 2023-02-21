@@ -1,6 +1,5 @@
 import { mergeDefaultProps, withCombineProps } from "@/lib";
 import { TextField } from "@kobalte/core";
-import { combineProps } from "@solid-primitives/props";
 import { ComponentProps, splitProps } from "solid-js";
 
 export interface TextFieldRootProps
