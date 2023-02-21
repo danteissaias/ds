@@ -20,6 +20,10 @@ export const Label = withCombineProps(TextField.Label, { class: "Label" });
 
 export const Input = withCombineProps(TextField.Input, { class: "Input" });
 
+export const TextArea = withCombineProps(TextField.TextArea, {
+  class: "TextArea",
+});
+
 export const Description = withCombineProps(TextField.Description, {
   class: "Description",
 });

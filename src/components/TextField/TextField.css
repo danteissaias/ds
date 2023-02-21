@@ -14,13 +14,13 @@
 /* Input */
 
 .TextField .Input {
+  display: block;
   appearance: none;
   width: 100%;
   color: var(--gray-12);
   background-color: var(--canvas);
   border: 1px solid var(--gray-6);
   transition: border 0.15s ease;
-  --focus-color: var(--gray-9);
 }
 
 .TextField .Input::placeholder {
@@ -29,6 +29,7 @@
 }
 
 .TextField .Input:focus-visible {
+  outline: 0;
   border-color: var(--gray-10);
 }
 
@@ -40,11 +41,6 @@
 
 .TextField .Input[aria-invalid="true"] {
   border-color: var(--red-11);
-  --focus-color: var(--red-9);
-}
-
-.TextField .Input:focus-visible {
-  outline: 0;
 }
 
 .TextField.size-1 .Input {
@@ -65,6 +61,60 @@
 
 @media (hover: none) {
   .TextField .Input {
+    font-size: var(--fs-3) !important;
+  }
+}
+
+/* TextArea */
+
+/* Input */
+
+.TextField .TextArea {
+  appearance: none;
+  display: block;
+  width: 100%;
+  color: var(--gray-12);
+  background-color: var(--canvas);
+  border: 1px solid var(--gray-6);
+  transition: border 0.15s ease;
+}
+
+.TextField .TextArea::placeholder {
+  color: var(--gray-9);
+  user-select: none;
+}
+
+.TextField .TextArea:focus-visible {
+  outline: 0;
+  border-color: var(--gray-10);
+}
+
+.TextField .TextArea:disabled {
+  cursor: not-allowed;
+  background-color: var(--gray-2);
+  color: var(--gray-10);
+}
+
+.TextField .TextArea[aria-invalid="true"] {
+  border-color: var(--red-11);
+}
+
+.TextField.size-1 .TextArea {
+  font-size: var(--fs-2);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--br-3);
+}
+
+.TextField.size-2 .TextArea {
+  font-size: var(--fs-2);
+  padding: var(--space-2);
+  border-radius: var(--br-3);
+}
+
+/* Larger font on mobile */
+
+@media (hover: none) {
+  .TextField .TextArea {
     font-size: var(--fs-3) !important;
   }
 }

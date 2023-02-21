@@ -114,7 +114,7 @@ function App() {
           padding: "25px",
         }}
       >
-        <h3>Text Field</h3>
+        <h3>Input</h3>
         <div style={{ display: "flex", gap: "8px" }}>
           <TextField.Root size="1">
             <TextField.Label>Label</TextField.Label>
@@ -148,6 +148,54 @@ function App() {
           <TextField.Root validationState="invalid">
             <TextField.Label>Label</TextField.Label>
             <TextField.Input placeholder="Error message" />
+            <TextField.ErrorMessage>
+              This is an error message.
+            </TextField.ErrorMessage>
+          </TextField.Root>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gap: "20px",
+          color: "var(--gray-12)",
+          padding: "25px",
+        }}
+      >
+        <h3>Text Area</h3>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <TextField.Root size="1">
+            <TextField.Label>Label</TextField.Label>
+            <TextField.TextArea placeholder="Small" />
+          </TextField.Root>
+
+          <TextField.Root>
+            <TextField.Label>Label</TextField.Label>
+            <TextField.TextArea placeholder="Medium" />
+          </TextField.Root>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <TextField.Root isDisabled>
+            <TextField.Label>Label</TextField.Label>
+            <TextField.TextArea placeholder="Disabled" />
+          </TextField.Root>
+          <TextField.Root validationState="invalid">
+            <TextField.Label>Label</TextField.Label>
+            <TextField.TextArea placeholder="Invalid" />
+          </TextField.Root>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <TextField.Root>
+            <TextField.Label>Label</TextField.Label>
+            <TextField.TextArea placeholder="Description" />
+            <TextField.Description>
+              This is a description.
+            </TextField.Description>
+          </TextField.Root>
+
+          <TextField.Root validationState="invalid">
+            <TextField.Label>Label</TextField.Label>
+            <TextField.TextArea placeholder="Error message" />
             <TextField.ErrorMessage>
               This is an error message.
             </TextField.ErrorMessage>
