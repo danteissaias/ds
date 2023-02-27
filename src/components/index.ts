@@ -1,4 +1,3 @@
-export * from "./Box/Box";
-export * from "./Button/Button";
+export * from "./Button/button";
 export * from "./Card/Card";
 export * from "./Spinner/Spinner";

@@ -2,7 +2,7 @@ import cn from "clsx";
 import * as React from "react";
 
 import { Spinner } from "@/components";
-import button from "./Button.module.css";
+import button from "./button.module.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
