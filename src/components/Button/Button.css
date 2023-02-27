@@ -11,11 +11,11 @@
     transform 0.15s ease, border-color 0.15s ease;
 }
 
-.Button:active:not([disabled]) {
+.Button:active:not(:disabled) {
   transform: scale(0.98);
 }
 
-.Button[disabled] {
+.Button:disabled {
   cursor: not-allowed;
 }
 
@@ -49,18 +49,6 @@
   width: var(--space-4);
 }
 
-/* Icon button */
-
-.Button.size-1.icon {
-  padding: 0;
-  width: var(--space-6);
-}
-
-.Button.size-2.icon {
-  padding: 0;
-  width: var(--space-7);
-}
-
 /* Button - gray */
 
 .Button.gray {
@@ -92,7 +80,7 @@
   }
 }
 
-.Button.gray[disabled] {
+.Button.gray:disabled {
   color: var(--gray-11);
   background-color: var(--gray-3);
   border-color: var(--gray-6);
@@ -127,6 +115,6 @@
   }
 }
 
-.Button.gray.ghost[disabled] {
+.Button.gray.ghost:disabled {
   background-color: var(--gray-a3);
 }

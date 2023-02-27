@@ -1,52 +1,40 @@
 import cn from "clsx";
-import { JSX, splitProps } from "solid-js";
+import * as React from "react";
 
 import { Spinner } from "@/components";
-import { mergeDefaultProps } from "@/lib";
 
 export interface ButtonProps
-  extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
-  size?: "1" | "2";
-  color?: "gray";
   icon?: boolean;
-  ghost?: boolean;
+  color?: "gray";
+  size?: "1" | "2";
+  variant?: "default" | "ghost";
 }
 
-export function Button(props: ButtonProps) {
-  props = mergeDefaultProps(
-    {
-      size: "2",
-      color: "gray",
-    },
-    props
-  );
-
-  const [, rest] = splitProps(props, [
-    "size",
-    "color",
-    "loading",
-    "disabled",
-    "icon",
-    "ghost",
-    "class",
-    "children",
-  ]);
-
+export function Button({
+  size = "2",
+  color = "gray",
+  variant = "default",
+  loading,
+  disabled,
+  className,
+  children,
+  ...props
+}: ButtonProps) {
   return (
     <button
-      disabled={props.disabled || props.loading}
-      class={cn(props.class, "reset-button", "Button", {
-        ghost: props.ghost,
-        icon: props.icon,
-        gray: props.color === "gray",
-        "size-1": props.size === "1",
-        "size-2": props.size === "2",
+      disabled={disabled || loading}
+      className={cn(className, "reset-button", "Button", {
+        gray: color === "gray",
+        ghost: variant === "ghost",
+        "size-1": size === "1",
+        "size-2": size === "2",
       })}
-      {...rest}
+      {...props}
     >
-      {props.loading ? <Spinner /> : null}
-      {props.children}
+      {loading ? <Spinner /> : null}
+      {children}
     </button>
   );
 }

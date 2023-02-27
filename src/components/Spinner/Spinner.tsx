@@ -1,19 +1,19 @@
 export function Spinner() {
   return (
-    <div class="Spinner">
-      <div class="Bars">
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
-        <div class="Bar"></div>
+    <div className="Spinner">
+      <div className="Bars">
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
       </div>
     </div>
   );

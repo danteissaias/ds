@@ -1,1 +1,1 @@
-export * from "./props";
+export * from "./classname";

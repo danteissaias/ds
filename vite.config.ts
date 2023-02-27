@@ -1,13 +1,13 @@
 import path from "path";
 import { defineConfig } from "vite";
 import lightningcss from "vite-plugin-lightningcss";
-import solidPlugin from "vite-plugin-solid";
+import reactPlugin from "@vitejs/plugin-react-swc";
 import tsconfigPaths from "vite-tsconfig-paths";
 import * as pkg from "./package.json";
 
 export default defineConfig({
   plugins: [
-    solidPlugin(),
+    reactPlugin(),
     tsconfigPaths(),
     lightningcss({
       customAtRules: {
@@ -83,9 +83,6 @@ export default defineConfig({
           external: [
             ...Object.keys(pkg.dependencies),
             ...Object.keys(pkg.peerDependencies),
-            "solid-js",
-            "solid-js/web",
-            "solid-js/store",
           ],
         },
       }

@@ -1,7 +1,7 @@
-import { JSX } from "solid-js";
+import * as React from "react";
 
-import { withCombineProps } from "@/lib";
+import { withClassName } from "@/lib";
 
-export interface CardProps extends JSX.HTMLAttributes<HTMLDivElement> {}
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const Card = withCombineProps("div", { class: "Card" });
+export const Card = withClassName("div", "Card");
