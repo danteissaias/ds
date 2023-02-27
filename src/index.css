@@ -3,8 +3,6 @@
 @import "./reset.css";
 @import "./components/Card/Card.css";
 @import "./components/Spinner/Spinner.css";
-@import "./components/TextField/TextField.css";
-@import "./components/View/View.css";
 
 :root {
   color-scheme: dark;
