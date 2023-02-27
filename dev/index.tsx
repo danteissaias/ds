@@ -5,14 +5,18 @@ import { Box, Button, Card, Icons, TextField } from "../src";
 import { createSignal } from "solid-js";
 
 function LoginExample() {
-  const [isLoading, setIsLoading] = createSignal(false);
+  const [loading, setLoading] = createSignal(false);
+  const [error, setError] = createSignal(false);
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        setIsLoading(true);
-        setTimeout(() => setIsLoading(false), 2000);
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+          setError(true);
+        }, 2000);
       }}
       style={{
         display: "flex",
@@ -21,16 +25,20 @@ function LoginExample() {
         "max-width": "300px",
       }}
     >
-      <TextField.Root>
+      <TextField.Root
+        onInput={() => setError(false)}
+        validationState={error() ? "invalid" : "valid"}
+      >
         <TextField.Label>Email address</TextField.Label>
         <TextField.Input required type="email" placeholder="john@doe.com" />
+        <TextField.ErrorMessage>This email is invalid.</TextField.ErrorMessage>
       </TextField.Root>
       <TextField.Root>
         <TextField.Label>Password</TextField.Label>
         <TextField.Input required type="password" placeholder="••••••••" />
       </TextField.Root>
-      <Button loading={isLoading()}>
-        {isLoading() ? "Logging in" : "Login"}
+      <Button disabled={error()} loading={loading()}>
+        {loading() ? "Logging in" : "Login"}
       </Button>
     </form>
   );

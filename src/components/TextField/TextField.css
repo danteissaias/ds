@@ -139,4 +139,14 @@
   font-size: var(--fs-2);
   margin-top: var(--space-2);
   color: var(--red-11);
+  animation: fade-in 0.15s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
