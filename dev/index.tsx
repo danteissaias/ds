@@ -1,7 +1,7 @@
 import "../src/index.css";
 
 import { render } from "solid-js/web";
-import { Button, Card, Icons, TextField } from "../src";
+import { Box, Button, Card, Icons, TextField } from "../src";
 import { createSignal } from "solid-js";
 
 function LoginExample() {
@@ -39,7 +39,7 @@ function LoginExample() {
 function App() {
   return (
     <main>
-      <div
+      <Box
         style={{
           display: "grid",
           gap: "20px",
@@ -90,7 +90,7 @@ function App() {
             <Icons.Search /> Search
           </Button>
         </div>
-      </div>
+      </Box>
 
       <div
         style={{

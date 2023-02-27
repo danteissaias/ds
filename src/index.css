@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap");
 
+@import "./reset.css";
 @import "./components/Button/Button.css";
 @import "./components/Card/Card.css";
 @import "./components/Spinner/Spinner.css";
@@ -80,60 +81,66 @@
   --fs-9: 60px;
 }
 
-body {
-  margin: 0;
-  overflow-wrap: break-word;
-  font-family: var(--ff-sans);
-  text-size-adjust: none;
-  -webkit-font-smoothing: antialiased;
-  color: var(--gray-12);
-  background-color: var(--canvas);
+.display-flex {
+  display: flex;
 }
 
-svg {
-  display: block;
+.fd-column {
+  flex-direction: column;
 }
 
-.reset-a {
-  text-decoration: none;
-  cursor: pointer;
+.fd-column-reverse {
+  flex-direction: column-reverse;
 }
 
-.reset-a,
-.reset-button {
-  color: inherit;
-  outline: none;
+.fd-row {
+  flex-direction: row;
 }
 
-.reset-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: none;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: 1;
-  padding: 0;
-  margin: 0;
-  text-align: initial;
-  -webkit-tap-highlight-color: transparent;
+.fd-row-reverse {
+  flex-direction: row-reverse;
 }
 
-.reset-heading {
-  margin: 0;
+.jc-start {
+  justify-content: flex-start;
 }
 
-.reset-li {
-  display: block;
+.jc-end {
+  justify-content: flex-end;
 }
 
-.reset-ol,
-.reset-ul {
-  margin: 0;
-  padding: 0;
+.jc-center {
+  justify-content: center;
 }
 
-.reset-pre {
-  margin: 0;
+.jc-between {
+  justify-content: space-between;
+}
+
+.jc-around {
+  justify-content: space-around;
+}
+
+.jc-evenly {
+  justify-content: space-evenly;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.ai-end {
+  align-items: flex-end;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-baseline {
+  align-items: baseline;
+}
+
+.ai-stretch {
+  align-items: stretch;
 }

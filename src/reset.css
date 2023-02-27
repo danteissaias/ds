@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  overflow-wrap: break-word;
+  font-family: var(--ff-sans);
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  color: var(--gray-12);
+  background-color: var(--canvas);
+}
+
+svg {
+  display: block;
+}
+
+.reset-a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.reset-a,
+.reset-button {
+  color: inherit;
+  outline: none;
+}
+
+.reset-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  text-align: initial;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.reset-heading {
+  margin: 0;
+}
+
+.reset-li {
+  display: block;
+}
+
+.reset-ol,
+.reset-ul {
+  margin: 0;
+  padding: 0;
+}
+
+.reset-pre {
+  margin: 0;
+}
