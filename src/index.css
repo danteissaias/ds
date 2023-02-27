@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap");
 
 @import "./reset.css";
-@import "./components/Button/Button.css";
 @import "./components/Card/Card.css";
 @import "./components/Spinner/Spinner.css";
 @import "./components/TextField/TextField.css";
+@import "./components/View/View.css";
 
 :root {
   color-scheme: dark;
@@ -143,4 +143,92 @@
 
 .ai-stretch {
   align-items: stretch;
+}
+
+.gap-0 {
+  gap: 0;
+}
+
+.gap-1 {
+  gap: var(--space-1);
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-5 {
+  gap: var(--space-5);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-7 {
+  gap: var(--space-7);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+.gap-9 {
+  gap: var(--space-9);
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: var(--space-1);
+}
+
+.p-2 {
+  padding: var(--space-2);
+}
+
+.p-3 {
+  padding: var(--space-3);
+}
+
+.p-4 {
+  padding: var(--space-4);
+}
+
+.p-4 {
+  padding: var(--space-4);
+}
+
+.p-5 {
+  padding: var(--space-5);
+}
+
+.p-6 {
+  padding: var(--space-6);
+}
+
+.p-7 {
+  padding: var(--space-7);
+}
+
+.p-8 {
+  padding: var(--space-8);
+}
+
+.p-9 {
+  padding: var(--space-9);
 }

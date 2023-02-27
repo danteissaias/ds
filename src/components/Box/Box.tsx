@@ -1,7 +1,7 @@
-import { JSX } from "solid-js";
+import * as React from "react";
 
-import { withCombineProps } from "@/lib";
+import { withClassName } from "@/lib";
 
-export interface BoxProps extends JSX.HTMLAttributes<HTMLDivElement> {}
+export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const Box = withCombineProps("div", { class: "Box" });
+export const Box = withClassName("div", "Box");

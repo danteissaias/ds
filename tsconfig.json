@@ -8,7 +8,8 @@
     "resolveJsonModule": true,
     "target": "es2018",
     "allowSyntheticDefaultImports": true,
-    "paths": { "@/*": ["./src/*"] }
+    "paths": { "@/*": ["./src/*"] },
+    "types": ["vite/client"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]

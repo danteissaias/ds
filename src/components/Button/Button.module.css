@@ -1,6 +1,22 @@
-/* Button */
+/* Reset */
+.reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  text-align: initial;
+  -webkit-tap-highlight-color: transparent;
+}
 
-.Button {
+/* Root */
+
+.root {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -11,17 +27,17 @@
     transform 0.15s ease, border-color 0.15s ease;
 }
 
-.Button:active:not(:disabled) {
+.root:active:not(:disabled) {
   transform: scale(0.98);
 }
 
-.Button:disabled {
+.root:disabled {
   cursor: not-allowed;
 }
 
 /* Sizes */
 
-.Button.size-1 {
+.size1 {
   height: var(--space-6);
   font-size: var(--fs-2);
   padding: 0 var(--space-3);
@@ -30,12 +46,12 @@
   --spinner-size: var(--space-4);
 }
 
-.Button.size-1 svg {
+.size1 svg {
   height: var(--space-4);
   width: var(--space-4);
 }
 
-.Button.size-2 {
+.size2 {
   height: var(--space-7);
   font-size: var(--fs-2);
   padding: 0 var(--space-4);
@@ -44,43 +60,43 @@
   --spinner-size: var(--space-4);
 }
 
-.Button.size-2 svg {
+.size2 svg {
   height: var(--space-4);
   width: var(--space-4);
 }
 
 /* Button - gray */
 
-.Button.gray {
+.gray {
   color: var(--gray-12);
   background-color: var(--gray-4);
   border: 1px solid var(--gray-7);
 }
 
-.Button.gray:focus-visible {
+.gray:focus-visible {
   outline: 2px solid var(--gray-9);
   outline-offset: 2px;
 }
 
-.Button.gray svg {
+.gray svg {
   color: var(--gray-11);
 }
 
 @media (hover: hover) {
-  .Button.gray:hover {
+  .gray:hover {
     background-color: var(--gray-6);
     border-color: var(--gray-8);
   }
 }
 
 @media (hover: none) {
-  .Button.gray:active {
+  .gray:active {
     background-color: var(--gray-6);
     border-color: var(--gray-8);
   }
 }
 
-.Button.gray:disabled {
+.gray:disabled {
   color: var(--gray-11);
   background-color: var(--gray-3);
   border-color: var(--gray-6);
@@ -88,33 +104,33 @@
 
 /* Button - gray + ghost */
 
-.Button.gray.ghost {
+.gray.ghost {
   background-color: transparent;
   border: none;
   color: var(--gray-11);
 }
 
-.Button.gray.ghost:focus-visible {
+.gray.ghost:focus-visible {
   outline: 2px solid var(--gray-9);
   outline-offset: 2px;
 }
 
-.Button.gray.ghost svg {
+.gray.ghost svg {
   color: var(--gray-11);
 }
 
 @media (hover: hover) {
-  .Button.gray.ghost:hover {
+  .gray.ghost:hover {
     background-color: var(--gray-a4);
   }
 }
 
 @media (hover: none) {
-  .Button.gray.ghost:active {
+  .gray.ghost:active {
     background-color: var(--gray-a4);
   }
 }
 
-.Button.gray.ghost:disabled {
+.gray.ghost:disabled {
   background-color: var(--gray-a3);
 }
