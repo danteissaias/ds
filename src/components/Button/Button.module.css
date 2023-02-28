@@ -74,8 +74,8 @@
 }
 
 .gray:focus-visible {
-  outline: 2px solid var(--gray-9);
-  outline-offset: 2px;
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-9);
 }
 
 .gray svg {
@@ -111,8 +111,8 @@
 }
 
 .gray.ghost:focus-visible {
-  outline: 2px solid var(--gray-9);
-  outline-offset: 2px;
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-9);
 }
 
 .gray.ghost svg {

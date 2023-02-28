@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { withClassName } from "@/lib";
-import card from "./card.module.css";
+import card from "./Card.module.css";
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
