@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "strict": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
+    "jsxImportSource": "solid-js",
+    "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
     "target": "es2018",
     "allowSyntheticDefaultImports": true,
-    "paths": { "@/*": ["./src/*"] },
-    "types": ["vite/client"]
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]

@@ -1,17 +1,12 @@
 import path from "path";
 import { defineConfig } from "vite";
 import lightningcss from "vite-plugin-lightningcss";
-import reactPlugin from "@vitejs/plugin-react-swc";
+import solidPlugin from "vite-plugin-solid";
 import tsconfigPaths from "vite-tsconfig-paths";
 import * as pkg from "./package.json";
 
 export default defineConfig({
-  plugins: [
-    reactPlugin(),
-    tsconfigPaths(),
-    lightningcss({ drafts: { nesting: true } }),
-  ],
-  css: { modules: {} },
+  plugins: [solidPlugin(), tsconfigPaths(), lightningcss({})],
   build: process.env.BUILD_LIB
     ? {
         lib: {
@@ -24,6 +19,9 @@ export default defineConfig({
           external: [
             ...Object.keys(pkg.dependencies),
             ...Object.keys(pkg.peerDependencies),
+            "solid-js",
+            "solid-js/web",
+            "solid-js/store",
           ],
         },
       }

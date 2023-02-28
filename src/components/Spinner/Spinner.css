@@ -1,13 +1,3 @@
-@keyframes spin {
-  0% {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0.15;
-  }
-}
-
 .Spinner,
 .Spinner .Bars {
   height: var(--spinner-size, 20px);
@@ -89,4 +79,14 @@
 .Spinner .Bars .Bar:nth-child(12) {
   animation-delay: -0.1s;
   transform: rotate(330deg) translate(146%);
+}
+
+@keyframes spin {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.15;
+  }
 }
