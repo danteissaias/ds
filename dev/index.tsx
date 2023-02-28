@@ -1,7 +1,7 @@
 import "../src/index.css";
 
 import { createRoot } from "react-dom/client";
-import { Button, Card, Icons } from "../src";
+import { Button, Card, Dropdown, Icons } from "../src";
 
 function App() {
   return (
@@ -61,6 +61,37 @@ function App() {
         <h3>Card</h3>
         <div style={{ display: "flex", gap: "8px" }}>
           <Card style={{ width: "300px" }}>This is the card content.</Card>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gap: 20,
+          color: "var(--gray-12)",
+          padding: 25,
+        }}
+      >
+        <h3>Dropdown</h3>
+        <div style={{ display: "flex", gap: 8 }}>
+          <Dropdown.Root modal={false}>
+            <Dropdown.Button size="1">
+              User
+              <Icons.ChevronDown size="16" />
+            </Dropdown.Button>
+            <Dropdown.Content style={{ minWidth: 230 }}>
+              <Dropdown.Label>Label</Dropdown.Label>
+              <Dropdown.Group>
+                <Dropdown.Item>Workspace Settings</Dropdown.Item>
+                <Dropdown.Item>Create or join workspace</Dropdown.Item>
+                <Dropdown.Item>Add an account</Dropdown.Item>
+              </Dropdown.Group>
+              <Dropdown.Separator />
+              <Dropdown.Group>
+                <Dropdown.Item>Log out</Dropdown.Item>
+              </Dropdown.Group>
+            </Dropdown.Content>
+          </Dropdown.Root>
         </div>
       </div>
     </main>

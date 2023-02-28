@@ -1,3 +1,4 @@
-export * from "./Button/button";
+export * from "./Button/Button";
 export * from "./Card/Card";
-export * from "./Spinner/spinner";
+export * as Dropdown from "./Dropdown/Dropdown";
+export * from "./Spinner/Spinner";

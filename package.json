@@ -24,6 +24,7 @@
     "build": "BUILD_LIB=true vite build && dts-bundle-generator -o dist/index.d.ts src/index.ts"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.0.3",
     "clsx": "^1.2.1"
   },
   "devDependencies": {

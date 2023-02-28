@@ -2,7 +2,6 @@ import cn from "clsx";
 import * as React from "react";
 
 import { Spinner } from "@/components";
-import button from "./Button.module.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,29 +12,35 @@ export interface ButtonProps
   variant?: "default" | "ghost";
 }
 
-export function Button({
-  size = "2",
-  color = "gray",
-  variant = "default",
-  loading,
-  disabled,
-  className,
-  children,
-  ...props
-}: ButtonProps) {
-  return (
-    <button
-      disabled={disabled || loading}
-      className={cn(className, "reset-button", "Button", {
-        gray: color === "gray",
-        ghost: variant === "ghost",
-        size1: size === "1",
-        size2: size === "2",
-      })}
-      {...props}
-    >
-      {loading ? <Spinner /> : null}
-      {children}
-    </button>
-  );
-}
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      size = "2",
+      color = "gray",
+      variant = "default",
+      loading,
+      disabled,
+      className,
+      children,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    return (
+      <button
+        disabled={disabled || loading}
+        ref={forwardedRef}
+        className={cn(className, "reset-button", "Button", {
+          gray: color === "gray",
+          ghost: variant === "ghost",
+          size1: size === "1",
+          size2: size === "2",
+        })}
+        {...props}
+      >
+        {loading ? <Spinner /> : null}
+        {children}
+      </button>
+    );
+  }
+);
