@@ -1,21 +1,19 @@
-import spinner from "./Spinner.module.css";
-
 export function Spinner() {
   return (
-    <div className={spinner.root}>
-      <div className={spinner.bars}>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
-        <div className={spinner.bar}></div>
+    <div className="Spinner">
+      <div className="Bars">
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
+        <div className="Bar"></div>
       </div>
     </div>
   );

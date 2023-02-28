@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap");
 
+@import "./components/Button/Button.css";
+@import "./components/Card/Card.css";
+@import "./components/Spinner/Spinner.css";
+
 :root {
   color-scheme: dark;
 

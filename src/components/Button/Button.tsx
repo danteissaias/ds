@@ -26,11 +26,11 @@ export function Button({
   return (
     <button
       disabled={disabled || loading}
-      className={cn(className, button.reset, button.root, {
-        [button.gray]: color === "gray",
-        [button.ghost]: variant === "ghost",
-        [button.size1]: size === "1",
-        [button.size2]: size === "2",
+      className={cn(className, "reset-button", "Button", {
+        gray: color === "gray",
+        ghost: variant === "ghost",
+        size1: size === "1",
+        size2: size === "2",
       })}
       {...props}
     >

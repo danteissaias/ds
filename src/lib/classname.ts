@@ -1,22 +1,18 @@
 import cn from "clsx";
-import {
-  ComponentProps,
-  createElement,
-  ElementRef,
-  ElementType,
-  forwardRef,
-} from "react";
+import * as React from "react";
 
-export const withClassName = <T extends ElementType>(
+export const withClassName = <T extends React.ElementType>(
   component: T,
   ...classes: string[]
 ) => {
-  return forwardRef<ElementRef<typeof component>, ComponentProps<T>>(
-    (props, forwardedRef) =>
-      createElement(component, {
-        ...props,
-        ref: forwardedRef,
-        className: cn(props.classNames, classes),
-      })
+  return React.forwardRef<
+    React.ElementRef<typeof component>,
+    React.ComponentProps<T>
+  >((props, forwardedRef) =>
+    React.createElement(component, {
+      ...props,
+      ref: forwardedRef,
+      className: cn(props.classNames, classes),
+    })
   );
 };

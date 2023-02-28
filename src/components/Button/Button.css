@@ -1,5 +1,5 @@
 /* Reset */
-.reset {
+.reset-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -16,7 +16,7 @@
 
 /* Root */
 
-.root {
+.Button {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -27,17 +27,17 @@
     transform 0.15s ease, border-color 0.15s ease;
 }
 
-.root:active:not(:disabled) {
+.Button:active:not(:disabled) {
   transform: scale(0.98);
 }
 
-.root:disabled {
+.Button:disabled {
   cursor: not-allowed;
 }
 
 /* Sizes */
 
-.size1 {
+.Button.size1 {
   height: var(--space-6);
   font-size: var(--fs-2);
   padding: 0 var(--space-3);
@@ -46,12 +46,12 @@
   --spinner-size: var(--space-4);
 }
 
-.size1 svg {
+.Button.size1 svg {
   height: var(--space-4);
   width: var(--space-4);
 }
 
-.size2 {
+.Button.size2 {
   height: var(--space-7);
   font-size: var(--fs-2);
   padding: 0 var(--space-4);
@@ -60,43 +60,43 @@
   --spinner-size: var(--space-4);
 }
 
-.size2 svg {
+.Button.size2 svg {
   height: var(--space-4);
   width: var(--space-4);
 }
 
 /* Button - gray */
 
-.gray {
+.Button.gray {
   color: var(--gray-12);
   background-color: var(--gray-4);
   border: 1px solid var(--gray-7);
 }
 
-.gray:focus-visible {
+.Button.gray:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-9);
 }
 
-.gray svg {
+.Button.gray svg {
   color: var(--gray-11);
 }
 
 @media (hover: hover) {
-  .gray:hover {
+  .Button.gray:hover {
     background-color: var(--gray-6);
     border-color: var(--gray-8);
   }
 }
 
 @media (hover: none) {
-  .gray:active {
+  .Button.gray:active {
     background-color: var(--gray-6);
     border-color: var(--gray-8);
   }
 }
 
-.gray:disabled {
+.Button.gray:disabled {
   color: var(--gray-11);
   background-color: var(--gray-3);
   border-color: var(--gray-6);
@@ -104,33 +104,33 @@
 
 /* Button - gray + ghost */
 
-.gray.ghost {
+.Button.gray.ghost {
   background-color: transparent;
   border: none;
   color: var(--gray-11);
 }
 
-.gray.ghost:focus-visible {
+.Button.gray.ghost:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-9);
 }
 
-.gray.ghost svg {
+.Button.gray.ghost svg {
   color: var(--gray-11);
 }
 
 @media (hover: hover) {
-  .gray.ghost:hover {
+  .Button.gray.ghost:hover {
     background-color: var(--gray-a4);
   }
 }
 
 @media (hover: none) {
-  .gray.ghost:active {
+  .Button.gray.ghost:active {
     background-color: var(--gray-a4);
   }
 }
 
-.gray.ghost:disabled {
+.Button.gray.ghost:disabled {
   background-color: var(--gray-a3);
 }

@@ -1,3 +1,3 @@
 export * from "./Button/button";
 export * from "./Card/Card";
-export * from "./Spinner/Spinner";
+export * from "./Spinner/spinner";
