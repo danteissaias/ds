@@ -1,7 +1,7 @@
-import { createSignal } from "solid-js";
+import { createSignal, JSX } from "solid-js";
 import { render } from "solid-js/web";
 
-import { Button, Card, Icons, TextField } from "../src";
+import { Button, Card, IconButton, Icons, TextField } from "../src";
 import "../src/index.css";
 
 function LoginExample() {
@@ -42,6 +42,22 @@ function LoginExample() {
   );
 }
 
+function ComponentName(props: JSX.HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h3
+      style={{
+        background: "var(--gray-3)",
+        width: "max-content",
+        padding: "var(--space-1) var(--space-2)",
+        "border-radius": "var(--br-3)",
+        "font-family": "var(--ff-mono)",
+        color: "var(--gray-12)",
+      }}
+      {...props}
+    />
+  );
+}
+
 function App() {
   return (
     <main>
@@ -53,7 +69,7 @@ function App() {
           padding: "25px",
         }}
       >
-        <h3>Button</h3>
+        <ComponentName>Button</ComponentName>
         <div style={{ display: "flex", gap: "8px" }}>
           Sizes
           <Button size="1">Small</Button>
@@ -79,15 +95,6 @@ function App() {
           </Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
-          Only icon
-          <Button icon aria-label="Upload" size="1" variant="ghost">
-            <Icons.Upload />
-          </Button>
-          <Button icon aria-label="Search">
-            <Icons.Search />
-          </Button>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
           With icon
           <Button size="1">
             <Icons.Upload /> Upload
@@ -106,7 +113,54 @@ function App() {
           padding: "25px",
         }}
       >
-        <h3>Card</h3>
+        <ComponentName>IconButton</ComponentName>
+        <div style={{ display: "flex", gap: "8px" }}>
+          Sizes
+          <IconButton aria-label="Upload" size="1">
+            <Icons.Upload />
+          </IconButton>
+          <IconButton aria-label="Search">
+            <Icons.Search />
+          </IconButton>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          Variants
+          <IconButton aria-label="Upload">
+            <Icons.Upload />
+          </IconButton>
+          <IconButton aria-label="Search" variant="ghost">
+            <Icons.Search />
+          </IconButton>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          Disabled
+          <IconButton aria-label="Upload" disabled>
+            <Icons.Upload />
+          </IconButton>
+          <IconButton aria-label="Search" variant="ghost" disabled>
+            <Icons.Search />
+          </IconButton>
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          Loading
+          <IconButton aria-label="Upload" loading>
+            <Icons.Upload />
+          </IconButton>
+          <IconButton aria-label="Search" variant="ghost" loading>
+            <Icons.Search />
+          </IconButton>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gap: "20px",
+          color: "var(--gray-12)",
+          padding: "25px",
+        }}
+      >
+        <ComponentName>Card</ComponentName>
         <div style={{ display: "flex", gap: "8px" }}>
           <Card style={{ width: "300px" }}>This is the card content.</Card>
         </div>
@@ -120,7 +174,7 @@ function App() {
           padding: "25px",
         }}
       >
-        <h3>Input</h3>
+        <ComponentName>TextField.Input</ComponentName>
         <div style={{ display: "flex", gap: "8px" }}>
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
@@ -168,7 +222,7 @@ function App() {
           padding: "25px",
         }}
       >
-        <h3>Text Area</h3>
+        <ComponentName>TextField.TextArea</ComponentName>
         <div style={{ display: "flex", gap: "8px" }}>
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
@@ -212,7 +266,7 @@ function App() {
           padding: "25px",
         }}
       >
-        <h3>Example</h3>
+        <ComponentName>LoginExample</ComponentName>
         <LoginExample />
       </div>
     </main>

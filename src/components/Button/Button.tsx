@@ -51,3 +51,17 @@ export function Button(props: ButtonProps) {
     </KButton.Root>
   );
 }
+
+export interface IconButtonProps extends Omit<ButtonProps, "icon"> {
+  "aria-label": string;
+}
+
+export function IconButton(props: IconButtonProps) {
+  const [, rest] = splitProps(props, ["children"]);
+
+  return (
+    <Button icon {...rest}>
+      {props.loading ? null : props.children}
+    </Button>
+  );
+}
