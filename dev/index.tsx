@@ -37,9 +37,7 @@ function LoginExample() {
         <TextField.Label>Password</TextField.Label>
         <TextField.Input required type="password" placeholder="••••••••" />
       </TextField.Root>
-      <Button disabled={error()} loading={loading()}>
-        {loading() ? "Logging in" : "Login"}
-      </Button>
+      <Button loading={loading()}>{loading() ? "Logging in" : "Login"}</Button>
     </form>
   );
 }
@@ -64,25 +62,25 @@ function App() {
         <div style={{ display: "flex", gap: "8px" }}>
           Variants
           <Button>Default</Button>
-          <Button ghost>Ghost</Button>
+          <Button variant="ghost">Ghost</Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Disabled
           <Button disabled>Default</Button>
-          <Button ghost disabled>
+          <Button variant="ghost" disabled>
             Ghost
           </Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Loading
           <Button loading>Default</Button>
-          <Button ghost loading>
+          <Button variant="ghost" loading>
             Ghost
           </Button>
         </div>
         <div style={{ display: "flex", gap: "8px" }}>
           Only icon
-          <Button icon aria-label="Upload" size="1">
+          <Button icon aria-label="Upload" size="1" variant="ghost">
             <Icons.Upload />
           </Button>
           <Button icon aria-label="Search">

@@ -1,5 +1,6 @@
 import cn from "clsx";
 import { JSX, splitProps } from "solid-js";
+import { Button as KButton } from "@kobalte/core";
 
 import { Spinner } from "@/components";
 import { mergeDefaultProps } from "@/lib";
@@ -10,7 +11,7 @@ export interface ButtonProps
   size?: "1" | "2";
   color?: "gray";
   icon?: boolean;
-  ghost?: boolean;
+  variant?: "default" | "ghost";
 }
 
 export function Button(props: ButtonProps) {
@@ -28,16 +29,16 @@ export function Button(props: ButtonProps) {
     "loading",
     "disabled",
     "icon",
-    "ghost",
+    "variant",
     "class",
     "children",
   ]);
 
   return (
-    <button
-      disabled={props.disabled || props.loading}
+    <KButton.Root
+      isDisabled={props.disabled || props.loading}
       class={cn(props.class, "reset-button", "Button", {
-        ghost: props.ghost,
+        ghost: props.variant == "ghost",
         icon: props.icon,
         gray: props.color === "gray",
         "size-1": props.size === "1",
@@ -47,6 +48,6 @@ export function Button(props: ButtonProps) {
     >
       {props.loading ? <Spinner /> : null}
       {props.children}
-    </button>
+    </KButton.Root>
   );
 }
