@@ -140,17 +140,17 @@
 
 .Button.gray.default {
   color: var(--gray-12);
-  background-color: var(--gray-3);
+  background-color: var(--gray-4);
   background-clip: padding-box;
-  border: 1px solid var(--gray-a6);
+  border: 1px solid var(--gray-a7);
 }
 
 @media (hover: hover) {
   .Button.gray.default:enabled:hover {
-    background: var(--gray-4);
+    background: var(--gray-5);
   }
 }
 
 .Button.gray.default:enabled:active {
-  background: var(--gray-5);
+  background: var(--gray-6);
 }
