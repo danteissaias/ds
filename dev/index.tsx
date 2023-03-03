@@ -75,17 +75,30 @@ function App() {
           <Button variant="ghost">Ghost</Button>
         </Flex>
         <Flex gap="2">
-          Disabled
-          <Button disabled>Default</Button>
-          <Button variant="ghost" disabled>
-            Ghost
+          Colors (Default)
+          <Button color="gray">Gray</Button>
+          <Button color="red">Red</Button>
+          <Button color="green">Green</Button>
+        </Flex>
+        <Flex gap="2">
+          Colors (Ghost)
+          <Button variant="ghost" color="gray">
+            Gray
+          </Button>
+          <Button variant="ghost" color="red">
+            Red
+          </Button>
+          <Button variant="ghost" color="green">
+            Green
           </Button>
         </Flex>
         <Flex gap="2">
-          Loading
-          <Button loading>Default</Button>
+          States
+          <Button disabled color="red">
+            Disabled
+          </Button>
           <Button variant="ghost" loading>
-            Ghost
+            Loading
           </Button>
         </Flex>
         <Flex gap="2">
@@ -120,17 +133,8 @@ function App() {
           </IconButton>
         </Flex>
         <Flex gap="2">
-          Disabled
-          <IconButton aria-label="Upload" disabled>
-            <Icons.Upload />
-          </IconButton>
-          <IconButton aria-label="Search" variant="ghost" disabled>
-            <Icons.Search />
-          </IconButton>
-        </Flex>
-        <Flex gap="2">
-          Loading
-          <IconButton aria-label="Upload" loading>
+          States
+          <IconButton variant="ghost" aria-label="Upload" disabled>
             <Icons.Upload />
           </IconButton>
           <IconButton aria-label="Search" variant="ghost" loading>

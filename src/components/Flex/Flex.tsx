@@ -28,7 +28,7 @@ export function Flex(props: FlexProps) {
     <div
       class={cn(
         props.class,
-        "Flex display-flex",
+        "display-flex",
         withBreakpoints("fd", props.direction),
         withBreakpoints("ai", props.align),
         withBreakpoints("jc", props.justify),

@@ -2,7 +2,6 @@
 
 @import "./components/Button/Button.css";
 @import "./components/Card/Card.css";
-@import "./components/Flex/Flex.css";
 @import "./components/Spinner/Spinner.css";
 @import "./components/TextField/TextField.css";
 
@@ -80,6 +79,45 @@
   --red-11: #ff6369;
   --red-12: #feecee;
 
+  --red-a1: hsla(0, 0%, 0%, 0);
+  --red-a2: hsla(5, 98.5%, 53.8%, 0.045);
+  --red-a3: hsla(359, 99.1%, 61.1%, 0.13);
+  --red-a4: hsla(358, 98.8%, 61%, 0.184);
+  --red-a5: hsla(357, 99.6%, 60.3%, 0.237);
+  --red-a6: hsla(358, 99.6%, 60.3%, 0.322);
+  --red-a7: hsla(357, 100%, 59.5%, 0.442);
+  --red-a8: hsla(358, 99.8%, 59.1%, 0.621);
+  --red-a9: hsla(358, 100%, 65.5%, 0.884);
+  --red-a10: hsla(358, 100%, 67.5%, 0.942);
+  --red-a11: hsla(358, 100%, 69.7%, 0.98);
+  --red-a12: hsla(352, 100%, 97.1%, 0.98);
+
+  --green-1: hsl(146, 30%, 7.4%);
+  --green-2: hsl(155, 44.2%, 8.4%);
+  --green-3: hsl(155, 46.7%, 10.9%);
+  --green-4: hsl(154, 48.4%, 12.9%);
+  --green-5: hsl(154, 49.7%, 14.9%);
+  --green-6: hsl(154, 50.9%, 17.6%);
+  --green-7: hsl(153, 51.8%, 21.8%);
+  --green-8: hsl(151, 51.7%, 28.4%);
+  --green-9: hsl(151, 55%, 41.5%);
+  --green-10: hsl(151, 49.3%, 46.5%);
+  --green-11: hsl(151, 50%, 53.2%);
+  --green-12: hsl(137, 72%, 94%);
+
+  --green-a1: hsla(0, 0%, 0%, 0);
+  --green-a2: hsla(169, 100%, 48.5%, 0.027);
+  --green-a3: hsla(162, 98.7%, 57.9%, 0.07);
+  --green-a4: hsla(158, 98.6%, 59.7%, 0.105);
+  --green-a5: hsla(158, 98.6%, 60.7%, 0.14);
+  --green-a6: hsla(156, 99.9%, 62%, 0.187);
+  --green-a7: hsla(154, 99.5%, 63.1%, 0.257);
+  --green-a8: hsla(152, 99.7%, 64.2%, 0.37);
+  --green-a9: hsla(151, 99.7%, 63.8%, 0.605);
+  --green-a10: hsla(152, 99.9%, 66.5%, 0.661);
+  --green-a11: hsla(151, 99.7%, 69.2%, 0.74);
+  --green-a12: hsla(137, 100%, 95.8%, 0.98);
+
   --canvas: var(--gray-1);
 }
 
@@ -91,6 +129,12 @@ body {
   -webkit-font-smoothing: antialiased;
   color: var(--gray-12);
   background-color: var(--canvas);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* display */
