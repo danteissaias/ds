@@ -1,12 +1,12 @@
 import { createSignal, JSX } from "solid-js";
 import { render } from "solid-js/web";
 
-import { Button, Card, IconButton, Icons, TextField } from "../src";
+import { Button, Card, Flex, IconButton, Icons, TextField } from "../src";
 import "../src/index.css";
 
 function LoginExample() {
   const [loading, setLoading] = createSignal(false);
-  const [error, setError] = createSignal(false);
+  const [error, setError] = createSignal();
 
   return (
     <form
@@ -18,26 +18,26 @@ function LoginExample() {
           setError(true);
         }, 2000);
       }}
-      style={{
-        display: "flex",
-        "flex-direction": "column",
-        gap: "var(--space-4)",
-        "max-width": "300px",
-      }}
     >
-      <TextField.Root
-        onInput={() => setError(false)}
-        validationState={error() ? "invalid" : "valid"}
-      >
-        <TextField.Label>Email address</TextField.Label>
-        <TextField.Input required type="email" placeholder="john@doe.com" />
-        <TextField.ErrorMessage>This email is invalid.</TextField.ErrorMessage>
-      </TextField.Root>
-      <TextField.Root>
-        <TextField.Label>Password</TextField.Label>
-        <TextField.Input required type="password" placeholder="••••••••" />
-      </TextField.Root>
-      <Button loading={loading()}>{loading() ? "Logging in" : "Login"}</Button>
+      <Flex direction="column" gap="4" style={{ "max-width": "300px" }}>
+        <TextField.Root
+          onInput={() => setError(false)}
+          validationState={error() ? "invalid" : "valid"}
+        >
+          <TextField.Label>Email address</TextField.Label>
+          <TextField.Input required type="email" placeholder="john@doe.com" />
+          <TextField.ErrorMessage>
+            This email is invalid.
+          </TextField.ErrorMessage>
+        </TextField.Root>
+        <TextField.Root>
+          <TextField.Label>Password</TextField.Label>
+          <TextField.Input required type="password" placeholder="••••••••" />
+        </TextField.Root>
+        <Button type="submit" loading={loading()}>
+          {loading() ? "Logging in" : "Login"}
+        </Button>
+      </Flex>
     </form>
   );
 }
@@ -59,42 +59,36 @@ function ComponentName(props: JSX.HTMLAttributes<HTMLHeadingElement>) {
 }
 
 function App() {
+  const [show, setShow] = createSignal(false);
   return (
     <main>
-      <div
-        style={{
-          display: "grid",
-          gap: "20px",
-          color: "var(--gray-12)",
-          padding: "25px",
-        }}
-      >
+      <Flex direction="column" gap="4" m="5">
         <ComponentName>Button</ComponentName>
-        <div style={{ display: "flex", gap: "8px" }}>
+        <Flex gap="2">
           Sizes
           <Button size="1">Small</Button>
           <Button size="2">Medium</Button>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           Variants
           <Button>Default</Button>
           <Button variant="ghost">Ghost</Button>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           Disabled
           <Button disabled>Default</Button>
           <Button variant="ghost" disabled>
             Ghost
           </Button>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           Loading
           <Button loading>Default</Button>
           <Button variant="ghost" loading>
             Ghost
           </Button>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           With icon
           <Button size="1">
             <Icons.Upload /> Upload
@@ -102,19 +96,12 @@ function App() {
           <Button>
             <Icons.Search /> Search
           </Button>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
 
-      <div
-        style={{
-          display: "grid",
-          gap: "20px",
-          color: "var(--gray-12)",
-          padding: "25px",
-        }}
-      >
+      <Flex direction="column" gap="4" m="5">
         <ComponentName>IconButton</ComponentName>
-        <div style={{ display: "flex", gap: "8px" }}>
+        <Flex gap="2">
           Sizes
           <IconButton aria-label="Upload" size="1">
             <Icons.Upload />
@@ -122,8 +109,8 @@ function App() {
           <IconButton aria-label="Search">
             <Icons.Search />
           </IconButton>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           Variants
           <IconButton aria-label="Upload">
             <Icons.Upload />
@@ -131,8 +118,8 @@ function App() {
           <IconButton aria-label="Search" variant="ghost">
             <Icons.Search />
           </IconButton>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           Disabled
           <IconButton aria-label="Upload" disabled>
             <Icons.Upload />
@@ -140,8 +127,8 @@ function App() {
           <IconButton aria-label="Search" variant="ghost" disabled>
             <Icons.Search />
           </IconButton>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           Loading
           <IconButton aria-label="Upload" loading>
             <Icons.Upload />
@@ -149,33 +136,19 @@ function App() {
           <IconButton aria-label="Search" variant="ghost" loading>
             <Icons.Search />
           </IconButton>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
 
-      <div
-        style={{
-          display: "grid",
-          gap: "20px",
-          color: "var(--gray-12)",
-          padding: "25px",
-        }}
-      >
+      <Flex direction="column" gap="4" style={{ padding: "var(--space-5)" }}>
         <ComponentName>Card</ComponentName>
-        <div style={{ display: "flex", gap: "8px" }}>
+        <Flex gap="2">
           <Card style={{ width: "300px" }}>This is the card content.</Card>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
 
-      <div
-        style={{
-          display: "grid",
-          gap: "20px",
-          color: "var(--gray-12)",
-          padding: "25px",
-        }}
-      >
+      <Flex direction="column" gap="4" m="5">
         <ComponentName>TextField.Input</ComponentName>
-        <div style={{ display: "flex", gap: "8px" }}>
+        <Flex gap="2">
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
             <TextField.Input size="1" placeholder="Small" />
@@ -185,8 +158,8 @@ function App() {
             <TextField.Label>Label</TextField.Label>
             <TextField.Input placeholder="Medium" />
           </TextField.Root>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           <TextField.Root isDisabled>
             <TextField.Label>Label</TextField.Label>
             <TextField.Input placeholder="Disabled" />
@@ -195,8 +168,8 @@ function App() {
             <TextField.Label>Label</TextField.Label>
             <TextField.Input placeholder="Invalid" />
           </TextField.Root>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
             <TextField.Input placeholder="Description" />
@@ -212,24 +185,18 @@ function App() {
               This is an error message.
             </TextField.ErrorMessage>
           </TextField.Root>
-        </div>
-      </div>
-      <div
-        style={{
-          display: "grid",
-          gap: "20px",
-          color: "var(--gray-12)",
-          padding: "25px",
-        }}
-      >
+        </Flex>
+      </Flex>
+
+      <Flex direction="column" gap="4" m="5">
         <ComponentName>TextField.TextArea</ComponentName>
-        <div style={{ display: "flex", gap: "8px" }}>
+        <Flex gap="2">
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
             <TextField.TextArea placeholder="Default" />
           </TextField.Root>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           <TextField.Root isDisabled>
             <TextField.Label>Label</TextField.Label>
             <TextField.TextArea placeholder="Disabled" />
@@ -238,8 +205,8 @@ function App() {
             <TextField.Label>Label</TextField.Label>
             <TextField.TextArea placeholder="Invalid" />
           </TextField.Root>
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
+        </Flex>
+        <Flex gap="2">
           <TextField.Root>
             <TextField.Label>Label</TextField.Label>
             <TextField.TextArea placeholder="Description" />
@@ -255,20 +222,13 @@ function App() {
               This is an error message.
             </TextField.ErrorMessage>
           </TextField.Root>
-        </div>
-      </div>
+        </Flex>
+      </Flex>
 
-      <div
-        style={{
-          display: "grid",
-          gap: "20px",
-          color: "var(--gray-12)",
-          padding: "25px",
-        }}
-      >
+      <Flex direction="column" gap="4" m="5">
         <ComponentName>LoginExample</ComponentName>
         <LoginExample />
-      </div>
+      </Flex>
     </main>
   );
 }

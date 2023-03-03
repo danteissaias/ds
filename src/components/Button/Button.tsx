@@ -1,6 +1,6 @@
+import { Button as KButton } from "@kobalte/core";
 import cn from "clsx";
 import { JSX, splitProps } from "solid-js";
-import { Button as KButton } from "@kobalte/core";
 
 import { Spinner } from "@/components";
 import { mergeDefaultProps } from "@/lib";
