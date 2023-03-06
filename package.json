@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "vite serve dev"
+    "dev": "vite serve dev",
+    "vercel-build": "vite build dev"
   },
   "devDependencies": {
     "@radix-ui/react-icons": "^1.2.0",
