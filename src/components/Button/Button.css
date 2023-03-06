@@ -46,6 +46,8 @@
   color: var(--gray-10);
 }
 
+/* Default */
+
 .Button.default {
   background-color: var(--c9);
   color: #fff;
@@ -65,6 +67,8 @@
   background: var(--gray-3);
   color: var(--gray-9);
 }
+
+/* Ghost */
 
 .Button.ghost {
   background-color: transparent;
@@ -86,6 +90,8 @@
   background: var(--gray-3);
   color: var(--gray-9);
 }
+
+/* Sizes */
 
 .Button.size-1 {
   height: var(--space-6);
@@ -114,6 +120,8 @@
   padding: 0;
   width: var(--space-7);
 }
+
+/* Colors */
 
 .Button.gray {
   --c3: var(--gray-3);
@@ -144,6 +152,8 @@
   --c10: var(--green-10);
   --c11: var(--green-11);
 }
+
+/* Default + gray */
 
 .Button.gray.default {
   color: var(--gray-12);
