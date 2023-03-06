@@ -7,7 +7,6 @@ import { mergeDefaultProps } from "@/lib";
 
 export interface ButtonProps
   extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: boolean;
   loading?: boolean;
   size?: "1" | "2";
   color?: "gray" | "green" | "red";
@@ -29,8 +28,6 @@ export function Button(props: ButtonProps) {
     "color",
     "loading",
     "disabled",
-    "icon",
-    "variant",
     "class",
     "children",
   ]);
@@ -41,7 +38,6 @@ export function Button(props: ButtonProps) {
       class={cn(props.class, "reset-button", "Button", {
         default: props.variant == "default",
         ghost: props.variant == "ghost",
-        icon: props.icon,
         red: props.color === "red",
         green: props.color === "green",
         gray: props.color === "gray",
@@ -64,7 +60,7 @@ export function IconButton(props: IconButtonProps) {
   const [, rest] = splitProps(props, ["children"]);
 
   return (
-    <Button icon {...rest}>
+    <Button class="icon" {...rest}>
       {props.loading ? null : props.children}
     </Button>
   );

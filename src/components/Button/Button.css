@@ -35,11 +35,15 @@
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--c9);
 }
 
+.Button:disabled {
+  cursor: not-allowed;
+}
+
 .Button svg {
   height: var(--space-4);
   width: var(--space-4);
   /* TODO */
-  color: var(--gray-11);
+  color: var(--gray-10);
 }
 
 .Button.default {
@@ -55,6 +59,11 @@
 
 .Button.default:enabled:active {
   background-color: var(--c11);
+}
+
+.Button.default:disabled {
+  background: var(--gray-3);
+  color: var(--gray-9);
 }
 
 .Button.ghost {
@@ -73,9 +82,7 @@
   background-color: var(--c5);
 }
 
-.Button.default:disabled,
 .Button.ghost:disabled {
-  cursor: not-allowed;
   background: var(--gray-3);
   color: var(--gray-9);
 }
@@ -153,4 +160,10 @@
 
 .Button.gray.default:enabled:active {
   background: var(--gray-6);
+}
+
+.Button.gray.default:disabled {
+  background: var(--gray-3);
+  color: var(--gray-10);
+  border-color: var(--gray-a4);
 }

@@ -70,18 +70,13 @@ function App() {
           <Button size="2">Medium</Button>
         </Flex>
         <Flex gap="2">
-          Variants
-          <Button>Default</Button>
-          <Button variant="ghost">Ghost</Button>
-        </Flex>
-        <Flex gap="2">
-          Colors (Default)
+          Default
           <Button color="gray">Gray</Button>
           <Button color="red">Red</Button>
           <Button color="green">Green</Button>
         </Flex>
         <Flex gap="2">
-          Colors (Ghost)
+          Ghost
           <Button variant="ghost" color="gray">
             Gray
           </Button>
@@ -93,12 +88,23 @@ function App() {
           </Button>
         </Flex>
         <Flex gap="2">
-          States
-          <Button disabled color="red">
-            Disabled
+          Disabled
+          <Button disabled>Gray</Button>
+          <Button color="red" disabled>
+            Default
+          </Button>
+          <Button variant="ghost" disabled>
+            Ghost
+          </Button>
+        </Flex>
+        <Flex gap="2">
+          Loading
+          <Button loading>Gray</Button>
+          <Button color="red" loading>
+            Default
           </Button>
           <Button variant="ghost" loading>
-            Loading
+            Ghost
           </Button>
         </Flex>
         <Flex gap="2">
