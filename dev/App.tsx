@@ -106,40 +106,28 @@ export default function App() {
         }}
       >
         <h3>Example</h3>
-        <div className="display-flex ds-gap-2 ai-center">
-          <IconButton size="1">
-            <Icons.ReloadIcon />
-          </IconButton>
-          <div
-            style={{
-              width: 1,
-              margin: '0 var(--space-1)',
-              height: '100%',
-              background: 'var(--gray-6)',
-            }}
-          >
-            &nbsp;
+        <div
+          className="display-flex jc-space-between"
+          style={{ maxWidth: 800 }}
+        >
+          <div className="display-flex ds-gap-2 ai-center">
+            <IconButton size="1">
+              <Icons.ReloadIcon />
+            </IconButton>
+
+            <Button size="1">Add record</Button>
           </div>
-          <Button size="1">Add record</Button>
-          <Button color="red" size="1">
-            Delete 2 records
-          </Button>
-          <div
-            style={{
-              width: 1,
-              margin: '0 var(--space-1)',
-              height: '100%',
-              background: 'var(--gray-6)',
-            }}
-          >
-            &nbsp;
+          <div className="display-flex ds-gap-2 ai-center">
+            <Button color="red" size="1">
+              Delete 2 records
+            </Button>
+            <Button color="green" size="1">
+              Save 1 change
+            </Button>
+            <Button ghost size="1">
+              Discard changes
+            </Button>
           </div>
-          <Button color="green" size="1">
-            Save 1 change
-          </Button>
-          <Button ghost size="1">
-            Discard changes
-          </Button>
         </div>
         <Table.Root style={{ maxWidth: 800 }}>
           <Table.Table>
@@ -159,7 +147,9 @@ export default function App() {
                 <Table.Cell>
                   <Checkbox />
                 </Table.Cell>
-                <Table.Cell>cle8fzo0c000708k21p3vftdw</Table.Cell>
+                <Table.Cell onDoubleClick={() => alert(1)}>
+                  cle8fzo0c000708k21p3vftdw
+                </Table.Cell>
                 <Table.Cell>John Doe</Table.Cell>
                 <Table.Cell>john@doe.com</Table.Cell>
                 <Table.Cell>********</Table.Cell>
