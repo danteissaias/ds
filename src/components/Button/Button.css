@@ -1,179 +1,237 @@
-.reset-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  border: none;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: 1;
-  padding: 0;
-  margin: 0;
-  text-align: initial;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Button */
-
 .Button {
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   user-select: none;
-  font-weight: 500;
-  transition: color 0.15s ease, background-color 0.15s ease,
-    transform 0.15s ease, border-color 0.15s ease;
-}
-
-.Button:active:enabled {
-  transform: scale(0.98);
+  font-weight: 600;
 }
 
 .Button:focus-visible {
   outline: 0;
-  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--c9);
 }
 
-.Button:disabled {
+.Button.ghost {
+  font-weight: 500;
+}
+
+.Button[disabled] {
   cursor: not-allowed;
 }
 
 .Button svg {
-  height: var(--space-4);
-  width: var(--space-4);
-  /* TODO */
-  color: var(--gray-10);
+  color: var(--gray-12);
 }
 
-/* Default */
-
-.Button.default {
-  background-color: var(--c9);
-  color: #fff;
-}
-
-@media (hover: hover) {
-  .Button.default:enabled:hover {
-    background-color: var(--c10);
-  }
-}
-
-.Button.default:enabled:active {
-  background-color: var(--c11);
-}
-
-.Button.default:disabled {
-  background: var(--gray-3);
-  color: var(--gray-9);
-}
-
-/* Ghost */
-
-.Button.ghost {
-  background-color: transparent;
-  border: none;
-  color: var(--c11);
-}
-
-@media (hover: hover) {
-  .Button.ghost:enabled:hover {
-    background-color: var(--c4);
-  }
-}
-
-.Button.ghost:enabled:active {
-  background-color: var(--c5);
-}
-
-.Button.ghost:disabled {
-  background: var(--gray-3);
-  color: var(--gray-9);
+.Button[disabled] svg {
+  opacity: 0.6;
 }
 
 /* Sizes */
 
 .Button.size-1 {
-  height: var(--space-6);
-  font-size: var(--fs-2);
-  padding: 0 var(--space-3);
+  height: var(--space-5);
+  font-size: var(--fs-1);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
   border-radius: var(--br-3);
   gap: var(--space-2);
-  --spinner-size: var(--space-4);
+  --spinner-size: var(--space-3);
 }
 
-.Button.size-1.icon {
+.Button.icon.size-1 {
+  height: var(--space-5);
+  width: var(--space-5);
   padding: 0;
-  width: var(--space-6);
+  --spinner-size: var(--space-3);
+}
+
+.Button.icon.size-1 svg {
+  height: var(--space-3);
+  width: var(--space-3);
 }
 
 .Button.size-2 {
-  height: var(--space-7);
+  height: var(--space-6);
   font-size: var(--fs-2);
-  padding: 0 var(--space-4);
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
   border-radius: var(--br-3);
   gap: var(--space-2);
+  --spinner-size: var(--space-3);
+}
+
+.Button.icon.size-2 {
+  height: var(--space-6);
+  width: var(--space-6);
+  padding: 0;
   --spinner-size: var(--space-4);
 }
 
-.Button.size-2.icon {
-  padding: 0;
-  width: var(--space-7);
+.Button.icon.size-2 svg {
+  height: var(--space-4);
+  width: var(--space-4);
 }
 
-/* Colors */
+.Button.ghost.size-2 {
+  height: var(--space-5);
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+  gap: var(--space-1);
+}
+
+.Button.icon.ghost.size-2 {
+  height: var(--space-6);
+  width: var(--space-6);
+  padding: 0;
+}
+
+/* Gray */
 
 .Button.gray {
-  --c3: var(--gray-3);
-  --c4: var(--gray-4);
-  --c5: var(--gray-5);
-  --c6: var(--gray-6);
-  --c9: var(--gray-9);
-  --c10: var(--gray-10);
-  --c11: var(--gray-11);
+  color: var(--gray-a12);
+  background-color: var(--gray-a4);
+  box-shadow: inset 0 0 0 1px var(--gray-a5);
 }
 
-.Button.red {
-  --c3: var(--red-3);
-  --c4: var(--red-4);
-  --c5: var(--red-5);
-  --c6: var(--red-6);
-  --c9: var(--red-9);
-  --c10: var(--red-10);
-  --c11: var(--red-11);
-}
-
-.Button.green {
-  --c3: var(--green-3);
-  --c4: var(--green-4);
-  --c5: var(--green-5);
-  --c6: var(--green-6);
-  --c9: var(--green-9);
-  --c10: var(--green-10);
-  --c11: var(--green-11);
-}
-
-/* Default + gray */
-
-.Button.gray.default {
-  color: var(--gray-12);
-  background-color: var(--gray-4);
-  background-clip: padding-box;
-  border: 1px solid var(--gray-a7);
+.Button.gray:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--gray-a5), 0 0 0 2px var(--canvas),
+    0 0 0 4px var(--gray-a9);
 }
 
 @media (hover: hover) {
-  .Button.gray.default:enabled:hover {
-    background: var(--gray-5);
+  .Button.gray:hover {
+    background-color: var(--gray-a5);
   }
 }
 
-.Button.gray.default:enabled:active {
-  background: var(--gray-6);
+.Button.gray:active {
+  background-color: var(--gray-a6);
 }
 
-.Button.gray.default:disabled {
-  background: var(--gray-3);
-  color: var(--gray-10);
-  border-color: var(--gray-a4);
+.Button.gray[disabled] {
+  background-color: var(--gray-a3);
+  color: var(--gray-a9);
+}
+
+/* Gray + ghost */
+
+.Button.gray.ghost {
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--gray-11);
+}
+
+.Button.gray.ghost:focus-visible {
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-a9);
+}
+
+@media (hover: hover) {
+  .Button.gray.ghost:hover {
+    background-color: var(--gray-4);
+  }
+}
+
+.Button.gray.ghost:active {
+  background-color: var(--gray-5);
+}
+
+.Button.gray.ghost[disabled] {
+  background: var(--gray-a3);
+  color: var(--gray-a9);
+}
+
+/* Red */
+
+.Button.red {
+  color: #fff;
+  background-color: var(--red-9);
+}
+
+.Button.red:focus-visible {
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--red-9);
+}
+
+@media (hover: hover) {
+  .Button.red:hover {
+    background: var(--red-10);
+  }
+}
+
+.Button.red:active {
+  background: var(--red-11);
+}
+
+.Button.red[disabled] {
+  background: var(--gray-a3);
+  color: var(--gray-a9);
+}
+
+/* Red + ghost */
+
+.Button.red.ghost {
+  color: var(--red-a11);
+  background-color: transparent;
+}
+
+@media (hover: hover) {
+  .Button.red.ghost:hover {
+    background: var(--red-a4);
+  }
+}
+
+.Button.red.ghost:active {
+  background: var(--red-a5);
+}
+
+.Button.red.ghost[disabled] {
+  background: var(--gray-a3);
+  color: var(--gray-a9);
+}
+
+/* Green */
+
+.Button.green {
+  color: #fff;
+  background-color: var(--green-9);
+}
+
+.Button.green:focus-visible {
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--green-9);
+}
+
+@media (hover: hover) {
+  .Button.green:hover {
+    background: var(--green-10);
+  }
+}
+
+.Button.green:active {
+  background: var(--green-11);
+}
+
+.Button.green[disabled] {
+  background: var(--gray-a3);
+  color: var(--gray-a9);
+}
+
+/* Green + ghost */
+
+.Button.green.ghost {
+  color: var(--green-a11);
+  background-color: transparent;
+}
+
+@media (hover: hover) {
+  .Button.green.ghost:hover {
+    background: var(--green-a4);
+  }
+}
+
+.Button.green.ghost:active {
+  background: var(--green-a5);
+}
+
+.Button.green.ghost[disabled] {
+  background: var(--gray-a3);
+  color: var(--gray-a9);
 }

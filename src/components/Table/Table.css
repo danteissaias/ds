@@ -1,0 +1,55 @@
+.TableRoot {
+  background-color: var(--gray-3);
+  font-size: var(--fs-2);
+  line-height: 20px;
+  box-shadow: 0 0 0 1px var(--gray-7);
+  border-radius: var(--br-4);
+  overflow: hidden;
+  position: relative;
+}
+
+.TableRootTable {
+  width: 100%;
+  text-align: left;
+  vertical-align: top;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.TableHead {
+  font-weight: 700;
+  background-color: var(--gray-a2);
+}
+
+.TableBody,
+.TableHead,
+.TableRow {
+  vertical-align: inherit;
+}
+
+.TableRow {
+  color: var(--gray-12);
+}
+
+.TableCell {
+  vertical-align: inherit;
+  padding: var(--space-2);
+  box-shadow: inset 0 -1px var(--gray-7), inset 1px 0 var(--gray-7);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.TableHead .TableCell:first-child,
+.TableBody .TableCell:first-child {
+  box-shadow: inset 0 -1px var(--gray-7);
+}
+
+.TableBody .TableRow:last-child .TableCell {
+  box-shadow: inset 1px 0 var(--gray-7);
+}
+
+.TableBody .TableRow:last-child .TableCell:first-child {
+  box-shadow: none;
+}

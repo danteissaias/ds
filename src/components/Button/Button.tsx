@@ -1,67 +1,55 @@
-import { Button as KButton } from "@kobalte/core";
-import cn from "clsx";
-import { JSX, splitProps } from "solid-js";
+import cn from 'clsx';
+import * as React from 'react';
 
-import { Spinner } from "@/components";
-import { mergeDefaultProps } from "@/lib";
+import { Spinner } from '@/components';
 
 export interface ButtonProps
-  extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
-  size?: "1" | "2";
-  color?: "gray" | "green" | "red";
-  variant?: "default" | "ghost";
+  ghost?: boolean;
+  size?: '1' | '2';
+  color?: 'gray' | 'red' | 'green';
 }
 
-export function Button(props: ButtonProps) {
-  props = mergeDefaultProps(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
     {
-      size: "2",
-      color: "gray",
-      variant: "default",
+      ghost,
+      size = '2',
+      color = 'gray',
+      loading,
+      disabled,
+      className,
+      children,
+      ...props
     },
-    props
-  );
-
-  const [, rest] = splitProps(props, [
-    "size",
-    "color",
-    "loading",
-    "disabled",
-    "class",
-    "children",
-  ]);
-
-  return (
-    <KButton.Root
-      isDisabled={props.disabled || props.loading}
-      class={cn(props.class, "reset-button", "Button", {
-        default: props.variant == "default",
-        ghost: props.variant == "ghost",
-        red: props.color === "red",
-        green: props.color === "green",
-        gray: props.color === "gray",
-        "size-1": props.size === "1",
-        "size-2": props.size === "2",
+    forwardedRef
+  ) => (
+    <button
+      ref={forwardedRef}
+      disabled={loading || disabled}
+      className={cn(className, 'reset-button', 'Button', {
+        ghost,
+        'size-1': size === '1',
+        'size-2': size === '2',
+        'gray': color === 'gray',
+        'red': color === 'red',
+        'green': color === 'green',
       })}
-      {...rest}
+      {...props}
     >
-      {props.loading ? <Spinner /> : null}
-      {props.children}
-    </KButton.Root>
-  );
-}
+      {loading && <Spinner />}
+      {children}
+    </button>
+  )
+);
 
-export interface IconButtonProps extends Omit<ButtonProps, "icon"> {
-  "aria-label": string;
-}
+export interface IconButtonProps extends Omit<ButtonProps, 'color'> {}
 
-export function IconButton(props: IconButtonProps) {
-  const [, rest] = splitProps(props, ["children"]);
-
-  return (
-    <Button class="icon" {...rest}>
-      {props.loading ? null : props.children}
+export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ className, children, ...props }, forwardedRef) => (
+    <Button ref={forwardedRef} className={cn(className, 'icon')} {...props}>
+      {props.loading ? null : children}
     </Button>
-  );
-}
+  )
+);

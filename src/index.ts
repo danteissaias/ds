@@ -1,5 +1,2 @@
-import "./index.css";
-
-export * from "./components";
-export * from "./lib";
-export * as Icons from "lucide-solid";
+export * from './components';
+export * as Icons from '@radix-ui/react-icons';

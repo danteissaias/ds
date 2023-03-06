@@ -1,0 +1,53 @@
+.CheckboxRoot {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: bottom;
+  flex-shrink: 0;
+  height: 20px;
+}
+
+.CheckboxButton {
+  all: unset;
+  height: var(--space-4);
+  width: var(--space-4);
+  border-radius: var(--br-1);
+  position: relative;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.CheckboxButton[data-state='checked'] {
+  background: var(--accent);
+}
+
+.CheckboxButton[data-state='checked'][disabled] {
+  background: var(--gray-4);
+  box-shadow: inset 0 0 0 1px var(--gray-a6);
+}
+
+.CheckboxButton[data-state='unchecked'] {
+  box-shadow: inset 0 0 0 1px var(--gray-a6);
+  background-color: var(--gray-7);
+}
+
+.CheckboxButton[data-state='unchecked'][disabled] {
+  box-shadow: inset 0 0 0 1px var(--gray-a6);
+  background: var(--gray-4);
+}
+
+.CheckboxButton:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--accent), 0 0 0 1px var(--accent);
+}
+
+.CheckboxIndicator {
+  color: #fff;
+  height: var(--space-4);
+  width: var(--space-4);
+}
+
+.CheckboxButton[data-state='checked'][disabled] .CheckboxIndicator {
+  color: var(--gray-a8);
+}
