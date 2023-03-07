@@ -44,7 +44,3 @@
 .TableBody .TableRow:hover {
   background-color: var(--gray-a2);
 }
-
-.TableBody .TableRow:active {
-  background-color: var(--gray-a3);
-}
