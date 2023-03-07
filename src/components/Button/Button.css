@@ -82,8 +82,7 @@
 }
 
 .Button.gray:focus-visible {
-  box-shadow: inset 0 0 0 1px var(--gray-a5), 0 0 0 2px var(--canvas),
-    0 0 0 4px var(--gray-a9);
+  box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-a9);
 }
 
 @media (hover: hover) {

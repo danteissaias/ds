@@ -201,6 +201,18 @@ export default function App() {
                 <Table.Cell>********</Table.Cell>
                 <Table.Cell>16:27 9/2/2023</Table.Cell>
               </Table.Row>
+              <Table.Row
+                style={{ userSelect: 'none', cursor: 'pointer' }}
+                onClick={() => alert('Clicked row 3')}
+              >
+                <Table.Cell>
+                  <Checkbox />
+                </Table.Cell>
+                <Table.Cell>Robert Roe</Table.Cell>
+                <Table.Cell>robert@roe.net</Table.Cell>
+                <Table.Cell>********</Table.Cell>
+                <Table.Cell>11:32 8/1/2023</Table.Cell>
+              </Table.Row>
             </Table.Body>
           </Table.Table>
         </Table.Root>
