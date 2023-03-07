@@ -5,6 +5,7 @@
   user-select: none;
   font-weight: 600;
   transition: background-color 0.1s;
+  cursor: pointer;
 }
 
 .Button:focus-visible {

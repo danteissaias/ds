@@ -18,6 +18,7 @@
   justify-content: center;
   box-sizing: border-box;
   transition: background-color 0.1s, box-shadow 0.1s;
+  cursor: pointer;
 }
 
 .CheckboxButton[data-state='checked'] {

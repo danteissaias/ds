@@ -1,8 +1,8 @@
 .TableRoot {
-  background-color: var(--gray-3);
+  background-color: var(--gray-2);
   font-size: var(--fs-2);
   line-height: 20px;
-  box-shadow: 0 0 0 1px var(--gray-7);
+  box-shadow: 0 0 0 1px var(--gray-5);
   border-radius: var(--br-4);
   overflow: hidden;
   position: relative;
@@ -34,7 +34,7 @@
 .TableCell {
   vertical-align: inherit;
   padding: var(--space-3);
-  box-shadow: inset 0 -1px var(--gray-7);
+  box-shadow: inset 0 -1px var(--gray-5);
 }
 
 .TableBody .TableRow:last-child .TableCell {

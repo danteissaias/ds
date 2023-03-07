@@ -178,7 +178,7 @@ export default function App() {
             </Table.Head>
             <Table.Body style={{ verticalAlign: 'middle' }}>
               <Table.Row
-                style={{ userSelect: 'none' }}
+                style={{ userSelect: 'none', cursor: 'pointer' }}
                 onClick={() => alert('Clicked row 1')}
               >
                 <Table.Cell>
@@ -190,7 +190,7 @@ export default function App() {
                 <Table.Cell>13:21 3/2/2023</Table.Cell>
               </Table.Row>
               <Table.Row
-                style={{ userSelect: 'none' }}
+                style={{ userSelect: 'none', cursor: 'pointer' }}
                 onClick={() => alert('Clicked row 2')}
               >
                 <Table.Cell>
