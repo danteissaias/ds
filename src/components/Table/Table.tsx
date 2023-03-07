@@ -1,12 +1,20 @@
 import cn from 'clsx';
 import * as React from 'react';
 
-export const Root = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, forwardedRef) => (
-  <div ref={forwardedRef} className={cn(className, 'TableRoot')} {...props} />
-));
+export interface TableRootProps extends React.HTMLAttributes<HTMLDivElement> {
+  grid?: boolean;
+  fixed?: boolean;
+}
+
+export const Root = React.forwardRef<HTMLDivElement, TableRootProps>(
+  ({ className, grid, fixed, ...props }, forwardedRef) => (
+    <div
+      ref={forwardedRef}
+      className={cn(className, 'TableRoot', { grid, fixed })}
+      {...props}
+    />
+  )
+);
 
 export const Table = React.forwardRef<
   HTMLTableElement,

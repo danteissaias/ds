@@ -129,7 +129,7 @@ export default function App() {
             </Button>
           </div>
         </div>
-        <Table.Root style={{ maxWidth: 800 }}>
+        <Table.Root style={{ maxWidth: 800 }} grid fixed>
           <Table.Table>
             <Table.Head>
               <Table.Row>
