@@ -182,7 +182,7 @@ export default function App() {
                 onClick={() => alert('Clicked row 1')}
               >
                 <Table.Cell>
-                  <Checkbox />
+                  <Checkbox checked />
                 </Table.Cell>
                 <Table.Cell>John Doe</Table.Cell>
                 <Table.Cell>john@doe.com</Table.Cell>
