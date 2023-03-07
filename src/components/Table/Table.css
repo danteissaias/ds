@@ -25,7 +25,6 @@
 .TableHead,
 .TableRow {
   vertical-align: inherit;
-  transition: background-color 0.1s;
 }
 
 .TableRow {
