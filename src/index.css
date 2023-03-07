@@ -3,6 +3,7 @@
 @import './reset.css';
 @import './components/Button/Button.css';
 @import './components/Checkbox/Checkbox.css';
+@import './components/Dropdown/Dropdown.css';
 @import './components/Spinner/Spinner.css';
 @import './components/Table/Table.css';
 

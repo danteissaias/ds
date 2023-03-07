@@ -25,6 +25,7 @@
 .TableHead,
 .TableRow {
   vertical-align: inherit;
+  transition: background-color 0.1s;
 }
 
 .TableRow {
@@ -33,7 +34,7 @@
 
 .TableCell {
   vertical-align: inherit;
-  padding: var(--space-2);
+  padding: var(--space-3);
   box-shadow: inset 0 -1px var(--gray-7);
 }
 
@@ -41,33 +42,10 @@
   box-shadow: none;
 }
 
-/* Fixed */
-
-.fixed .TableRootTable {
-  table-layout: fixed;
+.TableBody .TableRow:hover {
+  background-color: var(--gray-a2);
 }
 
-.fixed .TableCell {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Grid */
-
-.grid .TableBody .TableRow:last-child .TableCell {
-  box-shadow: inset 1px 0 var(--gray-7);
-}
-
-.grid .TableCell {
-  box-shadow: inset 0 -1px var(--gray-7), inset 1px 0 var(--gray-7);
-}
-
-.grid .TableHead .TableCell:first-child,
-.grid .TableBody .TableCell:first-child {
-  box-shadow: inset 0 -1px var(--gray-7);
-}
-
-.grid .TableBody .TableRow:last-child .TableCell:first-child {
-  box-shadow: none;
+.TableBody .TableRow:active {
+  background-color: var(--gray-a3);
 }

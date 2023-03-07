@@ -1,5 +1,5 @@
 import '../src/index.css';
-import { Button, Checkbox, IconButton, Icons, Table } from '../src';
+import { Button, Checkbox, Dropdown, IconButton, Icons, Table } from '../src';
 
 export default function App() {
   return (
@@ -101,6 +101,39 @@ export default function App() {
       <div
         style={{
           display: 'grid',
+          gap: 20,
+          color: 'var(--gray-12)',
+          padding: 25,
+        }}
+      >
+        <h3>Dropdown</h3>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <Dropdown.Root>
+            <Dropdown.Button>
+              User
+              <Icons.ChevronDownIcon />
+            </Dropdown.Button>
+            <Dropdown.Portal>
+              <Dropdown.Content style={{ minWidth: 230 }}>
+                <Dropdown.Label>Label</Dropdown.Label>
+                <Dropdown.Group>
+                  <Dropdown.Item>Workspace Settings</Dropdown.Item>
+                  <Dropdown.Item>Create or join workspace</Dropdown.Item>
+                  <Dropdown.Item>Add an account</Dropdown.Item>
+                </Dropdown.Group>
+                <Dropdown.Separator />
+                <Dropdown.Group>
+                  <Dropdown.Item className="red">Log out</Dropdown.Item>
+                </Dropdown.Group>
+              </Dropdown.Content>
+            </Dropdown.Portal>
+          </Dropdown.Root>
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: 'grid',
           gap: 'var(--space-4)',
           padding: 'var(--space-5)',
         }}
@@ -118,50 +151,55 @@ export default function App() {
             <Button size="1">Add record</Button>
           </div>
           <div className="display-flex ds-gap-2 ai-center">
+            <Button size="1">Reset password</Button>
             <Button color="red" size="1">
-              Delete 2 records
+              Delete 1 record
             </Button>
-            <Button color="green" size="1">
+            {/*   <Button color="green" size="1">
               Save 1 change
             </Button>
             <Button ghost size="1">
               Discard changes
-            </Button>
+            </Button> */}
           </div>
         </div>
-        <Table.Root style={{ maxWidth: 800 }} grid fixed>
+        <Table.Root style={{ maxWidth: 800 }}>
           <Table.Table>
             <Table.Head>
               <Table.Row>
-                <Table.Cell style={{ width: 33 }}>
+                <Table.Cell style={{ width: 0 }}>
                   <Checkbox />
                 </Table.Cell>
-                <Table.Cell>id</Table.Cell>
                 <Table.Cell>name</Table.Cell>
                 <Table.Cell>email</Table.Cell>
                 <Table.Cell>password</Table.Cell>
+                <Table.Cell>created at</Table.Cell>
               </Table.Row>
             </Table.Head>
-            <Table.Body style={{ fontFamily: 'var(--ff-mono)' }}>
-              <Table.Row>
+            <Table.Body style={{ verticalAlign: 'middle' }}>
+              <Table.Row
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => alert('Clicked row 1')}
+              >
                 <Table.Cell>
                   <Checkbox />
-                </Table.Cell>
-                <Table.Cell onDoubleClick={() => alert(1)}>
-                  cle8fzo0c000708k21p3vftdw
                 </Table.Cell>
                 <Table.Cell>John Doe</Table.Cell>
                 <Table.Cell>john@doe.com</Table.Cell>
                 <Table.Cell>********</Table.Cell>
+                <Table.Cell>13:21 3/2/2023</Table.Cell>
               </Table.Row>
-              <Table.Row>
+              <Table.Row
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => alert('Clicked row 2')}
+              >
                 <Table.Cell>
                   <Checkbox />
                 </Table.Cell>
-                <Table.Cell>cleecx9hr000hz7t0toz8irb6</Table.Cell>
                 <Table.Cell>Dante Issaias</Table.Cell>
                 <Table.Cell>dante@issaias.com</Table.Cell>
                 <Table.Cell>********</Table.Cell>
+                <Table.Cell>16:27 9/2/2023</Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table.Table>
