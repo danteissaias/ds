@@ -1,7 +1,27 @@
 {
+  "name": "@danteissaias/ds",
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
+    }
+  },
   "scripts": {
     "dev": "vite serve dev",
-    "vercel-build": "vite build dev"
+    "vercel-build": "vite build dev",
+    "build": "tsup src/index.ts"
   },
   "devDependencies": {
     "@radix-ui/react-icons": "^1.2.0",
@@ -11,6 +31,8 @@
     "@vitejs/plugin-react-swc": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5",
     "vite": "^4.1.4",
     "vite-tsconfig-paths": "^4.0.5"
   },
