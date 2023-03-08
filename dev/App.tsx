@@ -151,9 +151,8 @@ export default function App() {
             <Button size="1">Add record</Button>
           </div>
           <div className="display-flex ds-gap-2 ai-center">
-            <Button size="1">Reset password</Button>
             <Button color="red" size="1">
-              Delete 1 record
+              Delete 3 records
             </Button>
             {/*   <Button color="green" size="1">
               Save 1 change
@@ -167,7 +166,7 @@ export default function App() {
           <Table.Table>
             <Table.Head>
               <Table.Row>
-                <Table.Cell style={{ width: 0 }}>
+                <Table.Cell checkbox>
                   <Checkbox />
                 </Table.Cell>
                 <Table.Cell>name</Table.Cell>
@@ -177,41 +176,56 @@ export default function App() {
               </Table.Row>
             </Table.Head>
             <Table.Body style={{ verticalAlign: 'middle' }}>
-              <Table.Row
-                style={{ userSelect: 'none', cursor: 'pointer' }}
-                onClick={() => alert('Clicked row 1')}
-              >
-                <Table.Cell>
-                  <Checkbox checked />
-                </Table.Cell>
-                <Table.Cell>John Doe</Table.Cell>
-                <Table.Cell>john@doe.com</Table.Cell>
-                <Table.Cell>********</Table.Cell>
-                <Table.Cell>13:21 3/2/2023</Table.Cell>
-              </Table.Row>
-              <Table.Row
-                style={{ userSelect: 'none', cursor: 'pointer' }}
-                onClick={() => alert('Clicked row 2')}
-              >
-                <Table.Cell>
+              <Table.Row style={{ userSelect: 'none', cursor: 'pointer' }}>
+                <Table.Cell checkbox>
                   <Checkbox />
                 </Table.Cell>
-                <Table.Cell>Dante Issaias</Table.Cell>
-                <Table.Cell>dante@issaias.com</Table.Cell>
-                <Table.Cell>********</Table.Cell>
-                <Table.Cell>16:27 9/2/2023</Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row1">John Doe</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row1">john@doe.com</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row1">********</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row1">13:21 3/2/2023</a>
+                </Table.Cell>
               </Table.Row>
-              <Table.Row
-                style={{ userSelect: 'none', cursor: 'pointer' }}
-                onClick={() => alert('Clicked row 3')}
-              >
-                <Table.Cell>
+              <Table.Row style={{ userSelect: 'none', cursor: 'pointer' }}>
+                <Table.Cell checkbox>
                   <Checkbox />
                 </Table.Cell>
-                <Table.Cell>Robert Roe</Table.Cell>
-                <Table.Cell>robert@roe.net</Table.Cell>
-                <Table.Cell>********</Table.Cell>
-                <Table.Cell>11:32 8/1/2023</Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">Dante Issaias</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">dante@issaias.com</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">********</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">16:27 9/2/2023</a>
+                </Table.Cell>
+              </Table.Row>
+              <Table.Row style={{ userSelect: 'none', cursor: 'pointer' }}>
+                <Table.Cell checkbox>
+                  <Checkbox />
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">Robert Roe</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">robert@roe.net</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">********</a>
+                </Table.Cell>
+                <Table.Cell hasLink>
+                  <a href="#row2">11:32 8/1/2023</a>
+                </Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table.Table>

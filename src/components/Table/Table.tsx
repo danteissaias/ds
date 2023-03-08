@@ -1,20 +1,12 @@
 import cn from 'clsx';
 import * as React from 'react';
 
-export interface TableRootProps extends React.HTMLAttributes<HTMLDivElement> {
-  grid?: boolean;
-  fixed?: boolean;
-}
-
-export const Root = React.forwardRef<HTMLDivElement, TableRootProps>(
-  ({ className, grid, fixed, ...props }, forwardedRef) => (
-    <div
-      ref={forwardedRef}
-      className={cn(className, 'TableRoot', { grid, fixed })}
-      {...props}
-    />
-  )
-);
+export const Root = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, forwardedRef) => (
+  <div ref={forwardedRef} className={cn(className, 'TableRoot')} {...props} />
+));
 
 export const Table = React.forwardRef<
   HTMLTableElement,
@@ -34,6 +26,14 @@ export const Head = React.forwardRef<
   <thead ref={forwardedRef} className={cn(className, 'TableHead')} {...props} />
 ));
 
+type TableRowContext =
+  | { hasLink: true; href: string }
+  | { hasLink: boolean; href?: string };
+
+const TableRowContext = React.createContext<TableRowContext>({
+  hasLink: false,
+});
+
 export const Row = React.forwardRef<
   HTMLTableRowElement,
   React.HTMLAttributes<HTMLTableRowElement>
@@ -41,12 +41,21 @@ export const Row = React.forwardRef<
   <tr ref={forwardedRef} className={cn(className, 'TableRow')} {...props} />
 ));
 
-export const Cell = React.forwardRef<
-  HTMLTableCellElement,
-  React.ThHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, forwardedRef) => (
-  <td ref={forwardedRef} className={cn(className, 'TableCell')} {...props} />
-));
+export interface TableCellProps
+  extends React.ThHTMLAttributes<HTMLTableCellElement> {
+  hasLink?: boolean;
+  checkbox?: boolean;
+}
+
+export const Cell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
+  ({ className, hasLink, checkbox, ...props }, forwardedRef) => (
+    <td
+      ref={forwardedRef}
+      className={cn(className, 'TableCell', { hasLink, checkbox })}
+      {...props}
+    />
+  )
+);
 
 export const Body = React.forwardRef<
   HTMLTableSectionElement,
