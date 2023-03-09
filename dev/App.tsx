@@ -220,29 +220,29 @@ export default function App() {
               <Icons.ArrowClockwise />
             </IconButton>
             <IconButton>
-              <Icons.ArrowClockwise />
+              <Icons.PencilSimple />
             </IconButton>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
             <IconButton>
-              <Icons.ArrowClockwise />
+              <Icons.Archive />
             </IconButton>
             <IconButton color="red">
-              <Icons.ArrowClockwise />
+              <Icons.TrashSimple />
             </IconButton>
             <IconButton color="green">
-              <Icons.ArrowClockwise />
+              <Icons.Check />
             </IconButton>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
             <IconButton ghost>
-              <Icons.ArrowClockwise />
+              <Icons.Archive />
             </IconButton>
             <IconButton color="red" ghost>
-              <Icons.ArrowClockwise />
+              <Icons.TrashSimple />
             </IconButton>
             <IconButton color="green" ghost>
-              <Icons.ArrowClockwise />
+              <Icons.Check />
             </IconButton>
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
