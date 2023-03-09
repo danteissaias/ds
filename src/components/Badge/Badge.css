@@ -5,7 +5,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: var(--fs-1);
-  padding: 0 var(--space-1);
+  padding: 0 6px;
   line-height: 20px;
   border-radius: var(--br-2);
 }
