@@ -21,7 +21,8 @@
 }
 
 .Button svg {
-  color: var(--gray-12);
+  height: var(--space-3);
+  width: var(--space-3);
 }
 
 .Button[disabled] svg {
@@ -47,11 +48,6 @@
   --spinner-size: var(--space-3);
 }
 
-.Button.icon.size-1 svg {
-  height: var(--space-3);
-  width: var(--space-3);
-}
-
 .Button.size-2 {
   height: var(--space-6);
   font-size: var(--fs-2);
@@ -69,7 +65,7 @@
   --spinner-size: var(--space-4);
 }
 
-.Button.icon.size-2 svg {
+.Button.size-2.icon svg {
   height: var(--space-4);
   width: var(--space-4);
 }
@@ -79,6 +75,14 @@
 .Button.gray {
   color: var(--gray-a12);
   background-color: var(--gray-a6);
+}
+
+.Button.gray svg {
+  color: var(--gray-a11);
+}
+
+.Button.gray.icon svg {
+  color: var(--gray-a12);
 }
 
 .Button.gray:focus-visible {
@@ -100,12 +104,20 @@
   color: var(--gray-a9);
 }
 
+.Button.gray[data-state='open'] {
+  background-color: var(--gray-a6);
+}
+
 /* Gray + ghost */
 
 .Button.gray.ghost {
   background-color: transparent;
   box-shadow: none;
   color: var(--gray-11);
+}
+
+.Button.gray.ghost svg {
+  color: var(--gray-a11);
 }
 
 .Button.gray.ghost:focus-visible {

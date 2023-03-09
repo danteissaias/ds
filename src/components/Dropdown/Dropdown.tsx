@@ -1,20 +1,20 @@
 import * as Dropdown from '@radix-ui/react-dropdown-menu';
 import cn from 'clsx';
-import { ElementRef, forwardRef, ReactNode } from 'react';
+import * as React from 'react';
 
 import { Button as Btn, ButtonProps } from '@/components';
 
 export interface DropdownMenuProps {
-  trigger: ReactNode;
-  children: ReactNode;
+  trigger: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const Root = Dropdown.Root;
 export const Portal = Dropdown.Portal;
 export const Trigger = Dropdown.Trigger;
 
-export const Button = forwardRef<
-  ElementRef<typeof Dropdown.Trigger>,
+export const Button = React.forwardRef<
+  React.ElementRef<typeof Dropdown.Trigger>,
   ButtonProps
 >(({ className, ...props }, forwardedRef) => (
   <Dropdown.Trigger ref={forwardedRef} asChild>
@@ -22,8 +22,8 @@ export const Button = forwardRef<
   </Dropdown.Trigger>
 ));
 
-export const Content = forwardRef<
-  ElementRef<typeof Dropdown.Content>,
+export const Content = React.forwardRef<
+  React.ElementRef<typeof Dropdown.Content>,
   Dropdown.DropdownMenuContentProps
 >(
   (
@@ -49,8 +49,8 @@ export const Content = forwardRef<
   )
 );
 
-export const Group = forwardRef<
-  ElementRef<typeof Dropdown.Group>,
+export const Group = React.forwardRef<
+  React.ElementRef<typeof Dropdown.Group>,
   Dropdown.MenuGroupProps
 >(({ className, ...props }, forwardedRef) => (
   <Dropdown.Group
@@ -60,8 +60,8 @@ export const Group = forwardRef<
   />
 ));
 
-export const Item = forwardRef<
-  ElementRef<typeof Dropdown.Item>,
+export const Item = React.forwardRef<
+  React.ElementRef<typeof Dropdown.Item>,
   Dropdown.MenuItemProps
 >(({ className, ...props }, forwardedRef) => (
   <Dropdown.Item
@@ -71,8 +71,8 @@ export const Item = forwardRef<
   />
 ));
 
-export const Label = forwardRef<
-  ElementRef<typeof Dropdown.Label>,
+export const Label = React.forwardRef<
+  React.ElementRef<typeof Dropdown.Label>,
   Dropdown.MenuLabelProps
 >(({ className, ...props }, forwardedRef) => (
   <Dropdown.Label
@@ -82,8 +82,8 @@ export const Label = forwardRef<
   />
 ));
 
-export const Separator = forwardRef<
-  ElementRef<typeof Dropdown.Separator>,
+export const Separator = React.forwardRef<
+  React.ElementRef<typeof Dropdown.Separator>,
   Dropdown.MenuSeparatorProps
 >(({ className, ...props }, forwardedRef) => (
   <Dropdown.Separator

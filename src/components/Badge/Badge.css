@@ -1,0 +1,32 @@
+.Badge {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--fs-1);
+  padding: 0 var(--space-1);
+  line-height: 20px;
+  border-radius: var(--br-2);
+}
+
+.Badge.gray {
+  background-color: var(--gray-a6);
+  color: var(--gray-a11);
+}
+
+.Badge.red {
+  background-color: var(--red-a4);
+  color: var(--red-a11);
+}
+
+.Badge.green {
+  background-color: var(--green-a4);
+  color: var(--green-a11);
+}
+
+.Badge.accent {
+  /* background-color: rgba(from var(--accent), r g b / 0.2); */
+  background-color: hsla(219, 79%, 66%, 0.15);
+  color: var(--accent);
+}

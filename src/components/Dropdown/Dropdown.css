@@ -49,21 +49,14 @@
   gap: var(--space-2);
   font-size: var(--fs-2);
   color: hsl(256, 6%, 80%);
-  font-weight: 450;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .DropdownItem[data-highlighted] {
   background: var(--gray-a4);
   outline: none;
   color: var(--gray-12);
-}
-
-.DropdownItem.red {
-  color: var(--red-a11);
-}
-
-.DropdownItem.red[data-highlighted] {
-  background: var(--red-a4);
 }
 
 .DropdownItem svg {

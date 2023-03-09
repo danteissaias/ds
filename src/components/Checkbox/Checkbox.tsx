@@ -1,18 +1,26 @@
-import { Root, CheckboxProps, Indicator } from '@radix-ui/react-checkbox';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import cn from 'clsx';
 import * as React from 'react';
 
 import { Icons } from '@/index';
 
+export interface CheckboxProps extends CheckboxPrimitive.CheckboxProps {
+  indeterminate?: boolean;
+}
+
 export const Checkbox = React.forwardRef<
-  React.ElementRef<typeof Root>,
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
   CheckboxProps
->(({ className, ...props }, forwardedRef) => (
+>(({ className, indeterminate, ...props }, forwardedRef) => (
   <div className={cn(className, 'CheckboxRoot')}>
-    <Root ref={forwardedRef} className="CheckboxButton" {...props}>
-      <Indicator className="CheckboxIndicator">
-        <Icons.CheckIcon height={16} width={16} />
-      </Indicator>
-    </Root>
+    <CheckboxPrimitive.Root
+      ref={forwardedRef}
+      className={cn('CheckboxButton', { indeterminate })}
+      {...props}
+    >
+      <CheckboxPrimitive.Indicator className="CheckboxIndicator">
+        {indeterminate ? <Icons.Minus /> : <Icons.Check />}
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
   </div>
 ));

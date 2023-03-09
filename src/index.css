@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap');
 
 @import './reset.css';
+@import './components/Badge/Badge.css';
 @import './components/Button/Button.css';
 @import './components/Checkbox/Checkbox.css';
+@import './components/Dialog/Dialog.css';
 @import './components/Dropdown/Dropdown.css';
 @import './components/Spinner/Spinner.css';
 @import './components/Table/Table.css';
@@ -39,6 +41,19 @@
   --fs-7: 28px;
   --fs-8: 35px;
   --fs-9: 60px;
+
+  --black-a1: hsla(0, 0%, 0%, 0.012);
+  --black-a2: hsla(0, 0%, 0%, 0.027);
+  --black-a3: hsla(0, 0%, 0%, 0.047);
+  --black-a4: hsla(0, 0%, 0%, 0.071);
+  --black-a5: hsla(0, 0%, 0%, 0.09);
+  --black-a6: hsla(0, 0%, 0%, 0.114);
+  --black-a7: hsla(0, 0%, 0%, 0.141);
+  --black-a8: hsla(0, 0%, 0%, 0.22);
+  --black-a9: hsla(0, 0%, 0%, 0.439);
+  --black-a10: hsla(0, 0%, 0%, 0.478);
+  --black-a11: hsla(0, 0%, 0%, 0.565);
+  --black-a12: hsla(0, 0%, 0%, 0.91);
 
   --gray-1: hsl(246, 6%, 9%);
   --gray-2: hsl(240, 5.1%, 11.6%);
@@ -121,11 +136,6 @@
   --accent: hsl(219, 79%, 66%);
 
   --canvas: var(--gray-1);
-  --panel: var(--gray-2);
-
-  --surface-1: var(--gray-a1);
-  --surface-2: var(--gray-a2);
-  --surface-3: var(--gray-a3);
 }
 
 body {

@@ -25,7 +25,8 @@
     "build": "tsup src/index.ts"
   },
   "devDependencies": {
-    "@radix-ui/react-icons": "^1.2.0",
+    "@phosphor-icons/react": "^2.0.5",
+    "@radix-ui/react-dialog": "^1.0.3",
     "@types/node": "^18.14.6",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
@@ -44,6 +45,8 @@
     "clsx": "^1.2.1"
   },
   "peerDependencies": {
-    "@radix-ui/react-icons": "^1.2.0"
+    "@phosphor-icons/react": "^2.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

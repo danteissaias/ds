@@ -25,6 +25,11 @@
   background: var(--accent);
 }
 
+.CheckboxButton.indeterminate[data-state='checked'] {
+  background: var(--gray-a9);
+  box-shadow: inset 0 0 0 1px var(--gray-a6);
+}
+
 .CheckboxButton[data-state='checked'][disabled] {
   background: var(--gray-4);
   box-shadow: inset 0 0 0 1px var(--gray-a6);
@@ -52,6 +57,13 @@
   color: #fff;
   height: var(--space-4);
   width: var(--space-4);
+  display: flex;
+  padding: 2px;
+}
+
+.CheckboxIndicator svg {
+  height: 100%;
+  width: 100%;
 }
 
 .CheckboxButton[data-state='checked'][disabled] .CheckboxIndicator {

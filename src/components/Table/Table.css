@@ -62,6 +62,6 @@
   box-shadow: none;
 }
 
-.TableBody .TableRow:hover {
+.TableBody .TableRow:has(.hasLink):hover {
   background-color: var(--gray-a2);
 }
