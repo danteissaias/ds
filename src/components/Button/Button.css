@@ -116,7 +116,7 @@
 }
 
 .Button.gray.ghost svg {
-  color: var(--gray-a12);
+  color: var(--gray-a11);
 }
 
 .Button.gray.ghost:focus-visible {

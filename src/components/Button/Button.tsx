@@ -44,7 +44,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   )
 );
 
-export interface IconButtonProps extends Omit<ButtonProps, 'color'> {}
+export interface IconButtonProps extends ButtonProps {}
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, children, ...props }, forwardedRef) => (

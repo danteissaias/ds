@@ -214,17 +214,44 @@ export default function App() {
           }}
         >
           <h3>Icon Button</h3>
+
           <div style={{ display: 'flex', gap: 8 }}>
             <IconButton size="1">
               <Icons.ArrowClockwise />
             </IconButton>
             <IconButton>
-              <Icons.Trash />
+              <Icons.ArrowClockwise />
             </IconButton>
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <IconButton>
+              <Icons.ArrowClockwise />
+            </IconButton>
+            <IconButton color="red">
+              <Icons.ArrowClockwise />
+            </IconButton>
+            <IconButton color="green">
+              <Icons.ArrowClockwise />
+            </IconButton>
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
             <IconButton ghost>
-              <Icons.MagnifyingGlass />
+              <Icons.ArrowClockwise />
             </IconButton>
-            <IconButton loading />
+            <IconButton color="red" ghost>
+              <Icons.ArrowClockwise />
+            </IconButton>
+            <IconButton color="green" ghost>
+              <Icons.ArrowClockwise />
+            </IconButton>
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <IconButton disabled>
+              <Icons.ArrowClockwise />
+            </IconButton>
+            <IconButton loading>
+              <Icons.ArrowClockwise />
+            </IconButton>
           </div>
         </div>
 
