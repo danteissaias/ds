@@ -5,7 +5,6 @@
   user-select: none;
   font-weight: 600;
   transition: background-color 0.1s;
-  cursor: pointer;
 }
 
 .Button:focus-visible {
@@ -117,7 +116,7 @@
 }
 
 .Button.gray.ghost svg {
-  color: var(--gray-a11);
+  color: var(--gray-a12);
 }
 
 .Button.gray.ghost:focus-visible {
@@ -130,7 +129,8 @@
   }
 }
 
-.Button.gray.ghost:active {
+.Button.gray.ghost:active,
+.Button.gray.ghost[data-state='open'] {
   background-color: var(--gray-a5);
 }
 

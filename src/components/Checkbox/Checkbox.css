@@ -17,17 +17,24 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  transition: background-color 0.1s, box-shadow 0.1s;
-  cursor: pointer;
+  transition: background-color 0.1s;
 }
 
 .CheckboxButton[data-state='checked'] {
   background: var(--accent);
 }
 
-.CheckboxButton.indeterminate[data-state='checked'] {
-  background: var(--gray-a9);
-  box-shadow: inset 0 0 0 1px var(--gray-a6);
+.CheckboxButton.indeterminate {
+  box-shadow: inset 0 0 0 1px var(--gray-a8);
+  background-color: var(--gray-a6);
+}
+
+.CheckboxButton.indeterminate:hover {
+  box-shadow: inset 0 0 0 1px var(--gray-a9);
+}
+
+.CheckboxButton.indeterminate svg {
+  color: var(--gray-a11);
 }
 
 .CheckboxButton[data-state='checked'][disabled] {
@@ -36,7 +43,7 @@
 }
 
 .CheckboxButton[data-state='unchecked'] {
-  box-shadow: inset 0 0 0 1px var(--gray-a6);
+  box-shadow: inset 0 0 0 1px var(--gray-a8);
   background-color: var(--gray-a6);
 }
 

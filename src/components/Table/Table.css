@@ -19,8 +19,8 @@
 .TableHead {
   font-weight: 700;
   background-color: var(--gray-a2);
-  font-variant: small-caps;
-  font-size: var(--fs-3);
+  text-transform: uppercase;
+  font-size: var(--fs-1);
 }
 
 .TableBody,
@@ -46,6 +46,8 @@
 
 .TableCell.hasLink a {
   display: block;
+  cursor: pointer;
+  user-select: none;
   padding: var(--space-3);
   text-decoration: none;
   color: var(--gray-12);

@@ -42,78 +42,87 @@ function Example() {
               </Table.Cell>
               <Table.Cell>name</Table.Cell>
               <Table.Cell>email</Table.Cell>
-              <Table.Cell>password</Table.Cell>
               <Table.Cell>created at</Table.Cell>
               <Table.Cell>tags</Table.Cell>
+              <Table.Cell checkbox />
             </Table.Row>
           </Table.Head>
           <Table.Body style={{ verticalAlign: 'middle' }}>
-            <Table.Row style={{ userSelect: 'none', cursor: 'pointer' }}>
+            <Table.Row>
               <Table.Cell checkbox>
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row1">John Doe</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row1">john@doe.com</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row1">********</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row1">13:21 3/2/2023</a>
-              </Table.Cell>
+              <Table.Cell>John Doe</Table.Cell>
+              <Table.Cell>john@doe.com</Table.Cell>
+              <Table.Cell>13:21 3/2/2023</Table.Cell>
               <Table.Cell>
                 <div className="display-flex ds-gap-2">
                   <Badge color="red">expired</Badge>
                 </div>
               </Table.Cell>
+              <Table.Cell checkbox>
+                <Dropdown.Root>
+                  <Dropdown.Trigger asChild>
+                    <IconButton ghost>
+                      <Icons.DotsThree />
+                    </IconButton>
+                  </Dropdown.Trigger>
+                  <Dropdown.Portal>
+                    <Dropdown.Content style={{ minWidth: 220 }}>
+                      <Dropdown.Group>
+                        <Dropdown.Item>
+                          <Icons.EnvelopeSimple />
+                          Send password recovery
+                        </Dropdown.Item>
+                      </Dropdown.Group>
+                      <Dropdown.Separator />
+                      <Dropdown.Group>
+                        <Dropdown.Item>
+                          <Icons.TrashSimple />
+                          Delete record
+                        </Dropdown.Item>
+                      </Dropdown.Group>
+                    </Dropdown.Content>
+                  </Dropdown.Portal>
+                </Dropdown.Root>
+              </Table.Cell>
             </Table.Row>
-            <Table.Row style={{ userSelect: 'none', cursor: 'pointer' }}>
+            <Table.Row>
               <Table.Cell checkbox>
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">Dante Issaias</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">dante@issaias.com</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">********</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">16:27 9/2/2023</a>
-              </Table.Cell>
+              <Table.Cell>Dante Issaias</Table.Cell>
+              <Table.Cell>dante@issaias.com</Table.Cell>
+              <Table.Cell>16:27 9/2/2023</Table.Cell>
               <Table.Cell>
                 <div className="display-flex ds-gap-2">
                   <Badge color="gray">subuser</Badge>
                   <Badge color="accent">basic</Badge>
                 </div>
               </Table.Cell>
+              <Table.Cell checkbox>
+                <IconButton ghost>
+                  <Icons.DotsThree />
+                </IconButton>
+              </Table.Cell>
             </Table.Row>
-            <Table.Row style={{ userSelect: 'none', cursor: 'pointer' }}>
+            <Table.Row>
               <Table.Cell checkbox>
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">Robert Roe</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">robert@roe.net</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">********</a>
-              </Table.Cell>
-              <Table.Cell hasLink>
-                <a href="#row2">11:32 8/1/2023</a>
-              </Table.Cell>
+              <Table.Cell>Robert Roe</Table.Cell>
+              <Table.Cell>robert@roe.net</Table.Cell>
+              <Table.Cell>11:32 8/1/2023</Table.Cell>
               <Table.Cell>
                 <div className="display-flex ds-gap-2">
                   <Badge color="green">admin</Badge>
                   <Badge color="accent">pro</Badge>
                 </div>
+              </Table.Cell>
+              <Table.Cell checkbox>
+                <IconButton ghost>
+                  <Icons.DotsThree />
+                </IconButton>
               </Table.Cell>
             </Table.Row>
           </Table.Body>

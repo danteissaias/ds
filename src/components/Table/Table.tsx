@@ -26,14 +26,6 @@ export const Head = React.forwardRef<
   <thead ref={forwardedRef} className={cn(className, 'TableHead')} {...props} />
 ));
 
-type TableRowContext =
-  | { hasLink: true; href: string }
-  | { hasLink: boolean; href?: string };
-
-const TableRowContext = React.createContext<TableRowContext>({
-  hasLink: false,
-});
-
 export const Row = React.forwardRef<
   HTMLTableRowElement,
   React.HTMLAttributes<HTMLTableRowElement>
