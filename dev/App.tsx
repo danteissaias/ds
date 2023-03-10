@@ -11,10 +11,6 @@ import {
   Table,
 } from '../src';
 
-const tags = Array.from({ length: 50 }).map(
-  (_, i, a) => `v1.2.0-beta.${a.length - i}`
-);
-
 function Example() {
   return (
     <div className="display-flex fd-column ds-gap-4">
@@ -406,7 +402,7 @@ export default function App() {
             >
               <ScrollArea.Viewport>
                 <div className="ds-p-2">
-                  {tags.map((tag) => (
+                  {Array.from({ length: 50 }).map(() => (
                     <div
                       style={{
                         height: 50,
@@ -415,7 +411,7 @@ export default function App() {
                         background: 'var(--gray-5)',
                       }}
                       className=" ds-m-4"
-                    ></div>
+                    />
                   ))}
                 </div>
               </ScrollArea.Viewport>
