@@ -4,10 +4,10 @@
   vertical-align: middle;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: var(--fs-1);
+  font-size: var(--fs-12);
   padding: 0 6px;
   line-height: 20px;
-  border-radius: var(--br-2);
+  border-radius: var(--br-4);
 }
 
 .Badge.gray {

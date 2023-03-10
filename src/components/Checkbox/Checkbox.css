@@ -8,9 +8,9 @@
 
 .CheckboxButton {
   all: unset;
-  height: var(--space-4);
-  width: var(--space-4);
-  border-radius: var(--br-1);
+  height: var(--sp-16);
+  width: var(--sp-16);
+  border-radius: var(--br-4);
   position: relative;
   outline: none;
   display: flex;
@@ -62,8 +62,8 @@
 
 .CheckboxIndicator {
   color: #fff;
-  height: var(--space-4);
-  width: var(--space-4);
+  height: var(--sp-16);
+  width: var(--sp-16);
   display: flex;
   padding: 2px;
 }

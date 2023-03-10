@@ -13,16 +13,16 @@ import {
 
 function Example() {
   return (
-    <div className="display-flex fd-column ds-gap-4">
+    <div className="display-flex fd-column gap-16">
       <div className="display-flex jc-space-between" style={{ maxWidth: 800 }}>
-        <div className="display-flex ds-gap-2 ai-center">
+        <div className="display-flex gap-4 ai-center">
           <IconButton size="1">
             <Icons.ArrowClockwise />
           </IconButton>
 
           <Button size="1">Add record</Button>
         </div>
-        <div className="display-flex ds-gap-2 ai-center">
+        <div className="display-flex gap-4 ai-center">
           <Button color="red" size="1">
             Delete 3 records
           </Button>
@@ -57,7 +57,7 @@ function Example() {
               <Table.Cell>john@doe.com</Table.Cell>
               <Table.Cell>13:21 3/2/2023</Table.Cell>
               <Table.Cell>
-                <div className="display-flex ds-gap-2">
+                <div className="display-flex gap-4">
                   <Badge color="red">expired</Badge>
                 </div>
               </Table.Cell>
@@ -96,7 +96,7 @@ function Example() {
               <Table.Cell>dante@issaias.com</Table.Cell>
               <Table.Cell>16:27 9/2/2023</Table.Cell>
               <Table.Cell>
-                <div className="display-flex ds-gap-2">
+                <div className="display-flex gap-4">
                   <Badge color="gray">subuser</Badge>
                   <Badge color="accent">basic</Badge>
                 </div>
@@ -115,7 +115,7 @@ function Example() {
               <Table.Cell>robert@roe.net</Table.Cell>
               <Table.Cell>11:32 8/1/2023</Table.Cell>
               <Table.Cell>
-                <div className="display-flex ds-gap-2">
+                <div className="display-flex gap-4">
                   <Badge color="green">admin</Badge>
                   <Badge color="accent">pro</Badge>
                 </div>
@@ -137,25 +137,20 @@ export default function App() {
   return (
     <Icons.IconContext.Provider value={{ weight: 'bold' }}>
       <main>
-        <div
-          style={{
-            display: 'grid',
-            gap: 'var(--space-4)',
-            padding: 'var(--space-5)',
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>Button</h3>
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div className="display-flex gap-8">
             <Button size="1">Small</Button>
             <Button>Medium</Button>
           </div>
 
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div className="display-flex gap-8">
             <Button>Gray</Button>
             <Button color="red">Red</Button>
             <Button color="green">Green</Button>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <Button ghost>Gray</Button>
             <Button ghost color="red">
               Red
@@ -165,7 +160,7 @@ export default function App() {
             </Button>
           </div>
 
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div className="display-flex gap-8">
             <Button disabled>Gray</Button>
             <Button disabled color="red">
               Red
@@ -174,7 +169,8 @@ export default function App() {
               Green
             </Button>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <Button disabled ghost>
               Gray
             </Button>
@@ -185,7 +181,8 @@ export default function App() {
               Green
             </Button>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <Button loading>Gray</Button>
             <Button loading color="red">
               Red
@@ -194,7 +191,8 @@ export default function App() {
               Green
             </Button>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <Button loading ghost>
               Gray
             </Button>
@@ -207,16 +205,10 @@ export default function App() {
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: 'var(--space-4)',
-            padding: 'var(--space-5)',
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>Icon Button</h3>
 
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div className="display-flex gap-8">
             <IconButton size="1">
               <Icons.ArrowClockwise />
             </IconButton>
@@ -224,7 +216,8 @@ export default function App() {
               <Icons.PencilSimple />
             </IconButton>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <IconButton>
               <Icons.Archive />
             </IconButton>
@@ -235,7 +228,8 @@ export default function App() {
               <Icons.Check />
             </IconButton>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <IconButton ghost>
               <Icons.Archive />
             </IconButton>
@@ -246,7 +240,8 @@ export default function App() {
               <Icons.Check />
             </IconButton>
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <IconButton disabled>
               <Icons.ArrowClockwise />
             </IconButton>
@@ -256,16 +251,10 @@ export default function App() {
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: 20,
-            color: 'var(--gray-12)',
-            padding: 25,
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>Dropdown</h3>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <Dropdown.Root>
               <Dropdown.Button>
                 User
@@ -289,33 +278,19 @@ export default function App() {
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: 20,
-            color: 'var(--gray-12)',
-            padding: 25,
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>Checkbox</h3>
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div className="display-flex gap-8">
             <Checkbox />
             <Checkbox indeterminate checked />
             <Checkbox checked />
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: 20,
-            color: 'var(--gray-12)',
-            padding: 25,
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>Badge</h3>
 
-          <div style={{ display: 'flex', gap: 8 }}>
+          <div className="display-flex gap-8">
             <Badge>Gray</Badge>
             <Badge color="red">Red</Badge>
             <Badge color="green">Green</Badge>
@@ -323,14 +298,7 @@ export default function App() {
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: 20,
-            color: 'var(--gray-12)',
-            padding: 25,
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>
             Table <Badge>Work in progress</Badge>
           </h3>
@@ -356,18 +324,12 @@ export default function App() {
           </Table.Root>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: 20,
-            color: 'var(--gray-12)',
-            padding: 25,
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>
             Dialog <Badge>Work in progress</Badge>
           </h3>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <Dialog.Root>
               <Dialog.Trigger asChild>
                 <Button>Edit user</Button>
@@ -380,37 +342,31 @@ export default function App() {
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: 20,
-            color: 'var(--gray-12)',
-            padding: 25,
-          }}
-        >
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>
             Scroll Area <Badge>Work in progress</Badge>
           </h3>
-          <div style={{ display: 'flex', gap: 8 }}>
+
+          <div className="display-flex gap-8">
             <ScrollArea.Root
               style={{
                 background: 'var(--gray-4)',
-                maxHeight: 300,
+                height: 300,
                 maxWidth: 300,
-                borderRadius: 'var(--br-3)',
+                borderRadius: 'var(--br-6)',
               }}
             >
               <ScrollArea.Viewport>
-                <div className="ds-p-2">
+                <div className="p-4">
                   {Array.from({ length: 50 }).map(() => (
                     <div
                       style={{
                         height: 50,
                         width: 350,
-                        borderRadius: 'var(--br-2)',
+                        borderRadius: 'var(--br-4)',
                         background: 'var(--gray-5)',
                       }}
-                      className=" ds-m-4"
+                      className=" m-16"
                     />
                   ))}
                 </div>
@@ -426,7 +382,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="ds-p-5">
+        <div className="p-24 gap-16 display-flex fd-column">
           <h3>Example</h3>
           <Example />
         </div>
