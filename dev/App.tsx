@@ -349,6 +349,7 @@ export default function App() {
 
           <div className="display-flex gap-8">
             <ScrollArea.Root
+              scrollHideDelay={0}
               style={{
                 background: 'var(--gray-4)',
                 height: 300,
