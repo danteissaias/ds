@@ -1,11 +1,26 @@
 import cn from 'clsx';
 import * as React from 'react';
 
+import { ScrollArea } from '@/components';
+
 export const Root = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, forwardedRef) => (
-  <div ref={forwardedRef} className={cn(className, 'TableRoot')} {...props} />
+>(({ className, children, ...props }, forwardedRef) => (
+  <div ref={forwardedRef} className={cn(className, 'TableRoot')} {...props}>
+    <ScrollArea.Root>
+      <ScrollArea.Viewport className="TableRootScroll">
+        {children}
+      </ScrollArea.Viewport>
+      <ScrollArea.Scrollbar orientation="vertical">
+        <ScrollArea.Thumb />
+      </ScrollArea.Scrollbar>
+      <ScrollArea.Scrollbar orientation="horizontal">
+        <ScrollArea.Thumb />
+      </ScrollArea.Scrollbar>
+      <ScrollArea.Corner />
+    </ScrollArea.Root>
+  </div>
 ));
 
 export const Table = React.forwardRef<

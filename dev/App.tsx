@@ -7,8 +7,13 @@ import {
   Dropdown,
   IconButton,
   Icons,
+  ScrollArea,
   Table,
 } from '../src';
+
+const tags = Array.from({ length: 50 }).map(
+  (_, i, a) => `v1.2.0-beta.${a.length - i}`
+);
 
 function Example() {
   return (
@@ -382,10 +387,50 @@ export default function App() {
         <div
           style={{
             display: 'grid',
-            gap: 'var(--space-4)',
-            padding: 'var(--space-5)',
+            gap: 20,
+            color: 'var(--gray-12)',
+            padding: 25,
           }}
         >
+          <h3>
+            Scroll Area <Badge>Work in progress</Badge>
+          </h3>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <ScrollArea.Root
+              style={{
+                background: 'var(--gray-4)',
+                maxHeight: 300,
+                maxWidth: 300,
+                borderRadius: 'var(--br-3)',
+              }}
+            >
+              <ScrollArea.Viewport>
+                <div className="ds-p-2">
+                  {tags.map((tag) => (
+                    <div
+                      style={{
+                        height: 50,
+                        width: 350,
+                        borderRadius: 'var(--br-2)',
+                        background: 'var(--gray-5)',
+                      }}
+                      className=" ds-m-4"
+                    ></div>
+                  ))}
+                </div>
+              </ScrollArea.Viewport>
+              <ScrollArea.Scrollbar orientation="vertical">
+                <ScrollArea.Thumb />
+              </ScrollArea.Scrollbar>
+              <ScrollArea.Scrollbar orientation="horizontal">
+                <ScrollArea.Thumb />
+              </ScrollArea.Scrollbar>
+              <ScrollArea.Corner />
+            </ScrollArea.Root>
+          </div>
+        </div>
+
+        <div className="ds-p-5">
           <h3>Example</h3>
           <Example />
         </div>
