@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   user-select: none;
-  font-weight: 600;
+  font-weight: 500;
   transition: background-color 0.1s;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .Button.ghost {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .Button[disabled] {
@@ -30,14 +30,14 @@
   font-size: var(--fs-12);
   padding-left: var(--sp-8);
   padding-right: var(--sp-8);
-  border-radius: var(--br-6);
+  border-radius: var(--br-4);
   gap: var(--sp-8);
   --spinner-size: var(--sp-12);
 }
 
 .Button.size-1 svg {
-  height: 14px;
-  width: 14px;
+  height: var(--sp-12);
+  width: var(--sp-12);
 }
 
 .Button.icon.size-1 {
@@ -47,23 +47,19 @@
   --spinner-size: var(--sp-12);
 }
 
-.Button.icon.size-1 svg path {
-  /* stroke-width: 2 !important; */
-}
-
 .Button.size-2 {
   height: var(--sp-32);
   font-size: var(--fs-13);
   padding-left: var(--sp-12);
   padding-right: var(--sp-12);
-  border-radius: var(--br-6);
+  border-radius: var(--br-4);
   gap: var(--sp-8);
   --spinner-size: var(--sp-12);
 }
 
 .Button.size-2 svg {
-  height: 18px;
-  width: 18px;
+  height: var(--sp-16);
+  width: var(--sp-16);
 }
 
 .Button.icon.size-2 {
@@ -78,6 +74,7 @@
 .Button.gray {
   color: var(--gray-a12);
   background-color: var(--gray-a6);
+  --spinner-color: var(--gray-a9);
 }
 
 .Button.gray svg {
@@ -104,7 +101,7 @@
 
 .Button.gray[disabled] {
   background-color: var(--gray-a3);
-  color: var(--gray-a9);
+  color: var(--gray-a8);
 }
 
 .Button.gray[data-state='open'] {
@@ -140,7 +137,7 @@
 
 .Button.gray.ghost[disabled] {
   background: var(--gray-a3);
-  color: var(--gray-a9);
+  color: var(--gray-a8);
 }
 
 /* Red */
@@ -148,6 +145,7 @@
 .Button.red {
   color: #fff;
   background-color: var(--red-9);
+  --spinner-color: var(--red-a9);
 }
 
 .Button.red:focus-visible {
@@ -165,8 +163,9 @@
 }
 
 .Button.red[disabled] {
-  background: var(--gray-a3);
-  color: var(--gray-a9);
+  filter: grayscale(80%);
+  background: var(--red-a3);
+  color: var(--red-a8);
 }
 
 /* Red + ghost */
@@ -187,8 +186,9 @@
 }
 
 .Button.red.ghost[disabled] {
-  background: var(--gray-a3);
-  color: var(--gray-a9);
+  filter: grayscale(80%);
+  background: var(--red-a3);
+  color: var(--red-a8);
 }
 
 /* Green */
@@ -196,6 +196,7 @@
 .Button.green {
   color: #fff;
   background-color: var(--green-9);
+  --spinner-color: var(--green-a9);
 }
 
 .Button.green:focus-visible {
@@ -213,8 +214,9 @@
 }
 
 .Button.green[disabled] {
-  background: var(--gray-a3);
-  color: var(--gray-a9);
+  filter: grayscale(80%);
+  background: var(--green-a3);
+  color: var(--green-a8);
 }
 
 /* Green + ghost */
@@ -235,6 +237,7 @@
 }
 
 .Button.green.ghost[disabled] {
-  background: var(--gray-a3);
-  color: var(--gray-a9);
+  filter: grayscale(80%);
+  background: var(--green-a3);
+  color: var(--green-a8);
 }

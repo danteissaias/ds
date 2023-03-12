@@ -12,7 +12,7 @@
 
 .Spinner .Bars .Bar {
   animation: spin 1.2s linear infinite;
-  background-color: var(--gray-11);
+  background-color: var(--spinner-color, var(--gray-11));
   border-radius: var(--br-4);
   height: 8%;
   left: -10%;

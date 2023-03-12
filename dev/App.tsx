@@ -27,9 +27,9 @@ function Example() {
     <div className="display-flex fd-column gap-16">
       <div className="display-flex jc-space-between" style={{ maxWidth: 800 }}>
         <div className="display-flex gap-4 ai-center">
-          {/* <IconButton size="1">
+          <IconButton size="1">
             <ReloadIcon />
-          </IconButton> */}
+          </IconButton>
           <Button size="1">Add record</Button>
         </div>
         <div className="display-flex gap-4 ai-center">
