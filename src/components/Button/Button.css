@@ -164,7 +164,7 @@
 
 .Button.red[disabled] {
   filter: grayscale(80%);
-  background: var(--red-a3);
+  background: var(--red-a4);
   color: var(--red-a8);
 }
 
@@ -187,7 +187,7 @@
 
 .Button.red.ghost[disabled] {
   filter: grayscale(80%);
-  background: var(--red-a3);
+  background: var(--red-a4);
   color: var(--red-a8);
 }
 
@@ -215,7 +215,7 @@
 
 .Button.green[disabled] {
   filter: grayscale(80%);
-  background: var(--green-a3);
+  background: var(--green-a4);
   color: var(--green-a8);
 }
 
@@ -238,6 +238,6 @@
 
 .Button.green.ghost[disabled] {
   filter: grayscale(80%);
-  background: var(--green-a3);
+  background: var(--green-a4);
   color: var(--green-a8);
 }
