@@ -71,10 +71,6 @@
   height: 100%;
   width: 100%;
 }
-.CheckboxIndicator svg path {
-  vector-effect: non-scaling-stroke;
-  stroke-width: 1.5 !important;
-}
 
 .CheckboxButton[data-state='checked'][disabled] .CheckboxIndicator {
   color: var(--gray-a8);

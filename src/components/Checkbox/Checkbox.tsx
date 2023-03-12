@@ -1,5 +1,5 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { CheckmarkIcon, RemoveIcon } from '@sanity/icons';
+import { CheckIcon, MinusIcon } from '@radix-ui/react-icons';
 import cn from 'clsx';
 import * as React from 'react';
 
@@ -18,7 +18,7 @@ export const Checkbox = React.forwardRef<
       {...props}
     >
       <CheckboxPrimitive.Indicator className="CheckboxIndicator">
-        {indeterminate ? <RemoveIcon /> : <CheckmarkIcon />}
+        {indeterminate ? <MinusIcon /> : <CheckIcon />}
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   </div>

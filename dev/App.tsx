@@ -2,14 +2,14 @@ import '../src/index.css';
 
 import {
   ArchiveIcon,
-  CheckmarkIcon,
-  CreditCardIcon,
-  EditIcon,
-  EllipsisHorizontalIcon,
-  EnvelopeIcon,
-  SyncIcon,
+  CheckIcon,
+  CounterClockwiseClockIcon,
+  Pencil1Icon,
+  DotsHorizontalIcon,
+  EnvelopeClosedIcon,
+  ReloadIcon,
   TrashIcon,
-} from '@sanity/icons';
+} from '@radix-ui/react-icons';
 
 import {
   Badge,
@@ -27,6 +27,9 @@ function Example() {
     <div className="display-flex fd-column gap-16">
       <div className="display-flex jc-space-between" style={{ maxWidth: 800 }}>
         <div className="display-flex gap-4 ai-center">
+          {/* <IconButton size="1">
+            <ReloadIcon />
+          </IconButton> */}
           <Button size="1">Add record</Button>
         </div>
         <div className="display-flex gap-4 ai-center">
@@ -71,19 +74,19 @@ function Example() {
               <Table.Cell checkbox>
                 <Dropdown.Root>
                   <Dropdown.Trigger asChild>
-                    <IconButton ghost>
-                      <EllipsisHorizontalIcon />
+                    <IconButton ghost size="1">
+                      <DotsHorizontalIcon />
                     </IconButton>
                   </Dropdown.Trigger>
                   <Dropdown.Portal>
                     <Dropdown.Content style={{ minWidth: 220 }}>
                       <Dropdown.Group>
                         <Dropdown.Item>
-                          <EnvelopeIcon />
+                          <EnvelopeClosedIcon />
                           Send password recovery
                         </Dropdown.Item>
                         <Dropdown.Item>
-                          <CreditCardIcon />
+                          <CounterClockwiseClockIcon />
                           View payment history
                         </Dropdown.Item>
                       </Dropdown.Group>
@@ -113,8 +116,8 @@ function Example() {
                 </div>
               </Table.Cell>
               <Table.Cell checkbox>
-                <IconButton ghost>
-                  <EllipsisHorizontalIcon />
+                <IconButton ghost size="1">
+                  <DotsHorizontalIcon />
                 </IconButton>
               </Table.Cell>
             </Table.Row>
@@ -132,8 +135,8 @@ function Example() {
                 </div>
               </Table.Cell>
               <Table.Cell checkbox>
-                <IconButton ghost>
-                  <EllipsisHorizontalIcon />
+                <IconButton ghost size="1">
+                  <DotsHorizontalIcon />
                 </IconButton>
               </Table.Cell>
             </Table.Row>
@@ -220,10 +223,10 @@ export default function App() {
 
         <div className="display-flex gap-8">
           <IconButton size="1">
-            <EditIcon />
+            <Pencil1Icon />
           </IconButton>
           <IconButton>
-            <EditIcon />
+            <Pencil1Icon />
           </IconButton>
         </div>
 
@@ -235,7 +238,7 @@ export default function App() {
             <TrashIcon />
           </IconButton>
           <IconButton color="green">
-            <CheckmarkIcon />
+            <CheckIcon />
           </IconButton>
         </div>
 
@@ -247,7 +250,7 @@ export default function App() {
             <TrashIcon />
           </IconButton>
           <IconButton color="green" ghost>
-            <CheckmarkIcon />
+            <CheckIcon />
           </IconButton>
         </div>
 
@@ -256,7 +259,7 @@ export default function App() {
             <ArchiveIcon />
           </IconButton>
           <IconButton loading>
-            <SyncIcon />
+            <ReloadIcon />
           </IconButton>
         </div>
       </div>

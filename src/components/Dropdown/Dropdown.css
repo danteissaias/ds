@@ -54,8 +54,8 @@
 
 .DropdownItem svg {
   color: hsl(256, 6%, 80%);
-  height: var(--sp-20);
-  width: var(--sp-20);
+  height: var(--sp-16);
+  width: var(--sp-16);
 }
 
 .DropdownItem[data-highlighted] {
