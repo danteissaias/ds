@@ -26,7 +26,7 @@
 }
 
 .Badge.accent {
-  /* background-color: rgba(from var(--accent), r g b / 0.2); */
-  background-color: hsla(219, 79%, 66%, 0.15);
+  /* background-color: rgba(from var(--accent), r g b / 0.1); */
+  background-color: hsla(219, 79%, 66%, 0.1);
   color: var(--accent);
 }
