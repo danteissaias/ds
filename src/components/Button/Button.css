@@ -42,7 +42,7 @@
   --spinner-size: var(--sp-12);
 }
 
-.Button.icon.size-1 svg {
+.Button.size-1 svg {
   height: var(--sp-16);
   width: var(--sp-16);
 }
@@ -57,7 +57,7 @@
   padding-left: var(--sp-12);
   padding-right: var(--sp-12);
   border-radius: var(--br-6);
-  gap: var(--sp-8);
+  gap: var(--sp-4);
   --spinner-size: var(--sp-12);
 }
 
@@ -68,7 +68,7 @@
   --spinner-size: var(--sp-16);
 }
 
-.Button.size-2.icon svg {
+.Button.size-2 svg {
   height: var(--sp-20);
   width: var(--sp-20);
 }

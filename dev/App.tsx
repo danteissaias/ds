@@ -1,17 +1,16 @@
+import '../src/index.css';
+
 import {
-  AddIcon,
   ArchiveIcon,
   CheckmarkIcon,
-  ChevronDownIcon,
   CreditCardIcon,
   EditIcon,
   EllipsisHorizontalIcon,
   EnvelopeIcon,
-  RemoveCircleIcon,
-  StopIcon,
   SyncIcon,
   TrashIcon,
 } from '@sanity/icons';
+
 import {
   Badge,
   Button,
@@ -22,7 +21,6 @@ import {
   ScrollArea,
   Table,
 } from '../src';
-import '../src/index.css';
 
 function Example() {
   return (
@@ -91,7 +89,7 @@ function Example() {
                       </Dropdown.Group>
                       <Dropdown.Separator />
                       <Dropdown.Group>
-                        <Dropdown.Item>
+                        <Dropdown.Item className="red">
                           <TrashIcon />
                           Delete record
                         </Dropdown.Item>
@@ -268,10 +266,7 @@ export default function App() {
 
         <div className="display-flex gap-8">
           <Dropdown.Root>
-            <Dropdown.Button>
-              User
-              <ChevronDownIcon />
-            </Dropdown.Button>
+            <Dropdown.Button>User</Dropdown.Button>
             <Dropdown.Portal>
               <Dropdown.Content style={{ minWidth: 230 }}>
                 <Dropdown.Label>Label</Dropdown.Label>

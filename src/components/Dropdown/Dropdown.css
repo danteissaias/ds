@@ -49,13 +49,7 @@
   gap: var(--sp-8);
   font-size: var(--fs-14);
   color: hsl(256, 6%, 80%);
-  font-weight: 450;
-}
-
-.DropdownItem[data-highlighted] {
-  background: var(--accent);
-  outline: none;
-  color: #000;
+  font-weight: 500;
 }
 
 .DropdownItem svg {
@@ -64,8 +58,31 @@
   width: var(--sp-20);
 }
 
+.DropdownItem[data-highlighted] {
+  background: var(--gray-a4);
+  outline: none;
+  color: var(--gray-12);
+}
+
 .DropdownItem[data-highlighted] svg {
-  color: #000;
+  color: var(--gray-12);
+}
+
+.DropdownItem.red {
+  color: var(--red-a11);
+}
+
+.DropdownItem.red svg {
+  color: var(--red-a11);
+}
+
+.DropdownItem.red[data-highlighted] {
+  background: var(--red-a3);
+  color: var(--red-a11);
+}
+
+.DropdownItem.red[data-highlighted] svg {
+  color: var(--red-a11);
 }
 
 .DropdownSeparator {
