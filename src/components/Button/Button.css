@@ -69,138 +69,138 @@
   --spinner-size: var(--sp-16);
 }
 
-/* Gray */
+/* Default */
 
-.Button.gray {
+.Button {
   color: var(--gray-a12);
   background-color: var(--gray-a6);
 }
 
-.Button.gray svg {
+.Button svg {
   color: var(--gray-11);
 }
 
-.Button.gray.icon svg {
+.Button.icon svg {
   color: var(--gray-12);
 }
 
-.Button.gray:focus-visible {
+.Button:focus-visible {
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-a9);
 }
 
 @media (hover: hover) {
-  .Button.gray:enabled:hover {
+  .Button:enabled:hover {
     background-color: var(--gray-a7);
   }
 }
 
-.Button.gray:enabled:active {
+.Button:enabled:active {
   background-color: var(--gray-a8);
 }
 
-.Button.gray[data-state='open'] {
+.Button[data-state='open'] {
   background-color: var(--gray-a6);
 }
 
 /* Gray + ghost */
 
-.Button.gray.ghost {
+.Button.ghost {
   background-color: transparent;
   box-shadow: none;
   color: var(--gray-11);
 }
 
-.Button.gray.ghost svg {
+.Button.ghost svg {
   color: var(--gray-a11);
 }
 
-.Button.gray.ghost:focus-visible {
+.Button.ghost:focus-visible {
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--gray-a9);
 }
 
 @media (hover: hover) {
-  .Button.gray.ghost:enabled:hover {
+  .Button.ghost:enabled:hover {
     background-color: var(--gray-a4);
   }
 }
 
-.Button.gray.ghost:enabled:active,
-.Button.gray.ghost[data-state='open'] {
+.Button.ghost:enabled:active,
+.Button.ghost[data-state='open'] {
   background-color: var(--gray-a5);
 }
 
 /* Red */
 
-.Button.red {
+.Button.danger {
   color: #fff;
   background-color: var(--red-9);
 }
 
-.Button.red:focus-visible {
+.Button.danger:focus-visible {
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--red-9);
 }
 
 @media (hover: hover) {
-  .Button.red:enabled:hover {
+  .Button.danger:enabled:hover {
     background: var(--red-10);
   }
 }
 
-.Button.red:enabled:active {
+.Button.danger:enabled:active {
   background: var(--red-11);
 }
 
 /* Red + ghost */
 
-.Button.red.ghost {
+.Button.danger.ghost {
   color: var(--red-a11);
   background-color: transparent;
 }
 
 @media (hover: hover) {
-  .Button.red.ghost:enabled:hover {
+  .Button.danger.ghost:enabled:hover {
     background: var(--red-a4);
   }
 }
 
-.Button.red.ghost:enabled:active {
+.Button.danger.ghost:enabled:active {
   background: var(--red-a5);
 }
 
 /* Green */
-.Button.green {
+.Button.success {
   color: #fff;
   background-color: var(--green-9);
 }
 
-.Button.green:focus-visible {
+.Button.success:focus-visible {
   box-shadow: 0 0 0 2px var(--canvas), 0 0 0 4px var(--green-9);
 }
 
 @media (hover: hover) {
-  .Button.green:enabled:hover {
+  .Button.success:enabled:hover {
     background: var(--green-10);
   }
 }
 
-.Button.green:enabled:active {
+.Button.success:enabled:active {
   background: var(--green-11);
 }
 
 /* Green + ghost */
 
-.Button.green.ghost {
+.Button.success.ghost {
   color: var(--green-a11);
   background-color: transparent;
 }
 
 @media (hover: hover) {
-  .Button.green.ghost:enabled:hover {
+  .Button.success.ghost:enabled:hover {
     background: var(--green-a4);
   }
 }
 
-.Button.green.ghost:enabled:active {
+.Button.success.ghost:enabled:active {
   background: var(--green-a5);
 }
 

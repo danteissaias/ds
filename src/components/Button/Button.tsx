@@ -4,20 +4,21 @@ import * as React from 'react';
 import { Spinner } from '@/components';
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
   loading?: boolean;
-  ghost?: boolean;
   size?: '1' | '2';
   color?: 'gray' | 'red' | 'green';
   variant?: 'default' | 'ghost';
+  type?: 'default' | 'success' | 'danger';
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
-      ghost,
       size = '2',
       color = 'gray',
+      variant,
+      type,
       loading,
       disabled,
       className,
@@ -30,12 +31,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ref={forwardedRef}
       disabled={loading || disabled}
       className={cn(className, 'reset-button', 'Button', {
-        ghost,
+        'ghost': variant === 'ghost',
+        'danger': type === 'danger',
+        'success': type == 'success',
         'size-1': size === '1',
         'size-2': size === '2',
-        'gray': color === 'gray',
-        'red': color === 'red',
-        'green': color === 'green',
+        // 'gray': color === 'gray',
+        // 'red': color === 'red',
+        // 'green': color === 'green',
       })}
       {...props}
     >

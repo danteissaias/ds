@@ -61,19 +61,16 @@ export const Group = React.forwardRef<
 ));
 
 export interface DropdownItemProps extends Dropdown.MenuItemProps {
-  color?: 'red' | 'gray';
+  type?: 'danger' | 'default';
 }
 
 export const Item = React.forwardRef<
   React.ElementRef<typeof Dropdown.Item>,
   DropdownItemProps
->(({ className, color, ...props }, forwardedRef) => (
+>(({ className, type, ...props }, forwardedRef) => (
   <Dropdown.Item
     ref={forwardedRef}
-    className={cn(className, 'DropdownItem', {
-      red: color === 'red',
-      gray: color === 'gray',
-    })}
+    className={cn(className, 'DropdownItem', { danger: type === 'danger' })}
     {...props}
   />
 ));

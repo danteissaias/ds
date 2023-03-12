@@ -2,18 +2,17 @@ import cn from 'clsx';
 import * as React from 'react';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  color?: 'red' | 'green' | 'gray' | 'accent';
+  type?: 'default' | 'success' | 'danger' | 'info';
 }
 
 export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
-  ({ color = 'gray', ...props }, forwardedRef) => (
+  ({ type, ...props }, forwardedRef) => (
     <div
       ref={forwardedRef}
       className={cn('Badge', {
-        gray: color === 'gray',
-        red: color === 'red',
-        green: color === 'green',
-        accent: color === 'accent',
+        danger: type === 'danger',
+        success: type === 'success',
+        info: type === 'info',
       })}
       {...props}
     />

@@ -68,20 +68,20 @@
   color: var(--gray-12);
 }
 
-.DropdownItem.red {
+.DropdownItem.danger {
   color: var(--red-a11);
 }
 
-.DropdownItem.red svg {
+.DropdownItem.danger svg {
   color: var(--red-a11);
 }
 
-.DropdownItem.red[data-highlighted] {
+.DropdownItem.danger[data-highlighted] {
   background: var(--red-a3);
   color: var(--red-a11);
 }
 
-.DropdownItem.red[data-highlighted] svg {
+.DropdownItem.danger[data-highlighted] svg {
   color: var(--red-a11);
 }
 

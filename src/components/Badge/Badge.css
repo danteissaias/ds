@@ -10,22 +10,22 @@
   border-radius: var(--br-4);
 }
 
-.Badge.gray {
+.Badge {
   background-color: var(--gray-a3);
   color: var(--gray-a11);
 }
 
-.Badge.red {
+.Badge.danger {
   background-color: var(--red-a4);
   color: var(--red-a11);
 }
 
-.Badge.green {
+.Badge.success {
   background-color: var(--green-a3);
   color: var(--green-a11);
 }
 
-.Badge.accent {
+.Badge.info {
   /* background-color: rgba(from var(--accent), r g b / 0.1); */
   background-color: hsla(219, 79%, 66%, 0.1);
   color: var(--accent);

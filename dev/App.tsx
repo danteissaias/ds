@@ -33,7 +33,7 @@ function Example() {
           <Button size="1">Add record</Button>
         </div>
         <div className="display-flex gap-4 ai-center">
-          <Button color="red" size="1">
+          <Button type="danger" size="1">
             Delete 3 records
           </Button>
           {/*   <Button color="green" size="1">
@@ -68,13 +68,13 @@ function Example() {
               <Table.Cell>13:21 3/2/2023</Table.Cell>
               <Table.Cell>
                 <div className="display-flex gap-4">
-                  <Badge color="red">expired</Badge>
+                  <Badge type="danger">expired</Badge>
                 </div>
               </Table.Cell>
               <Table.Cell checkbox>
                 <Dropdown.Root>
                   <Dropdown.Trigger asChild>
-                    <IconButton ghost size="1">
+                    <IconButton variant="ghost" size="1">
                       <DotsHorizontalIcon />
                     </IconButton>
                   </Dropdown.Trigger>
@@ -92,7 +92,7 @@ function Example() {
                       </Dropdown.Group>
                       <Dropdown.Separator />
                       <Dropdown.Group>
-                        <Dropdown.Item color="red">
+                        <Dropdown.Item type="danger">
                           <TrashIcon />
                           Delete record
                         </Dropdown.Item>
@@ -111,12 +111,12 @@ function Example() {
               <Table.Cell>16:27 9/2/2023</Table.Cell>
               <Table.Cell>
                 <div className="display-flex gap-4">
-                  <Badge color="gray">subuser</Badge>
-                  <Badge color="accent">basic</Badge>
+                  <Badge>subuser</Badge>
+                  <Badge type="info">basic</Badge>
                 </div>
               </Table.Cell>
               <Table.Cell checkbox>
-                <IconButton ghost size="1">
+                <IconButton variant="ghost" size="1">
                   <DotsHorizontalIcon />
                 </IconButton>
               </Table.Cell>
@@ -130,12 +130,12 @@ function Example() {
               <Table.Cell>11:32 8/1/2023</Table.Cell>
               <Table.Cell>
                 <div className="display-flex gap-4">
-                  <Badge color="green">admin</Badge>
-                  <Badge color="accent">pro</Badge>
+                  <Badge type="success">admin</Badge>
+                  <Badge type="info">pro</Badge>
                 </div>
               </Table.Cell>
               <Table.Cell checkbox>
-                <IconButton ghost size="1">
+                <IconButton variant="ghost" size="1">
                   <DotsHorizontalIcon />
                 </IconButton>
               </Table.Cell>
@@ -159,62 +159,32 @@ export default function App() {
 
         <div className="display-flex gap-8">
           <Button>Default</Button>
-          <Button color="red">Danger</Button>
-          <Button color="green">Success</Button>
+          <Button type="danger">Danger</Button>
+          <Button type="success">Success</Button>
         </div>
 
         <div className="display-flex gap-8">
-          <Button ghost>Default</Button>
-          <Button ghost color="red">
+          <Button variant="ghost">Default</Button>
+          <Button variant="ghost" type="danger">
             Danger
           </Button>
-          <Button ghost color="green">
+          <Button variant="ghost" type="success">
             Success
           </Button>
         </div>
 
         <div className="display-flex gap-8">
-          <Button disabled>Gray</Button>
-          <Button disabled color="red">
-            Red
+          <Button disabled size="1">
+            Small
           </Button>
-          <Button disabled color="green">
-            Green
-          </Button>
+          <Button disabled>Medium</Button>
         </div>
 
         <div className="display-flex gap-8">
-          <Button disabled ghost>
-            Gray
+          <Button loading size="1">
+            Small
           </Button>
-          <Button disabled ghost color="red">
-            Red
-          </Button>
-          <Button disabled ghost color="green">
-            Green
-          </Button>
-        </div>
-
-        <div className="display-flex gap-8">
-          <Button loading>Gray</Button>
-          <Button loading color="red">
-            Red
-          </Button>
-          <Button loading color="green">
-            Green
-          </Button>
-        </div>
-
-        <div className="display-flex gap-8">
-          <Button loading ghost>
-            Gray
-          </Button>
-          <Button loading ghost color="red">
-            Red
-          </Button>
-          <Button loading ghost color="green">
-            Green
-          </Button>
+          <Button loading>Medium</Button>
         </div>
       </div>
 
@@ -243,13 +213,13 @@ export default function App() {
         </div>
 
         <div className="display-flex gap-8">
-          <IconButton ghost>
+          <IconButton variant="ghost">
             <ArchiveIcon />
           </IconButton>
-          <IconButton color="red" ghost>
+          <IconButton color="red" variant="ghost">
             <TrashIcon />
           </IconButton>
-          <IconButton color="green" ghost>
+          <IconButton color="green" variant="ghost">
             <CheckIcon />
           </IconButton>
         </div>
@@ -302,16 +272,14 @@ export default function App() {
 
         <div className="display-flex gap-8">
           <Badge>Gray</Badge>
-          <Badge color="red">Red</Badge>
-          <Badge color="green">Green</Badge>
-          <Badge color="accent">Accent</Badge>
+          <Badge type="danger">Red</Badge>
+          <Badge type="success">Green</Badge>
+          <Badge type="info">Accent</Badge>
         </div>
       </div>
 
       <div className="p-24 gap-16 display-flex fd-column">
-        <h3>
-          Table <Badge>Work in progress</Badge>
-        </h3>
+        <h3>Table</h3>
         <Table.Root style={{ maxWidth: 800 }}>
           <Table.Table>
             <Table.Head>
@@ -353,9 +321,7 @@ export default function App() {
       </div>
 
       <div className="p-24 gap-16 display-flex fd-column">
-        <h3>
-          Scroll Area <Badge>Work in progress</Badge>
-        </h3>
+        <h3>Scroll Area</h3>
 
         <div className="display-flex gap-8">
           <ScrollArea.Root
