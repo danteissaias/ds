@@ -17,7 +17,7 @@
   padding-top: calc(var(--sp-4) + 1px);
   padding-bottom: calc(var(--sp-4) + 1px);
   border-radius: var(--br-6);
-  background-color: var(--gray-5);
+  background-color: var(--gray-3);
   box-shadow: inset 0 0 0 1px var(--gray-a4), rgb(0 0 0 / 20%) 0px 4px 24px;
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
   user-select: none;
@@ -44,41 +44,41 @@
   align-items: center;
   padding-left: var(--sp-8);
   padding-right: var(--sp-8);
-  height: 28px;
+  height: var(--sp-32);
   border-radius: var(--br-4);
   gap: var(--sp-8);
-  font-size: var(--fs-13);
+  font-size: var(--fs-14);
   color: hsl(256, 6%, 80%);
-  font-weight: 500;
+  font-weight: 450;
 }
 
 .DropdownItem[data-highlighted] {
-  background: var(--gray-a4);
+  background: var(--accent);
   outline: none;
-  color: var(--gray-12);
+  color: #000;
 }
 
 .DropdownItem svg {
-  color: var(--gray-10);
-  height: var(--sp-16);
-  width: var(--sp-16);
+  color: hsl(256, 6%, 80%);
+  height: var(--sp-20);
+  width: var(--sp-20);
+}
+
+.DropdownItem[data-highlighted] svg {
+  color: #000;
 }
 
 .DropdownSeparator {
-  margin-top: var(--sp-4);
-  margin-bottom: var(--sp-4);
+  margin: var(--sp-4);
   height: 1px;
   background: var(--gray-a5);
-  /* Prevent inset box shadow overlap. */
-  margin-left: 1px;
-  margin-right: 1px;
 }
 
 .DropdownLabel {
   padding-left: calc(var(--sp-12) + 1px);
   padding-top: var(--sp-4);
   padding-bottom: var(--sp-4);
-  font-size: var(--fs-13);
+  font-size: var(--fs-14);
   color: var(--gray-11);
   font-weight: 450;
 }

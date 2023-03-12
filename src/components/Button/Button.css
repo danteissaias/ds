@@ -19,11 +19,6 @@
   cursor: not-allowed;
 }
 
-.Button svg {
-  height: var(--sp-12);
-  width: var(--sp-12);
-}
-
 .Button[disabled] svg {
   opacity: 0.6;
 }
@@ -47,9 +42,18 @@
   --spinner-size: var(--sp-12);
 }
 
+.Button.icon.size-1 svg {
+  height: var(--sp-16);
+  width: var(--sp-16);
+}
+
+.Button.icon.size-1 svg path {
+  /* stroke-width: 2 !important; */
+}
+
 .Button.size-2 {
   height: var(--sp-32);
-  font-size: var(--fs-14);
+  font-size: var(--fs-13);
   padding-left: var(--sp-12);
   padding-right: var(--sp-12);
   border-radius: var(--br-6);
@@ -65,8 +69,8 @@
 }
 
 .Button.size-2.icon svg {
-  height: var(--sp-16);
-  width: var(--sp-16);
+  height: var(--sp-20);
+  width: var(--sp-20);
 }
 
 /* Gray */
