@@ -277,7 +277,7 @@ export default function App() {
                 </Dropdown.Group>
                 <Dropdown.Separator />
                 <Dropdown.Group>
-                  <Dropdown.Item>Log out</Dropdown.Item>
+                  <Dropdown.Item className="red">Log out</Dropdown.Item>
                 </Dropdown.Group>
               </Dropdown.Content>
             </Dropdown.Portal>
