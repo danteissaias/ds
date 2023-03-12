@@ -157,6 +157,10 @@
   background-color: transparent;
 }
 
+.Button.danger.ghost svg {
+  color: var(--red-a11);
+}
+
 @media (hover: hover) {
   .Button.danger.ghost:enabled:hover {
     background: var(--red-a4);
@@ -192,6 +196,10 @@
 .Button.success.ghost {
   color: var(--green-a11);
   background-color: transparent;
+}
+
+.Button.success.ghost svg {
+  color: var(--green-a11);
 }
 
 @media (hover: hover) {

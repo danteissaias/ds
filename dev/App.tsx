@@ -204,10 +204,10 @@ export default function App() {
           <IconButton>
             <ArchiveIcon />
           </IconButton>
-          <IconButton color="red">
+          <IconButton type="danger">
             <TrashIcon />
           </IconButton>
-          <IconButton color="green">
+          <IconButton type="success">
             <CheckIcon />
           </IconButton>
         </div>
@@ -216,10 +216,10 @@ export default function App() {
           <IconButton variant="ghost">
             <ArchiveIcon />
           </IconButton>
-          <IconButton color="red" variant="ghost">
+          <IconButton type="danger" variant="ghost">
             <TrashIcon />
           </IconButton>
-          <IconButton color="green" variant="ghost">
+          <IconButton type="success" variant="ghost">
             <CheckIcon />
           </IconButton>
         </div>
