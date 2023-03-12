@@ -54,7 +54,7 @@
   padding-right: var(--sp-12);
   border-radius: var(--br-4);
   gap: var(--sp-8);
-  --spinner-size: var(--sp-12);
+  --spinner-size: var(--sp-16);
 }
 
 .Button.size-2 svg {
@@ -74,7 +74,6 @@
 .Button.gray {
   color: var(--gray-a12);
   background-color: var(--gray-a6);
-  --spinner-color: var(--gray-a9);
 }
 
 .Button.gray svg {
@@ -90,18 +89,13 @@
 }
 
 @media (hover: hover) {
-  .Button.gray:hover {
+  .Button.gray:enabled:hover {
     background-color: var(--gray-a7);
   }
 }
 
-.Button.gray:active {
+.Button.gray:enabled:active {
   background-color: var(--gray-a8);
-}
-
-.Button.gray[disabled] {
-  background-color: var(--gray-a3);
-  color: var(--gray-a8);
 }
 
 .Button.gray[data-state='open'] {
@@ -125,19 +119,14 @@
 }
 
 @media (hover: hover) {
-  .Button.gray.ghost:hover {
+  .Button.gray.ghost:enabled:hover {
     background-color: var(--gray-a4);
   }
 }
 
-.Button.gray.ghost:active,
+.Button.gray.ghost:enabled:active,
 .Button.gray.ghost[data-state='open'] {
   background-color: var(--gray-a5);
-}
-
-.Button.gray.ghost[disabled] {
-  background: var(--gray-a3);
-  color: var(--gray-a8);
 }
 
 /* Red */
@@ -145,7 +134,6 @@
 .Button.red {
   color: #fff;
   background-color: var(--red-9);
-  --spinner-color: var(--red-a9);
 }
 
 .Button.red:focus-visible {
@@ -153,19 +141,13 @@
 }
 
 @media (hover: hover) {
-  .Button.red:hover {
+  .Button.red:enabled:hover {
     background: var(--red-10);
   }
 }
 
-.Button.red:active {
+.Button.red:enabled:active {
   background: var(--red-11);
-}
-
-.Button.red[disabled] {
-  filter: grayscale(80%);
-  background: var(--red-a4);
-  color: var(--red-a8);
 }
 
 /* Red + ghost */
@@ -176,27 +158,19 @@
 }
 
 @media (hover: hover) {
-  .Button.red.ghost:hover {
+  .Button.red.ghost:enabled:hover {
     background: var(--red-a4);
   }
 }
 
-.Button.red.ghost:active {
+.Button.red.ghost:enabled:active {
   background: var(--red-a5);
 }
 
-.Button.red.ghost[disabled] {
-  filter: grayscale(80%);
-  background: var(--red-a4);
-  color: var(--red-a8);
-}
-
 /* Green */
-
 .Button.green {
   color: #fff;
   background-color: var(--green-9);
-  --spinner-color: var(--green-a9);
 }
 
 .Button.green:focus-visible {
@@ -204,19 +178,13 @@
 }
 
 @media (hover: hover) {
-  .Button.green:hover {
+  .Button.green:enabled:hover {
     background: var(--green-10);
   }
 }
 
-.Button.green:active {
+.Button.green:enabled:active {
   background: var(--green-11);
-}
-
-.Button.green[disabled] {
-  filter: grayscale(80%);
-  background: var(--green-a4);
-  color: var(--green-a8);
 }
 
 /* Green + ghost */
@@ -227,17 +195,20 @@
 }
 
 @media (hover: hover) {
-  .Button.green.ghost:hover {
+  .Button.green.ghost:enabled:hover {
     background: var(--green-a4);
   }
 }
 
-.Button.green.ghost:active {
+.Button.green.ghost:enabled:active {
   background: var(--green-a5);
 }
 
-.Button.green.ghost[disabled] {
-  filter: grayscale(80%);
-  background: var(--green-a4);
-  color: var(--green-a8);
+/* Disabled */
+
+.Button[disabled],
+.Button.ghost[disabled] {
+  --spinner-color: var(--gray-a10);
+  background-color: var(--gray-a3);
+  color: var(--gray-a9);
 }

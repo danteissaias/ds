@@ -92,7 +92,7 @@ function Example() {
                       </Dropdown.Group>
                       <Dropdown.Separator />
                       <Dropdown.Group>
-                        <Dropdown.Item className="red">
+                        <Dropdown.Item color="red">
                           <TrashIcon />
                           Delete record
                         </Dropdown.Item>
@@ -158,18 +158,18 @@ export default function App() {
         </div>
 
         <div className="display-flex gap-8">
-          <Button>Gray</Button>
-          <Button color="red">Red</Button>
-          <Button color="green">Green</Button>
+          <Button>Default</Button>
+          <Button color="red">Danger</Button>
+          <Button color="green">Success</Button>
         </div>
 
         <div className="display-flex gap-8">
-          <Button ghost>Gray</Button>
+          <Button ghost>Default</Button>
           <Button ghost color="red">
-            Red
+            Danger
           </Button>
           <Button ghost color="green">
-            Green
+            Success
           </Button>
         </div>
 
@@ -280,7 +280,7 @@ export default function App() {
                 </Dropdown.Group>
                 <Dropdown.Separator />
                 <Dropdown.Group>
-                  <Dropdown.Item className="red">Log out</Dropdown.Item>
+                  <Dropdown.Item color="red">Log out</Dropdown.Item>
                 </Dropdown.Group>
               </Dropdown.Content>
             </Dropdown.Portal>

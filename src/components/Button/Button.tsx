@@ -9,6 +9,7 @@ export interface ButtonProps
   ghost?: boolean;
   size?: '1' | '2';
   color?: 'gray' | 'red' | 'green';
+  variant?: 'default' | 'ghost';
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
