@@ -75,7 +75,7 @@
 .MenuSeparator {
   margin: var(--sp-4);
   height: 1px;
-  background: var(--gray-a5);
+  background: var(--gray-a6);
 }
 
 .MenuLabel {
