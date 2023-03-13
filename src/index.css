@@ -141,7 +141,7 @@
   --green-a12: hsla(137, 100%, 95.8%, 0.98);
 
   --accent: hsl(219, 79%, 66%);
-  --canvas: var(--gray-1);
+  --canvas: #121214;
 }
 
 body {
@@ -151,7 +151,7 @@ body {
   text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
   color: var(--gray-12);
-  background-color: var(--gray-1);
+  background-color: var(--canvas);
 }
 
 *,

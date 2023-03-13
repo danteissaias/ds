@@ -14,8 +14,12 @@ export interface MenuMenuProps {
   children: React.ReactNode;
 }
 
-export const Root = DropdownMenu.Root;
-export const Trigger = DropdownMenu.Trigger;
+export const Root = ({
+  modal = false,
+  ...props
+}: DropdownMenu.DropdownMenuProps) => (
+  <DropdownMenu.Root modal={modal} {...props} />
+);
 
 export const Button = React.forwardRef<
   React.ElementRef<typeof DropdownMenu.Trigger>,

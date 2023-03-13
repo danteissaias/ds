@@ -38,7 +38,11 @@ const columns: ColumnDef<User, any>[] = [
   {
     accessorKey: 'type',
     header: 'Tags',
-    cell: ({ renderValue }) => <Badge>{renderValue()}</Badge>,
+    cell: ({ renderValue }) => (
+      <Badge type={renderValue() === 'customer' ? 'success' : 'default'}>
+        {renderValue()}
+      </Badge>
+    ),
   },
 ];
 

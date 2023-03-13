@@ -4,7 +4,7 @@
   justify-content: center;
   user-select: none;
   font-weight: 500;
-  transition: background-color 0.1s;
+  transition: background-color 0.1s, transform 0.1s;
 }
 
 .Button:focus-visible {
@@ -15,21 +15,12 @@
   font-weight: 400;
 }
 
-.Button[disabled] {
-  cursor: not-allowed;
-}
-
-.Button[disabled] svg {
-  opacity: 0.6;
-}
-
 /* Sizes */
 
 .Button.size-1 {
   height: var(--sp-24);
   font-size: var(--fs-12);
-  padding-left: var(--sp-8);
-  padding-right: var(--sp-8);
+  padding: 0 var(--sp-8);
   border-radius: var(--br-4);
   gap: var(--sp-8);
   --spinner-size: var(--sp-12);
@@ -40,18 +31,16 @@
   width: var(--sp-12);
 }
 
-.Button.icon.size-1 {
+.Button.size-1.icon {
   padding: 0;
   height: var(--sp-24);
   width: var(--sp-24);
-  --spinner-size: var(--sp-12);
 }
 
 .Button.size-2 {
   height: var(--sp-32);
   font-size: var(--fs-13);
-  padding-left: var(--sp-12);
-  padding-right: var(--sp-12);
+  padding: 0 var(--sp-12);
   border-radius: var(--br-4);
   gap: var(--sp-8);
   --spinner-size: var(--sp-16);
@@ -62,11 +51,10 @@
   width: var(--sp-16);
 }
 
-.Button.icon.size-2 {
+.Button.size-2.icon {
   height: var(--sp-32);
   width: var(--sp-32);
   padding: 0;
-  --spinner-size: var(--sp-16);
 }
 
 /* Default */
@@ -216,7 +204,12 @@
 
 .Button[disabled],
 .Button.ghost[disabled] {
-  --spinner-color: var(--gray-a10);
+  cursor: not-allowed;
   background-color: var(--gray-a3);
   color: var(--gray-a9);
+  --spinner-color: var(--gray-a10);
+}
+
+.Button[disabled] svg {
+  opacity: 0.6;
 }
