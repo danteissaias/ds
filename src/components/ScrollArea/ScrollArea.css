@@ -32,7 +32,7 @@
 }
 
 .ScrollAreaTrack[data-orientation='vertical']
-  + .ScrollAreaScrollbar[data-orientation='horizontal'] {
+  + .ScrollAreaTrack[data-orientation='horizontal'] {
   margin-right: var(--sp-12);
 }
 

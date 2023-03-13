@@ -1,27 +1,25 @@
-import '../src/index.css';
-
 import {
   ArchiveIcon,
   CheckIcon,
   CounterClockwiseClockIcon,
-  DotsHorizontalIcon,
   EnvelopeClosedIcon,
   Pencil1Icon,
   ReloadIcon,
   TrashIcon,
 } from '@radix-ui/react-icons';
+import { ColumnDef } from '@tanstack/react-table';
 
 import {
   Badge,
   Button,
   Checkbox,
   Dialog,
-  Menu,
   IconButton,
+  Menu,
   ScrollArea,
   Table,
 } from '../src';
-import { ColumnDef } from '@tanstack/react-table';
+import '../src/index.css';
 
 interface User {
   name: string;

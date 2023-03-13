@@ -2,13 +2,12 @@ import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
-  RowData,
   useReactTable,
 } from '@tanstack/react-table';
 import cn from 'clsx';
 import * as React from 'react';
 
-import { Checkbox, Menu, IconButton, ScrollArea } from '@/components';
+import { Checkbox, Menu, ScrollArea } from '@/components';
 import { DotsHorizontalIcon } from '@radix-ui/react-icons';
 
 const Root = React.forwardRef<
@@ -68,18 +67,11 @@ interface RowAction {
   onHandle: () => void | Promise<void>;
 }
 
-export interface TableAutoProps<T>
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface TableProps<T> extends React.HTMLAttributes<HTMLDivElement> {
   selectable?: boolean;
   rowActions?: (row: T) => RowAction[];
   data: T[];
   columns: ColumnDef<T, any>[];
-}
-
-declare module '@tanstack/react-table' {
-  interface ColumnMeta<TData extends RowData, TValue> {
-    checkbox?: boolean;
-  }
 }
 
 export function Table<T>({
@@ -88,14 +80,14 @@ export function Table<T>({
   selectable,
   rowActions,
   ...props
-}: TableAutoProps<T>) {
+}: TableProps<T>) {
   const columnDefs = React.useMemo(() => {
     const columnDefs: ColumnDef<T, any>[] = [];
 
     if (selectable) {
       columnDefs.push({
         id: 'select',
-        meta: { checkbox: true },
+        size: 40,
         header: ({ table }) => {
           return (
             <Checkbox
@@ -135,11 +127,15 @@ export function Table<T>({
     if (rowActions) {
       columnDefs.push({
         id: 'actions',
-        meta: { checkbox: true },
+        size: 40,
         cell: ({ row }) => {
           return (
             <Menu.Root>
-              <Menu.IconButton variant="ghost" size="1">
+              <Menu.IconButton
+                style={{ float: 'right' }}
+                variant="ghost"
+                size="1"
+              >
                 <DotsHorizontalIcon />
               </Menu.IconButton>
 
@@ -176,10 +172,7 @@ export function Table<T>({
         {table.getHeaderGroups().map((headerGroup) => (
           <Row key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <Cell
-                key={header.id}
-                checkbox={header.column.columnDef.meta?.checkbox}
-              >
+              <Cell key={header.id} style={{ minWidth: header.getSize() }}>
                 {header.isPlaceholder
                   ? null
                   : flexRender(
@@ -196,10 +189,7 @@ export function Table<T>({
         {table.getRowModel().rows.map((row) => (
           <Row key={row.id}>
             {row.getVisibleCells().map((cell) => (
-              <Cell
-                key={cell.id}
-                checkbox={cell.column.columnDef.meta?.checkbox}
-              >
+              <Cell key={cell.id} style={{ minWidth: cell.column.getSize() }}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </Cell>
             ))}

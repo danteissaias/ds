@@ -35,16 +35,9 @@
 
 .TableCell {
   vertical-align: inherit;
-  min-width: 128px;
+  /* min-width: 128px; */
   padding: var(--sp-12);
   box-shadow: inset 0 -1px var(--gray-6);
-}
-
-.TableCell.checkbox {
-  min-width: unset;
-  width: 1%;
-  white-space: nowrap;
-  padding: var(--sp-12);
 }
 
 .TableBody .TableRow:last-child .TableCell {
