@@ -4,9 +4,9 @@ import {
   ArchiveIcon,
   CheckIcon,
   CounterClockwiseClockIcon,
-  Pencil1Icon,
   DotsHorizontalIcon,
   EnvelopeClosedIcon,
+  Pencil1Icon,
   ReloadIcon,
   TrashIcon,
 } from '@radix-ui/react-icons';
@@ -21,6 +21,47 @@ import {
   ScrollArea,
   Table,
 } from '../src';
+import { ColumnDef } from '@tanstack/react-table';
+
+interface User {
+  name: string;
+  email: string;
+  createdAt: string;
+  type: 'subuser' | 'customer';
+  customerId?: string;
+}
+
+const columns: ColumnDef<User, any>[] = [
+  { accessorKey: 'name', header: 'Name' },
+  { accessorKey: 'email', header: 'Email' },
+  { accessorKey: 'createdAt', header: 'Created at' },
+  {
+    accessorKey: 'type',
+    header: 'Tags',
+    cell: ({ renderValue }) => <Badge>{renderValue()}</Badge>,
+  },
+];
+
+const data: User[] = [
+  {
+    name: 'John Doe',
+    email: 'john@doe.com',
+    createdAt: '13:21 3/2/2023',
+    type: 'subuser',
+  },
+  {
+    name: 'Dante Issaias',
+    email: 'dante@issaias.com',
+    createdAt: '16:27 9/2/2023',
+    type: 'customer',
+  },
+  {
+    name: 'Robert Roe',
+    email: 'robert@roe.com',
+    createdAt: '18:15 1/2/2023',
+    type: 'customer',
+  },
+];
 
 function Example() {
   return (
@@ -44,105 +85,31 @@ function Example() {
             </Button> */}
         </div>
       </div>
-      <Table.Root style={{ maxWidth: 800 }}>
-        <Table.Table>
-          <Table.Head>
-            <Table.Row>
-              <Table.Cell checkbox>
-                <Checkbox />
-              </Table.Cell>
-              <Table.Cell>name</Table.Cell>
-              <Table.Cell>email</Table.Cell>
-              <Table.Cell>created at</Table.Cell>
-              <Table.Cell>tags</Table.Cell>
-              <Table.Cell checkbox />
-            </Table.Row>
-          </Table.Head>
-          <Table.Body style={{ verticalAlign: 'middle' }}>
-            <Table.Row>
-              <Table.Cell checkbox>
-                <Checkbox />
-              </Table.Cell>
-              <Table.Cell>John Doe</Table.Cell>
-              <Table.Cell>john@doe.com</Table.Cell>
-              <Table.Cell>13:21 3/2/2023</Table.Cell>
-              <Table.Cell>
-                <div className="display-flex gap-4">
-                  <Badge type="danger">expired</Badge>
-                </div>
-              </Table.Cell>
-              <Table.Cell checkbox>
-                <Dropdown.Root>
-                  <Dropdown.Trigger asChild>
-                    <IconButton variant="ghost" size="1">
-                      <DotsHorizontalIcon />
-                    </IconButton>
-                  </Dropdown.Trigger>
-                  <Dropdown.Portal>
-                    <Dropdown.Content style={{ minWidth: 220 }}>
-                      <Dropdown.Group>
-                        <Dropdown.Item>
-                          <EnvelopeClosedIcon />
-                          Send password recovery
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                          <CounterClockwiseClockIcon />
-                          View payment history
-                        </Dropdown.Item>
-                      </Dropdown.Group>
-                      <Dropdown.Separator />
-                      <Dropdown.Group>
-                        <Dropdown.Item type="danger">
-                          <TrashIcon />
-                          Delete record
-                        </Dropdown.Item>
-                      </Dropdown.Group>
-                    </Dropdown.Content>
-                  </Dropdown.Portal>
-                </Dropdown.Root>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell checkbox>
-                <Checkbox />
-              </Table.Cell>
-              <Table.Cell>Dante Issaias</Table.Cell>
-              <Table.Cell>dante@issaias.com</Table.Cell>
-              <Table.Cell>16:27 9/2/2023</Table.Cell>
-              <Table.Cell>
-                <div className="display-flex gap-4">
-                  <Badge>subuser</Badge>
-                  <Badge type="info">basic</Badge>
-                </div>
-              </Table.Cell>
-              <Table.Cell checkbox>
-                <IconButton variant="ghost" size="1">
-                  <DotsHorizontalIcon />
-                </IconButton>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell checkbox>
-                <Checkbox />
-              </Table.Cell>
-              <Table.Cell>Robert Roe</Table.Cell>
-              <Table.Cell>robert@roe.net</Table.Cell>
-              <Table.Cell>11:32 8/1/2023</Table.Cell>
-              <Table.Cell>
-                <div className="display-flex gap-4">
-                  <Badge type="success">admin</Badge>
-                  <Badge type="info">pro</Badge>
-                </div>
-              </Table.Cell>
-              <Table.Cell checkbox>
-                <IconButton variant="ghost" size="1">
-                  <DotsHorizontalIcon />
-                </IconButton>
-              </Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table.Table>
-      </Table.Root>
+
+      <Table.Auto
+        style={{ maxWidth: 800 }}
+        data={data}
+        columns={columns}
+        selection
+        rowActions={(row) => [
+          {
+            label: 'Send password recovery',
+            icon: EnvelopeClosedIcon,
+            onHandle: () => console.log('Send password recovery', row.email),
+          },
+          {
+            label: 'View payment history',
+            icon: CounterClockwiseClockIcon,
+            onHandle: () => console.log('View payment history', row.email),
+          },
+          {
+            label: 'Delete record',
+            type: 'danger',
+            icon: TrashIcon,
+            onHandle: () => console.log('Delete', row.email),
+          },
+        ]}
+      />
     </div>
   );
 }
@@ -250,7 +217,7 @@ export default function App() {
                 </Dropdown.Group>
                 <Dropdown.Separator />
                 <Dropdown.Group>
-                  <Dropdown.Item color="red">Log out</Dropdown.Item>
+                  <Dropdown.Item type="danger">Log out</Dropdown.Item>
                 </Dropdown.Group>
               </Dropdown.Content>
             </Dropdown.Portal>
@@ -262,7 +229,7 @@ export default function App() {
         <h3>Checkbox</h3>
         <div className="display-flex gap-8">
           <Checkbox />
-          <Checkbox indeterminate checked />
+          <Checkbox checked="indeterminate" />
           <Checkbox checked />
         </div>
       </div>
@@ -279,27 +246,55 @@ export default function App() {
       </div>
 
       <div className="p-24 gap-16 display-flex fd-column">
-        <h3>Table</h3>
+        <h3>Basic Table</h3>
         <Table.Root style={{ maxWidth: 800 }}>
-          <Table.Table>
-            <Table.Head>
-              <Table.Row>
-                <Table.Cell>name</Table.Cell>
-                <Table.Cell>email</Table.Cell>
-                <Table.Cell>password</Table.Cell>
-                <Table.Cell>created at</Table.Cell>
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell>John Doe</Table.Cell>
-                <Table.Cell>john@doe.com</Table.Cell>
-                <Table.Cell>*********</Table.Cell>
-                <Table.Cell>03:21 3/2/2023</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table.Table>
+          <Table.Head>
+            <Table.Row>
+              <Table.Cell>name</Table.Cell>
+              <Table.Cell>email</Table.Cell>
+              <Table.Cell>password</Table.Cell>
+              <Table.Cell>created at</Table.Cell>
+            </Table.Row>
+          </Table.Head>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell>John Doe</Table.Cell>
+              <Table.Cell>john@doe.com</Table.Cell>
+              <Table.Cell>*********</Table.Cell>
+              <Table.Cell>03:21 3/2/2023</Table.Cell>
+            </Table.Row>
+          </Table.Body>
         </Table.Root>
+      </div>
+
+      <div className="p-24 gap-16 display-flex fd-column">
+        <h3>
+          Table <Badge>Work in progress</Badge>
+        </h3>
+        <Table.Auto
+          style={{ maxWidth: 800 }}
+          data={data}
+          columns={columns}
+          selection
+          rowActions={(row) => [
+            {
+              label: 'Send password recovery',
+              icon: EnvelopeClosedIcon,
+              onHandle: () => console.log('Send password recovery', row.email),
+            },
+            {
+              label: 'View payment history',
+              icon: CounterClockwiseClockIcon,
+              onHandle: () => console.log('View payment history', row.email),
+            },
+            {
+              label: 'Delete record',
+              type: 'danger',
+              icon: TrashIcon,
+              onHandle: () => console.log('Delete', row.email),
+            },
+          ]}
+        />
       </div>
 
       <div className="p-24 gap-16 display-flex fd-column">
@@ -335,8 +330,9 @@ export default function App() {
           >
             <ScrollArea.Viewport>
               <div className="p-4">
-                {Array.from({ length: 50 }).map(() => (
+                {Array.from({ length: 50 }).map((_, i) => (
                   <div
+                    key={i}
                     style={{
                       height: 50,
                       width: 350,
@@ -348,13 +344,8 @@ export default function App() {
                 ))}
               </div>
             </ScrollArea.Viewport>
-            <ScrollArea.Scrollbar orientation="vertical">
-              <ScrollArea.Thumb />
-            </ScrollArea.Scrollbar>
-            <ScrollArea.Scrollbar orientation="horizontal">
-              <ScrollArea.Thumb />
-            </ScrollArea.Scrollbar>
-            <ScrollArea.Corner />
+            <ScrollArea.Scrollbar orientation="vertical" />
+            <ScrollArea.Scrollbar orientation="horizontal" />
           </ScrollArea.Root>
         </div>
       </div>

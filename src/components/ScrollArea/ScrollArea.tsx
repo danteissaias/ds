@@ -26,33 +26,13 @@ export const Viewport = React.forwardRef<
 
 export const Scrollbar = React.forwardRef<
   ScrollArea.ScrollAreaScrollbarElement,
-  ScrollArea.ScrollAreaScrollbarProps
+  Omit<ScrollArea.ScrollAreaScrollbarProps, 'children'>
 >(({ className, ...props }, forwardedRef) => (
   <ScrollArea.Scrollbar
     ref={forwardedRef}
-    className={cn(className, 'ScrollAreaScrollbar')}
+    className={cn(className, 'ScrollAreaTrack')}
     {...props}
-  />
-));
-
-export const Thumb = React.forwardRef<
-  ScrollArea.ScrollAreaThumbElement,
-  ScrollArea.ScrollAreaThumbProps
->(({ className, ...props }, forwardedRef) => (
-  <ScrollArea.Thumb
-    ref={forwardedRef}
-    className={cn(className, 'ScrollAreaThumb')}
-    {...props}
-  />
-));
-
-export const Corner = React.forwardRef<
-  React.ElementRef<typeof ScrollArea.Corner>,
-  ScrollArea.ScrollAreaCornerProps
->(({ className, ...props }, forwardedRef) => (
-  <ScrollArea.Corner
-    ref={forwardedRef}
-    className={cn(className, 'ScrollAreaCorner')}
-    {...props}
-  />
+  >
+    <ScrollArea.Thumb className="ScrollAreaThumb" />
+  </ScrollArea.Scrollbar>
 ));

@@ -10,28 +10,12 @@ export const Root = React.forwardRef<
   <div ref={forwardedRef} className={cn(className, 'TableRoot')} {...props}>
     <ScrollArea.Root>
       <ScrollArea.Viewport className="TableRootScroll">
-        {children}
+        <table className="TableRootTable">{children}</table>
       </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar orientation="vertical">
-        <ScrollArea.Thumb />
-      </ScrollArea.Scrollbar>
-      <ScrollArea.Scrollbar orientation="horizontal">
-        <ScrollArea.Thumb />
-      </ScrollArea.Scrollbar>
-      <ScrollArea.Corner />
+      <ScrollArea.Scrollbar orientation="vertical" />
+      <ScrollArea.Scrollbar orientation="horizontal" />
     </ScrollArea.Root>
   </div>
-));
-
-export const Table = React.forwardRef<
-  HTMLTableElement,
-  React.TableHTMLAttributes<HTMLTableElement>
->(({ className, ...props }, forwardedRef) => (
-  <table
-    ref={forwardedRef}
-    className={cn(className, 'TableRootTable')}
-    {...props}
-  />
 ));
 
 export const Head = React.forwardRef<
@@ -50,15 +34,14 @@ export const Row = React.forwardRef<
 
 export interface TableCellProps
   extends React.ThHTMLAttributes<HTMLTableCellElement> {
-  hasLink?: boolean;
   checkbox?: boolean;
 }
 
 export const Cell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
-  ({ className, hasLink, checkbox, ...props }, forwardedRef) => (
+  ({ className, checkbox, ...props }, forwardedRef) => (
     <td
       ref={forwardedRef}
-      className={cn(className, 'TableCell', { hasLink, checkbox })}
+      className={cn(className, 'TableCell', { checkbox })}
       {...props}
     />
   )
@@ -70,3 +53,5 @@ export const Body = React.forwardRef<
 >(({ className, ...props }, forwardedRef) => (
   <tbody ref={forwardedRef} className={cn(className, 'TableBody')} {...props} />
 ));
+
+export { Auto } from './Auto';

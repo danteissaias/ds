@@ -10,7 +10,7 @@
   overscroll-behavior-x: contain;
 }
 
-.ScrollAreaScrollbar {
+.ScrollAreaTrack {
   display: flex;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -21,23 +21,23 @@
   background-color: var(--gray-a3);
 }
 
-.ScrollAreaScrollbar[data-orientation='vertical'] {
+.ScrollAreaTrack[data-orientation='vertical'] {
   flex-direction: column;
   width: var(--sp-4);
 }
 
-.ScrollAreaScrollbar[data-orientation='horizontal'] {
+.ScrollAreaTrack[data-orientation='horizontal'] {
   flex-direction: row;
   height: var(--sp-4);
 }
 
-.ScrollAreaScrollbar[data-orientation='vertical']
+.ScrollAreaTrack[data-orientation='vertical']
   + .ScrollAreaScrollbar[data-orientation='horizontal'] {
   margin-right: var(--sp-12);
 }
 
-.ScrollAreaScrollbar[data-orientation='horizontal']
-  + .ScrollAreaScrollbar[data-orientation='vertical'] {
+.ScrollAreaTrack[data-orientation='horizontal']
+  + .ScrollAreaTrack[data-orientation='vertical'] {
   margin-bottom: var(--sp-12);
 }
 
