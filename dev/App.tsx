@@ -16,7 +16,7 @@ import {
   Button,
   Checkbox,
   Dialog,
-  Dropdown,
+  Menu,
   IconButton,
   ScrollArea,
   Table,
@@ -77,20 +77,14 @@ function Example() {
           <Button type="danger" size="1">
             Delete 3 records
           </Button>
-          {/*   <Button color="green" size="1">
-              Save 1 change
-            </Button>
-            <Button ghost size="1">
-              Discard changes
-            </Button> */}
         </div>
       </div>
 
-      <Table.Auto
+      <Table
         style={{ maxWidth: 800 }}
         data={data}
         columns={columns}
-        selection
+        selectable
         rowActions={(row) => [
           {
             label: 'Send password recovery',
@@ -202,26 +196,24 @@ export default function App() {
       </div>
 
       <div className="p-24 gap-16 display-flex fd-column">
-        <h3>Dropdown</h3>
+        <h3>Menu</h3>
 
         <div className="display-flex gap-8">
-          <Dropdown.Root>
-            <Dropdown.Button>User</Dropdown.Button>
-            <Dropdown.Portal>
-              <Dropdown.Content style={{ minWidth: 230 }}>
-                <Dropdown.Label>Label</Dropdown.Label>
-                <Dropdown.Group>
-                  <Dropdown.Item>Workspace Settings</Dropdown.Item>
-                  <Dropdown.Item>Create or join workspace</Dropdown.Item>
-                  <Dropdown.Item>Add an account</Dropdown.Item>
-                </Dropdown.Group>
-                <Dropdown.Separator />
-                <Dropdown.Group>
-                  <Dropdown.Item type="danger">Log out</Dropdown.Item>
-                </Dropdown.Group>
-              </Dropdown.Content>
-            </Dropdown.Portal>
-          </Dropdown.Root>
+          <Menu.Root>
+            <Menu.Button>User</Menu.Button>
+            <Menu.Content style={{ minWidth: 230 }}>
+              <Menu.Label>Label</Menu.Label>
+              <Menu.Group>
+                <Menu.Item>Workspace Settings</Menu.Item>
+                <Menu.Item>Create or join workspace</Menu.Item>
+                <Menu.Item>Add an account</Menu.Item>
+              </Menu.Group>
+              <Menu.Separator />
+              <Menu.Group>
+                <Menu.Item type="danger">Log out</Menu.Item>
+              </Menu.Group>
+            </Menu.Content>
+          </Menu.Root>
         </div>
       </div>
 
@@ -246,36 +238,14 @@ export default function App() {
       </div>
 
       <div className="p-24 gap-16 display-flex fd-column">
-        <h3>Basic Table</h3>
-        <Table.Root style={{ maxWidth: 800 }}>
-          <Table.Head>
-            <Table.Row>
-              <Table.Cell>name</Table.Cell>
-              <Table.Cell>email</Table.Cell>
-              <Table.Cell>password</Table.Cell>
-              <Table.Cell>created at</Table.Cell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell>John Doe</Table.Cell>
-              <Table.Cell>john@doe.com</Table.Cell>
-              <Table.Cell>*********</Table.Cell>
-              <Table.Cell>03:21 3/2/2023</Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table.Root>
-      </div>
-
-      <div className="p-24 gap-16 display-flex fd-column">
         <h3>
           Table <Badge>Work in progress</Badge>
         </h3>
-        <Table.Auto
+        <Table
           style={{ maxWidth: 800 }}
           data={data}
           columns={columns}
-          selection
+          selectable
           rowActions={(row) => [
             {
               label: 'Send password recovery',

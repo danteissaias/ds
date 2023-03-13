@@ -1,9 +1,17 @@
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  RowData,
+  useReactTable,
+} from '@tanstack/react-table';
 import cn from 'clsx';
 import * as React from 'react';
 
-import { ScrollArea } from '@/components';
+import { Checkbox, Menu, IconButton, ScrollArea } from '@/components';
+import { DotsHorizontalIcon } from '@radix-ui/react-icons';
 
-export const Root = React.forwardRef<
+const Root = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, forwardedRef) => (
@@ -18,26 +26,25 @@ export const Root = React.forwardRef<
   </div>
 ));
 
-export const Head = React.forwardRef<
+const Head = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, forwardedRef) => (
   <thead ref={forwardedRef} className={cn(className, 'TableHead')} {...props} />
 ));
 
-export const Row = React.forwardRef<
+const Row = React.forwardRef<
   HTMLTableRowElement,
   React.HTMLAttributes<HTMLTableRowElement>
 >(({ className, ...props }, forwardedRef) => (
   <tr ref={forwardedRef} className={cn(className, 'TableRow')} {...props} />
 ));
 
-export interface TableCellProps
-  extends React.ThHTMLAttributes<HTMLTableCellElement> {
+interface TableCellProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
   checkbox?: boolean;
 }
 
-export const Cell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
+const Cell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
   ({ className, checkbox, ...props }, forwardedRef) => (
     <td
       ref={forwardedRef}
@@ -47,11 +54,158 @@ export const Cell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
   )
 );
 
-export const Body = React.forwardRef<
+const Body = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, forwardedRef) => (
   <tbody ref={forwardedRef} className={cn(className, 'TableBody')} {...props} />
 ));
 
-export { Auto } from './Auto';
+interface RowAction {
+  label: string;
+  icon?: React.ElementType;
+  type?: 'default' | 'danger';
+  onHandle: () => void | Promise<void>;
+}
+
+export interface TableAutoProps<T>
+  extends React.HTMLAttributes<HTMLDivElement> {
+  selectable?: boolean;
+  rowActions?: (row: T) => RowAction[];
+  data: T[];
+  columns: ColumnDef<T, any>[];
+}
+
+declare module '@tanstack/react-table' {
+  interface ColumnMeta<TData extends RowData, TValue> {
+    checkbox?: boolean;
+  }
+}
+
+export function Table<T>({
+  data,
+  columns,
+  selectable,
+  rowActions,
+  ...props
+}: TableAutoProps<T>) {
+  const columnDefs = React.useMemo(() => {
+    const columnDefs: ColumnDef<T, any>[] = [];
+
+    if (selectable) {
+      columnDefs.push({
+        id: 'select',
+        meta: { checkbox: true },
+        header: ({ table }) => {
+          return (
+            <Checkbox
+              checked={
+                table.getIsSomeRowsSelected()
+                  ? 'indeterminate'
+                  : table.getIsAllRowsSelected()
+              }
+              onCheckedChange={(checked) =>
+                checked === 'indeterminate'
+                  ? table.toggleAllRowsSelected(true)
+                  : table.toggleAllRowsSelected(checked)
+              }
+            />
+          );
+        },
+        cell: ({ row }) => {
+          return (
+            <Checkbox
+              checked={
+                row.getIsSomeSelected() ? 'indeterminate' : row.getIsSelected()
+              }
+              disabled={!row.getCanSelect()}
+              onCheckedChange={(checked) =>
+                checked === 'indeterminate'
+                  ? row.toggleSelected(true)
+                  : row.toggleSelected(checked)
+              }
+            />
+          );
+        },
+      });
+    }
+
+    columnDefs.push(...columns);
+
+    if (rowActions) {
+      columnDefs.push({
+        id: 'actions',
+        meta: { checkbox: true },
+        cell: ({ row }) => {
+          return (
+            <Menu.Root>
+              <Menu.IconButton variant="ghost" size="1">
+                <DotsHorizontalIcon />
+              </Menu.IconButton>
+
+              <Menu.Content style={{ minWidth: 220 }}>
+                {rowActions(row.original).map((action, i) => (
+                  <Menu.Item
+                    key={i}
+                    onClick={() => action.onHandle()}
+                    type={action.type}
+                  >
+                    {action.icon && <action.icon />}
+                    {action.label}
+                  </Menu.Item>
+                ))}
+              </Menu.Content>
+            </Menu.Root>
+          );
+        },
+      });
+    }
+
+    return columnDefs;
+  }, [columns, rowActions, selectable]);
+
+  const table = useReactTable({
+    data,
+    columns: columnDefs,
+    getCoreRowModel: getCoreRowModel(),
+  });
+
+  return (
+    <Root {...props}>
+      <Head>
+        {table.getHeaderGroups().map((headerGroup) => (
+          <Row key={headerGroup.id}>
+            {headerGroup.headers.map((header) => (
+              <Cell
+                key={header.id}
+                checkbox={header.column.columnDef.meta?.checkbox}
+              >
+                {header.isPlaceholder
+                  ? null
+                  : flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
+              </Cell>
+            ))}
+          </Row>
+        ))}
+      </Head>
+
+      <Body>
+        {table.getRowModel().rows.map((row) => (
+          <Row key={row.id}>
+            {row.getVisibleCells().map((cell) => (
+              <Cell
+                key={cell.id}
+                checkbox={cell.column.columnDef.meta?.checkbox}
+              >
+                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              </Cell>
+            ))}
+          </Row>
+        ))}
+      </Body>
+    </Root>
+  );
+}

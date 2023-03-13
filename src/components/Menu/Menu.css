@@ -12,7 +12,7 @@
   }
 }
 
-.DropdownContent {
+.MenuContent {
   /* Must add 1px due to inset box shadow. */
   padding: calc(var(--sp-4) + 1px);
   border-radius: var(--br-6);
@@ -23,15 +23,15 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .DropdownContent[data-state='open'] {
+  .MenuContent[data-state='open'] {
     animation: scaleIn 100ms;
   }
 
-  .DropdownContent[data-state='closed'] {
+  .MenuContent[data-state='closed'] {
     animation: scaleOut 100ms;
   }
 }
-.DropdownItem {
+.MenuItem {
   display: flex;
   align-items: center;
   padding-left: var(--sp-8);
@@ -44,47 +44,47 @@
   font-weight: 450;
 }
 
-.DropdownItem svg {
+.MenuItem svg {
   color: hsl(256, 6%, 80%);
   height: var(--sp-16);
   width: var(--sp-16);
 }
 
-.DropdownItem[data-highlighted] {
-  background: var(--gray-a3);
+.MenuItem[data-highlighted] {
+  background: var(--gray-a4);
   outline: none;
   color: var(--gray-12);
 }
 
-.DropdownItem[data-highlighted] svg {
+.MenuItem[data-highlighted] svg {
   color: var(--gray-12);
 }
 
-.DropdownItem.danger {
+.MenuItem.danger {
   color: var(--red-a11);
 }
 
-.DropdownItem.danger svg {
+.MenuItem.danger svg {
   color: var(--red-a11);
 }
 
-.DropdownItem.danger[data-highlighted] {
+.MenuItem.danger[data-highlighted] {
   background: var(--red-a3);
   color: var(--red-a11);
 }
 
-.DropdownItem.danger[data-highlighted] svg {
+.MenuItem.danger[data-highlighted] svg {
   color: var(--red-a11);
 }
 
-.DropdownSeparator {
+.MenuSeparator {
   margin: var(--sp-4);
   height: 1px;
   background: var(--gray-a5);
 }
 
-.DropdownLabel {
-  padding-left: calc(var(--sp-12) + 1px);
+.MenuLabel {
+  padding-left: calc(var(--sp-8) + 1px);
   padding-top: var(--sp-4);
   padding-bottom: var(--sp-4);
   font-size: var(--fs-13);
