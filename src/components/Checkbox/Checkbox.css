@@ -65,6 +65,7 @@
   height: var(--sp-16);
   width: var(--sp-16);
   display: flex;
+  padding: 1px;
 }
 
 .CheckboxIndicator svg {
