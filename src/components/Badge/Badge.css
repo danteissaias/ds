@@ -11,7 +11,7 @@
 }
 
 .Badge {
-  background-color: var(--gray-a3);
+  background-color: var(--gray-a4);
   color: var(--gray-a11);
 }
 
@@ -21,12 +21,12 @@
 }
 
 .Badge.success {
-  background-color: var(--green-a3);
+  background-color: var(--green-a4);
   color: var(--green-a11);
 }
 
 .Badge.info {
   /* background-color: rgba(from var(--accent), r g b / 0.1); */
-  background-color: hsla(219, 79%, 66%, 0.1);
+  background-color: hsla(219, 79%, 66%, 0.2);
   color: var(--accent);
 }

@@ -8,7 +8,7 @@ import cn from 'clsx';
 import * as React from 'react';
 
 import { Checkbox, Menu, ScrollArea } from '@/components';
-import { DotsHorizontalIcon } from '@radix-ui/react-icons';
+import { MoreHorizontal } from 'react-feather';
 
 const Root = React.forwardRef<
   HTMLDivElement,
@@ -136,7 +136,7 @@ export function Table<T>({
                 variant="ghost"
                 size="1"
               >
-                <DotsHorizontalIcon />
+                <MoreHorizontal />
               </Menu.IconButton>
 
               <Menu.Content style={{ minWidth: 220 }}>

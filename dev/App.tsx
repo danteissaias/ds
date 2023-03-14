@@ -1,13 +1,5 @@
-import {
-  ArchiveIcon,
-  CheckIcon,
-  CounterClockwiseClockIcon,
-  EnvelopeClosedIcon,
-  Pencil1Icon,
-  ReloadIcon,
-  TrashIcon,
-} from '@radix-ui/react-icons';
 import { ColumnDef } from '@tanstack/react-table';
+import { Archive, Check, Mail, RotateCw, Trash } from 'react-feather';
 
 import {
   Badge,
@@ -71,7 +63,7 @@ function Example() {
       <div className="display-flex jc-space-between" style={{ maxWidth: 800 }}>
         <div className="display-flex gap-4 ai-center">
           <IconButton size="1">
-            <ReloadIcon />
+            <RotateCw />
           </IconButton>
           <Button size="1">Add record</Button>
         </div>
@@ -90,18 +82,18 @@ function Example() {
         rowActions={(row) => [
           {
             label: 'Send password recovery',
-            icon: EnvelopeClosedIcon,
+            icon: Mail,
             onHandle: () => console.log('Send password recovery', row.email),
           },
           {
             label: 'View payment history',
-            icon: CounterClockwiseClockIcon,
+            icon: RotateCw,
             onHandle: () => console.log('View payment history', row.email),
           },
           {
             label: 'Delete record',
             type: 'danger',
-            icon: TrashIcon,
+            icon: Trash,
             onHandle: () => console.log('Delete', row.email),
           },
         ]}
@@ -156,43 +148,43 @@ export default function App() {
 
         <div className="display-flex gap-8">
           <IconButton size="1">
-            <Pencil1Icon />
+            <RotateCw />
           </IconButton>
           <IconButton>
-            <Pencil1Icon />
+            <RotateCw />
           </IconButton>
         </div>
 
         <div className="display-flex gap-8">
           <IconButton>
-            <ArchiveIcon />
+            <Archive />
           </IconButton>
           <IconButton type="danger">
-            <TrashIcon />
+            <Trash />
           </IconButton>
           <IconButton type="success">
-            <CheckIcon />
+            <Check />
           </IconButton>
         </div>
 
         <div className="display-flex gap-8">
           <IconButton variant="ghost">
-            <ArchiveIcon />
+            <Archive />
           </IconButton>
           <IconButton type="danger" variant="ghost">
-            <TrashIcon />
+            <Trash />
           </IconButton>
           <IconButton type="success" variant="ghost">
-            <CheckIcon />
+            <Check />
           </IconButton>
         </div>
 
         <div className="display-flex gap-8">
           <IconButton disabled>
-            <ArchiveIcon />
+            <Archive />
           </IconButton>
           <IconButton loading>
-            <ReloadIcon />
+            <RotateCw />
           </IconButton>
         </div>
       </div>
@@ -251,18 +243,18 @@ export default function App() {
           rowActions={(row) => [
             {
               label: 'Send password recovery',
-              icon: EnvelopeClosedIcon,
+              icon: Mail,
               onHandle: () => console.log('Send password recovery', row.email),
             },
             {
               label: 'View payment history',
-              icon: CounterClockwiseClockIcon,
+              icon: RotateCw,
               onHandle: () => console.log('View payment history', row.email),
             },
             {
               label: 'Delete record',
               type: 'danger',
-              icon: TrashIcon,
+              icon: Trash,
               onHandle: () => console.log('Delete', row.email),
             },
           ]}

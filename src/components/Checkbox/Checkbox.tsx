@@ -1,5 +1,5 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { CheckIcon, MinusIcon } from '@radix-ui/react-icons';
+import { Check, Minus } from 'react-feather';
 import cn from 'clsx';
 import * as React from 'react';
 
@@ -16,7 +16,7 @@ export const Checkbox = React.forwardRef<
       {...props}
     >
       <CheckboxPrimitive.Indicator className="CheckboxIndicator">
-        {props.checked === 'indeterminate' ? <MinusIcon /> : <CheckIcon />}
+        {props.checked === 'indeterminate' ? <Minus /> : <Check />}
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   </div>

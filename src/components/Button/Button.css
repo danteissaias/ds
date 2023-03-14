@@ -29,6 +29,7 @@
 .Button.size-1 svg {
   height: var(--sp-12);
   width: var(--sp-12);
+  stroke-width: 2.5px;
 }
 
 .Button.size-1.icon {
