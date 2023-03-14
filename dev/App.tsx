@@ -1,5 +1,12 @@
 import { ColumnDef } from '@tanstack/react-table';
-import { Archive, Check, Mail, RotateCw, Trash } from 'react-feather';
+import {
+  Archive,
+  Check,
+  Mail,
+  RotateCw,
+  ShoppingCart,
+  Trash,
+} from 'react-feather';
 
 import {
   Badge,
@@ -87,7 +94,7 @@ function Example() {
           },
           {
             label: 'View payment history',
-            icon: RotateCw,
+            icon: ShoppingCart,
             onHandle: () => console.log('View payment history', row.email),
           },
           {
@@ -248,7 +255,7 @@ export default function App() {
             },
             {
               label: 'View payment history',
-              icon: RotateCw,
+              icon: ShoppingCart,
               onHandle: () => console.log('View payment history', row.email),
             },
             {
